@@ -5,24 +5,25 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Changelog - ReactPHP</title>
+        <title>HTTPClient: 
+Changelog - ReactPHP</title>
 
-        <meta name="description" content="Asynchronous HTTP client library.">
+        <meta name="description" content="Event-driven, streaming HTTP client for ReactPHP.">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="https://jsor-labs.github.io/website/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="https://jsor-labs.github.io/website/favicon-32x32.png">
-        <link rel="manifest" href="https://jsor-labs.github.io/website/manifest.json">
-        <link rel="mask-icon" href="https://jsor-labs.github.io/website/safari-pinned-tab.svg" color="#4f5b93">
+        <link rel="apple-touch-icon" sizes="180x180" href="http://jsor-labs.github.io/website/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="http://jsor-labs.github.io/website/favicon-32x32.png">
+        <link rel="manifest" href="http://jsor-labs.github.io/website/manifest.json">
+        <link rel="mask-icon" href="http://jsor-labs.github.io/website/safari-pinned-tab.svg" color="#4f5b93">
         <meta name="apple-mobile-web-app-title" content="ReactPHP">
         <meta name="application-name" content="ReactPHP">
         <meta name="theme-color" content="#f4f3f1">
-        <meta name="msapplication-config" content="https://jsor-labs.github.io/website/browserconfig.xml" />
+        <meta name="msapplication-config" content="http://jsor-labs.github.io/website/browserconfig.xml" />
 
-        <meta property="og:image" content="https://jsor-labs.github.io/website/og-image.png">
+        <meta property="og:image" content="http://jsor-labs.github.io/website/og-image.png">
 
             <script>window.__assets = '../assets/';</script>
-        <style>@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:400;src:local("Source Sans Pro"),local("SourceSansPro-Regular"),url(../assets/fdc0354668675e460e18d8e6b880e634.woff) format("woff")}@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:700;src:local("Source Sans Pro Bold"),local("SourceSansPro-Bold"),url(../assets/54f926c7e2cffb824547c75bc5ac0b5e.woff) format("woff")}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;color:#584b4f;background-color:#fff}blockquote,fieldset,form,h1,h2,h3,h4,h5,h6,hr,ol,p,ul{margin:0 0 16px}ul{margin-bottom:0}hr{clear:both;height:0;border:0;border-bottom:1px dashed #eae8e3;padding:0}h1,h2,h3,h4,h5,h6{font-weight:700;line-height:1;-webkit-font-smoothing:antialiased;color:#584b4f}.font-loaded-source-sans-pro h1,.font-loaded-source-sans-pro h2,.font-loaded-source-sans-pro h3,.font-loaded-source-sans-pro h4,.font-loaded-source-sans-pro h5,.font-loaded-source-sans-pro h6{font-family:Source Sans Pro,Helvetica Neue,Arial,sans-serif;font-weight:700}h1{font-size:2.4em;margin-bottom:32px;color:#4f5b93;letter-spacing:-1px}h1:not(:first-child){margin-top:32px}h2{font-size:1.8em;margin-bottom:32px}h2:not(:first-child){margin-top:32px}h3{font-size:1.4em;margin-bottom:24px;color:#4f5b93}h3:not(:first-child){margin-top:24px}h4{font-size:1.2em}h4:not(:first-child){margin-top:24px}@media (max-width:768px){h1{font-size:1.8em}h2{font-size:1.6em;margin-bottom:32px}}.container{padding:32px}@media (max-width:768px){.container{padding:16px}}.wrapper{max-width:960px;margin:auto}.wrapper--wide{max-width:1280px}.wrapper--narrow{max-width:640px}.main{width:calc(98% - 400px);margin-bottom:64px}.sidebar{width:calc(400px - 2%);margin-bottom:32px}@media (max-width:1024px){.main,.sidebar{width:auto}}.grid{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:102%;margin-left:-2%}.grid>*{max-width:100%;margin-left:2%}.grid--4cols>*{-ms-flex-preferred-size:23%;flex-basis:23%}.grid--3cols>*{-ms-flex-preferred-size:31.33%;flex-basis:31.33%}.grid--2cols>*{-ms-flex-preferred-size:48%;flex-basis:48%}@media (max-width:768px){.grid{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.grid>*{width:98%;-ms-flex-preferred-size:98%;flex-basis:98%}}.header{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;width:100%;border-bottom:1px dashed #eae8e3;padding:16px 32px}@media (max-width:768px){.header{padding:16px;margin-bottom:16px}}.header__logo{display:block;line-height:1}.header__logo svg{display:block;height:16px;width:auto}.header__search{margin:0;position:absolute;right:32px;z-index:999}@media (max-width:768px){.header__search{right:16px}}.header__search input{width:400px}@media (max-width:768px){.header__search input{width:calc(100vw - 32px)}}.searchbox{width:100%}.searchbox,.searchbox:focus{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:4px 8px 4px 32px;font-size:16px;line-height:24px;color:#584b4f;border:1px solid #eae8e3}.searchbox--collapsed:not(:focus){background-color:transparent;border-color:transparent;width:32px!important;margin-right:-12px}.welcome__intro{padding:16px 0 136px;border-bottom:1px dashed #eae8e3;background-image:radial-gradient(ellipse at center,#fff 0,#eae8e3 100%);background-size:auto 100%;background-position:50% 0}.welcome__intro h1{font-size:2em;margin-bottom:16px;color:#4f5b93}.welcome__logo{display:block;margin:0 auto;max-width:320px}.welcome__logo svg{display:block;height:240px}.welcome__content{padding-top:16px;display:block;max-width:calc(98% - 320px)}.welcome__example{display:block;margin:auto;max-width:720px;margin-top:-160px}.welcome__example .highlight pre{padding:32px;box-shadow:0 0 16px #d6d1c8}.welcome__intro .links a{color:#584b4f;text-decoration:none}.welcome__intro .links a:hover{color:#4f5b93;text-decoration:none}@media (max-width:768px){.welcome__content{padding:32px 16px 16px;max-width:100%}.welcome__logo svg{height:160px}.welcome__intro h1{text-align:center;font-size:1.6em;margin-bottom:16px;color:#4f5b93}.welcome__intro .links{text-align:center}}.links{margin:0;padding:0}.links li{display:inline-block;margin:0 8px;text-decoration:none}.links li:first-child{margin-left:0}.links li:last-child{margin-right:0}.links a{display:block}.links a,.links a:hover{text-decoration:none}.component-info__contributors,.component-info__title{display:-webkit-box;display:-ms-flexbox;display:flex}.component-info__contributors{-ms-flex-wrap:wrap;flex-wrap:wrap;padding:0;list-style:none}.version-selector__panel{position:fixed;top:-20000em;visibility:hidden}</style>
-        <script>!function(n){function t(o){if(e[o])return e[o].exports;var r=e[o]={i:o,l:!1,exports:{}};return n[o].call(r.exports,r,r.exports,t),r.l=!0,r.exports}var e={};t.m=n,t.c=e,t.i=function(n){return n},t.d=function(n,e,o){t.o(n,e)||Object.defineProperty(n,e,{configurable:!1,enumerable:!0,get:o})},t.n=function(n){var e=n&&n.__esModule?function(){return n.default}:function(){return n};return t.d(e,"a",e),e},t.o=function(n,t){return Object.prototype.hasOwnProperty.call(n,t)},t.p="",t(t.s=27)}([function(n,t,e){e.p=window.__assets},function(n,t){n.exports={check:function(n){return 2===("; "+document.cookie).split("; font-loaded-"+n+"=").length},loaded:function(n){document.documentElement.className+=" font-loaded-"+n}}},function(n,t){var e;e=function(){return this}();try{e=e||Function("return this")()||(0,eval)("this")}catch(n){"object"==typeof window&&(e=window)}n.exports=e},function(n,t,e){e(11),e(22),e(6),e(9)},,,function(n,t,e){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=e(16);e.n(o)},,,function(n,t,e){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=e(18);e.n(o)},,function(n,t,e){e(20);var o=e(1);o.check("source-sans-pro")&&o.loaded("source-sans-pro")},,,,,function(n,t){},,function(n,t){},,function(n,t){},,function(n,t){},,,,,function(n,t,e){e(0),n.exports=e(3)}]);</script>
+        <style>@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:400;src:local("Source Sans Pro"),local("SourceSansPro-Regular"),url(../assets/fdc0354668675e460e18d8e6b880e634.woff) format("woff")}@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:700;src:local("Source Sans Pro Bold"),local("SourceSansPro-Bold"),url(../assets/54f926c7e2cffb824547c75bc5ac0b5e.woff) format("woff")}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;color:#584b4f;background-color:#fff}blockquote,fieldset,form,h1,h2,h3,h4,h5,h6,hr,ol,p,ul{margin:0 0 16px}ul{margin-bottom:0}hr{clear:both;height:0;border:0;border-bottom:1px dashed #eae8e3;padding:0}h1,h2,h3,h4,h5,h6{font-weight:700;line-height:1;-webkit-font-smoothing:antialiased;color:#584b4f}.font-loaded-source-sans-pro h1,.font-loaded-source-sans-pro h2,.font-loaded-source-sans-pro h3,.font-loaded-source-sans-pro h4,.font-loaded-source-sans-pro h5,.font-loaded-source-sans-pro h6{font-family:Source Sans Pro,Helvetica Neue,Arial,sans-serif;font-weight:700}h1{font-size:2.4em;margin-bottom:32px;color:#4f5b93;letter-spacing:-1px}h1:not(:first-child){margin-top:32px}h2{font-size:1.8em;margin-bottom:32px}h2:not(:first-child){margin-top:32px}h3{font-size:1.4em;margin-bottom:24px;color:#4f5b93}h3:not(:first-child){margin-top:24px}h4{font-size:1.2em}h4:not(:first-child){margin-top:24px}@media (max-width:768px){h1{font-size:1.8em}h2{font-size:1.6em;margin-bottom:32px}}.container{padding:32px}@media (max-width:768px){.container{padding:16px}}.wrapper{max-width:960px;margin:auto}.wrapper--wide{max-width:1280px}.wrapper--narrow{max-width:640px}.main{width:calc(98% - 400px);margin-bottom:64px}.sidebar{width:calc(400px - 2%);margin-bottom:32px}@media (max-width:1024px){.main,.sidebar{width:auto}}.grid{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:102%;margin-left:-2%}.grid>*{max-width:100%;margin-left:2%}.grid--4cols>*{-ms-flex-preferred-size:23%;flex-basis:23%}.grid--3cols>*{-ms-flex-preferred-size:31.33%;flex-basis:31.33%}.grid--2cols>*{-ms-flex-preferred-size:48%;flex-basis:48%}@media (max-width:768px){.grid{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.grid>*{width:98%;-ms-flex-preferred-size:98%;flex-basis:98%}}.header{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;width:100%;border-bottom:1px dashed #eae8e3;padding:16px 32px}@media (max-width:768px){.header{padding:16px;margin-bottom:16px}}.header__logo{display:block;line-height:1}.header__logo svg{display:block;height:16px;width:auto}.header__search{margin:0;position:absolute;right:32px;z-index:999}@media (max-width:768px){.header__search{right:16px}}.header__search input{width:400px}@media (max-width:768px){.header__search input{width:calc(100vw - 32px)}}.searchbox{width:100%}.searchbox,.searchbox:focus{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:4px 8px 4px 32px;font-size:16px;line-height:24px;color:#584b4f;border:1px solid #eae8e3}.searchbox--collapsed:not(:focus){background-color:transparent;border-color:transparent;width:32px!important;margin-right:-12px}.welcome__intro{padding:16px 0 136px;border-bottom:1px dashed #eae8e3;background-image:radial-gradient(ellipse at center,#fff 0,#eae8e3 100%);background-size:auto 100%;background-position:50% 0}.welcome__intro h1{font-size:2em;margin-bottom:16px;color:#4f5b93}.welcome__logo{display:block;margin:0 auto;max-width:320px}.welcome__logo svg{display:block;height:240px}.welcome__content{padding-top:16px;display:block;max-width:calc(98% - 320px)}.welcome__example{display:block;margin:auto;max-width:800px;margin-top:-160px}.welcome__example .highlight pre{padding:32px;box-shadow:0 0 16px #d6d1c8}.welcome__intro .links a{color:#584b4f;text-decoration:none}.welcome__intro .links a:hover{color:#4f5b93;text-decoration:none}@media (max-width:768px){.welcome__content{padding:32px 16px 16px;max-width:100%}.welcome__logo svg{height:160px}.welcome__intro h1{text-align:center;font-size:1.6em;margin-bottom:16px;color:#4f5b93}.welcome__intro .links{text-align:center}}.links{margin:0;padding:0}.links li{display:inline-block;margin:0 8px;text-decoration:none}.links li:first-child{margin-left:0}.links li:last-child{margin-right:0}.links a{display:block}.links a,.links a:hover{text-decoration:none}.component-info__contributors,.component-info__title{display:-webkit-box;display:-ms-flexbox;display:flex}.component-info__contributors{-ms-flex-wrap:wrap;flex-wrap:wrap;padding:0;list-style:none}.version-selector__panel{position:fixed;top:-20000em;visibility:hidden}</style>
+        <script>!function(n){function e(o){if(t[o])return t[o].exports;var r=t[o]={i:o,l:!1,exports:{}};return n[o].call(r.exports,r,r.exports,e),r.l=!0,r.exports}var t={};e.m=n,e.c=t,e.i=function(n){return n},e.d=function(n,t,o){e.o(n,t)||Object.defineProperty(n,t,{configurable:!1,enumerable:!0,get:o})},e.n=function(n){var t=n&&n.__esModule?function(){return n.default}:function(){return n};return e.d(t,"a",t),t},e.o=function(n,e){return Object.prototype.hasOwnProperty.call(n,e)},e.p="",e(e.s=22)}([function(n,e,t){t.p=window.__assets},function(n,e){n.exports={check:function(n){return 2===("; "+document.cookie).split("; font-loaded-"+n+"=").length},loaded:function(n){document.documentElement.className+=" font-loaded-"+n}}},function(n,e,t){t(10),t(19),t(5),t(8)},,,function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var o=t(13);t.n(o)},,,function(n,e,t){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var o=t(15);t.n(o)},,function(n,e,t){t(17);var o=t(1);o.check("source-sans-pro")&&o.loaded("source-sans-pro")},,,function(n,e){},,function(n,e){},,function(n,e){},,function(n,e){},,,function(n,e,t){t(0),n.exports=t(2)}]);</script>
         </head>
 
     <body>
@@ -40,6 +41,102 @@
             <main class="main">
                 <h1>
 <a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Changelog</h1>
+<h2>
+<a id="054-2017-08-25" class="anchor" href="#054-2017-08-25" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.4 (2017-08-25)</h2>
+<ul>
+<li>
+<p>Feature: Update Socket dependency to support hosts file on all platforms
+(#108 by @clue)</p>
+<p>This means that HTTP requests to hosts such as <code>localhost</code> will now work as
+expected across all platforms with no changes required:</p>
+<pre><code>$client = new Client($loop);
+$request = $client-&gt;request('GET', 'http://localhost/');
+$request-&gt;on('response', function (Response $response) {
+    // …
+});
+$request-&gt;end();
+</code></pre>
+</li>
+</ul>
+<h2>
+<a id="053-2017-08-16" class="anchor" href="#053-2017-08-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.3 (2017-08-16)</h2>
+<ul>
+<li>
+<p>Feature: Target evenement 3.0 a long side 2.0
+(#106 by @WyriHaximus)</p>
+</li>
+<li>
+<p>Improve test suite by locking Travis distro so new defaults will not break the build
+(#211 by @clue)</p>
+</li>
+</ul>
+<h2>
+<a id="052-2017-06-27" class="anchor" href="#052-2017-06-27" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.2 (2017-06-27)</h2>
+<ul>
+<li>
+<p>Feature: Support passing arrays for request header values
+(#100 by @clue)</p>
+</li>
+<li>
+<p>Fix: Fix merging default headers if overwritten with custom case headers
+(#101 by @clue)</p>
+</li>
+</ul>
+<h2>
+<a id="051-2017-06-18" class="anchor" href="#051-2017-06-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.1 (2017-06-18)</h2>
+<ul>
+<li>
+<p>Feature: Emit <code>error</code> event if request URL is invalid
+(#99 by @clue)</p>
+</li>
+<li>
+<p>Feature: Support OPTIONS method with asterisk-form (<code>OPTIONS * HTTP/1.1</code>)
+(#98 by @clue)</p>
+</li>
+<li>
+<p>Improve documentation for event semantics
+(#97 by @clue)</p>
+</li>
+</ul>
+<h2>
+<a id="050-2017-05-22" class="anchor" href="#050-2017-05-22" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.0 (2017-05-22)</h2>
+<ul>
+<li>
+<p>Feature / BC break: Replace <code>Factory</code> with simple <code>Client</code> constructor
+(#85 by @clue)</p>
+<p>The <code>Client</code> now accepts a required <code>LoopInterface</code> and an optional
+<code>ConnectorInterface</code>. It will now create a default <code>Connector</code> if none
+has been given.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> old</span></span>
+<span class="pl-s1"><span class="pl-smi">$dnsResolverFactory</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\Dns\Resolver\</span><span class="pl-c1">Factory</span>();</span>
+<span class="pl-s1"><span class="pl-smi">$dnsResolver</span> <span class="pl-k">=</span> <span class="pl-smi">$dnsResolverFactory</span><span class="pl-k">-&gt;</span>createCached(<span class="pl-s"><span class="pl-pds">'</span>8.8.8.8<span class="pl-pds">'</span></span>, <span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$factory</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\HttpClient\</span><span class="pl-c1">Factory</span>();</span>
+<span class="pl-s1"><span class="pl-smi">$client</span> <span class="pl-k">=</span> <span class="pl-smi">$factory</span><span class="pl-k">-&gt;</span>create(<span class="pl-smi">$loop</span>, <span class="pl-smi">$dnsResolver</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> new</span></span>
+<span class="pl-s1"><span class="pl-smi">$client</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\HttpClient\</span><span class="pl-c1">Client</span>(<span class="pl-smi">$loop</span>);</span></pre></div>
+</li>
+<li>
+<p>Feature: <code>Request::close()</code> now cancels pending connection attempt
+(#91 by @clue)</p>
+</li>
+<li>
+<p>Feature / BC break: Replace deprecated SocketClient with new Socket component
+(#74, #84 and #88 by @clue)</p>
+</li>
+<li>
+<p>Feature / BC break: Consistent stream semantics and forward compatibility with upcoming Stream v1.0
+(#90 by @clue)</p>
+</li>
+<li>
+<p>Feature: Forward compatibility with upcoming EventLoop v1.0 and v0.5
+(#89 by @clue)</p>
+</li>
+<li>
+<p>Fix: Catch Guzzle parser exception
+(#82 by @djagya)</p>
+</li>
+</ul>
 <h2>
 <a id="0417-2017-03-20" class="anchor" href="#0417-2017-03-20" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.17 (2017-03-20)</h2>
 <ul>
@@ -179,16 +276,15 @@
 <ul>
 <li>Feature: HTTP client (@arnaud-lb)</li>
 </ul>
-
             </main>
             <aside class="sidebar" role="complementary">
                 <section class="component-info">
                     <h2 class="component-info__title">
-                        HTTPClient
+                        <a href="../http-client/">HTTPClient</a>
 
                         <div class="version-selector">
                             <button class="version-selector__button" aria-expanded="false" aria-controls="component-version-selector" data-version-selector-toggle>
-                                v0.4.17
+                                v0.5.4
 
                                 <i class="icon-chevron-down" aria-hidden="true"></i>
                                 <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -199,8 +295,33 @@
 
                                 <ul class="version-selector__list">
                                                                             <li>
+                                            <a href="https://github.com/reactphp/http-client/tree/v0.5.4#readme">
+                                                <span class="version-selector__version version-selector__version--latest">v0.5.4</span>
+                                            </a>
+                                        </li>
+                                                                            <li>
+                                            <a href="https://github.com/reactphp/http-client/tree/v0.5.3#readme">
+                                                <span class="version-selector__version">v0.5.3</span>
+                                            </a>
+                                        </li>
+                                                                            <li>
+                                            <a href="https://github.com/reactphp/http-client/tree/v0.5.2#readme">
+                                                <span class="version-selector__version">v0.5.2</span>
+                                            </a>
+                                        </li>
+                                                                            <li>
+                                            <a href="https://github.com/reactphp/http-client/tree/v0.5.1#readme">
+                                                <span class="version-selector__version">v0.5.1</span>
+                                            </a>
+                                        </li>
+                                                                            <li>
+                                            <a href="https://github.com/reactphp/http-client/tree/v0.5.0#readme">
+                                                <span class="version-selector__version">v0.5.0</span>
+                                            </a>
+                                        </li>
+                                                                            <li>
                                             <a href="https://github.com/reactphp/http-client/tree/v0.4.17#readme">
-                                                <span class="version-selector__version version-selector__version--latest">v0.4.17</span>
+                                                <span class="version-selector__version">v0.4.17</span>
                                             </a>
                                         </li>
                                                                             <li>
@@ -346,6 +467,91 @@
                         </li>
                     </ul>
 
+                    <h3 class="component-info__subtitle">Contributors</h3>
+
+                    <ul class="component-info__contributors">
+                                            <li>
+                            <a href="https://github.com/WyriHaximus">
+                                <img src="https://avatars2.githubusercontent.com/u/147145?v=4&amp;s=40" alt="WyriHaximus" title="WyriHaximus (65 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/clue">
+                                <img src="https://avatars1.githubusercontent.com/u/776829?v=4&amp;s=40" alt="clue" title="clue (36 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/igorw">
+                                <img src="https://avatars2.githubusercontent.com/u/88061?v=4&amp;s=40" alt="igorw" title="igorw (23 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/cboden">
+                                <img src="https://avatars0.githubusercontent.com/u/617694?v=4&amp;s=40" alt="cboden" title="cboden (19 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/arnaud-lb">
+                                <img src="https://avatars3.githubusercontent.com/u/365207?v=4&amp;s=40" alt="arnaud-lb" title="arnaud-lb (13 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/dpovshed">
+                                <img src="https://avatars2.githubusercontent.com/u/786020?v=4&amp;s=40" alt="dpovshed" title="dpovshed (2 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/cursedcoder">
+                                <img src="https://avatars3.githubusercontent.com/u/899452?v=4&amp;s=40" alt="cursedcoder" title="cursedcoder (2 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/mdrost">
+                                <img src="https://avatars1.githubusercontent.com/u/4083346?v=4&amp;s=40" alt="mdrost" title="mdrost (2 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/djagya">
+                                <img src="https://avatars0.githubusercontent.com/u/2600431?v=4&amp;s=40" alt="djagya" title="djagya (2 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/jmalloc">
+                                <img src="https://avatars3.githubusercontent.com/u/761536?v=4&amp;s=40" alt="jmalloc" title="jmalloc (1 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/jsor">
+                                <img src="https://avatars2.githubusercontent.com/u/55574?v=4&amp;s=40" alt="jsor" title="jsor (1 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/Th3Mouk">
+                                <img src="https://avatars0.githubusercontent.com/u/5006899?v=4&amp;s=40" alt="Th3Mouk" title="Th3Mouk (1 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/mbonneau">
+                                <img src="https://avatars3.githubusercontent.com/u/748287?v=4&amp;s=40" alt="mbonneau" title="mbonneau (1 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/weichenlin">
+                                <img src="https://avatars1.githubusercontent.com/u/3406567?v=4&amp;s=40" alt="weichenlin" title="weichenlin (1 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/e3betht">
+                                <img src="https://avatars0.githubusercontent.com/u/1811561?v=4&amp;s=40" alt="e3betht" title="e3betht (1 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/mmelvin0">
+                                <img src="https://avatars2.githubusercontent.com/u/762247?v=4&amp;s=40" alt="mmelvin0" title="mmelvin0 (1 contribution)">
+                            </a>
+                        </li>
+                                        </ul>
+
                     <h3 class="component-info__subtitle">Activity</h3>
 
                     <div class="component-info__participation">
@@ -358,7 +564,7 @@
         <mask id="reactphp-http-client-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,1 12,1 18,1 24,1 30,1 36,3 42,1 48,1 54,1 60,2 66,1 72,1 78,1 84,1 90,1 96,3 102,1 108,1 114,3 120,1 126,3 132,1 138,5 144,1 150,1 156,2 162,1 168,3 174,1 180,1 186,1 192,1 198,1 204,3 210,1 216,1 222,1 228,1 234,1 240,7 246,4 252,1 258,6 264,1 270,1 276,1 282,2 288,5 294,4 300,1 306,2" 
+                points="0,1 6,3 12,1 18,1 24,3 30,1 36,3 42,5 48,1 54,1 60,1 66,2 72,3 78,1 84,1 90,1 96,1 102,1 108,1 114,3 120,1 126,1 132,1 138,1 144,5 150,3 156,4 162,6 168,1 174,1 180,1 186,2 192,5 198,4 204,1 210,1 216,14 222,1 228,1 234,1 240,9 246,6 252,1 258,1 264,1 270,1 276,1 282,4 288,3 294,2 300,4 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
@@ -368,97 +574,15 @@
 
     <g transform="translate(0, -1.5)">
         <rect 
-            x="0" y="-2" width="320" height="42"
+            x="0" 
+            y="-2" 
+            width="320" 
+            height="42"
             style="stroke:none;fill:url(#reactphp-http-client-participation-gradient);mask:url(#reactphp-http-client-participation-sparkline)"
         ></rect>
     </g>
 </svg>
                     </div>
-
-                    <h3 class="component-info__subtitle">Contributors</h3>
-
-                    <ul class="component-info__contributors">
-                                            <li>
-                            <a href="https://github.com/WyriHaximus">
-                                <img src="https://avatars1.githubusercontent.com/u/147145?v=3&amp;s=40" alt="WyriHaximus" title="WyriHaximus (53 contributions)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/igorw">
-                                <img src="https://avatars1.githubusercontent.com/u/88061?v=3&amp;s=40" alt="igorw" title="igorw (23 contributions)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/clue">
-                                <img src="https://avatars2.githubusercontent.com/u/776829?v=3&amp;s=40" alt="clue" title="clue (19 contributions)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/cboden">
-                                <img src="https://avatars3.githubusercontent.com/u/617694?v=3&amp;s=40" alt="cboden" title="cboden (19 contributions)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/arnaud-lb">
-                                <img src="https://avatars0.githubusercontent.com/u/365207?v=3&amp;s=40" alt="arnaud-lb" title="arnaud-lb (13 contributions)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/dpovshed">
-                                <img src="https://avatars1.githubusercontent.com/u/786020?v=3&amp;s=40" alt="dpovshed" title="dpovshed (2 contribution)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/cursedcoder">
-                                <img src="https://avatars0.githubusercontent.com/u/899452?v=3&amp;s=40" alt="cursedcoder" title="cursedcoder (2 contribution)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/mdrost">
-                                <img src="https://avatars2.githubusercontent.com/u/4083346?v=3&amp;s=40" alt="mdrost" title="mdrost (2 contribution)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/djagya">
-                                <img src="https://avatars3.githubusercontent.com/u/2600431?v=3&amp;s=40" alt="djagya" title="djagya (2 contribution)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/jmalloc">
-                                <img src="https://avatars0.githubusercontent.com/u/761536?v=3&amp;s=40" alt="jmalloc" title="jmalloc (1 contribution)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/jsor">
-                                <img src="https://avatars1.githubusercontent.com/u/55574?v=3&amp;s=40" alt="jsor" title="jsor (1 contribution)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/Th3Mouk">
-                                <img src="https://avatars3.githubusercontent.com/u/5006899?v=3&amp;s=40" alt="Th3Mouk" title="Th3Mouk (1 contribution)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/mbonneau">
-                                <img src="https://avatars0.githubusercontent.com/u/748287?v=3&amp;s=40" alt="mbonneau" title="mbonneau (1 contribution)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/weichenlin">
-                                <img src="https://avatars2.githubusercontent.com/u/3406567?v=3&amp;s=40" alt="weichenlin" title="weichenlin (1 contribution)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/e3betht">
-                                <img src="https://avatars3.githubusercontent.com/u/1811561?v=3&amp;s=40" alt="e3betht" title="e3betht (1 contribution)">
-                            </a>
-                        </li>
-                                            <li>
-                            <a href="https://github.com/mmelvin0">
-                                <img src="https://avatars1.githubusercontent.com/u/762247?v=3&amp;s=40" alt="mmelvin0" title="mmelvin0 (1 contribution)">
-                            </a>
-                        </li>
-                                        </ul>
                 </section>
             </aside>
         </div>
