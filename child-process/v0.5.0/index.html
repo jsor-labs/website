@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>ChildProcess: 
+Child Process Component - ReactPHP</title>
+
+        <meta name="description" content="Library for executing child processes.">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="https://jsor-labs.github.io/website/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://jsor-labs.github.io/website/favicon-32x32.png">
+        <link rel="manifest" href="https://jsor-labs.github.io/website/manifest.json">
+        <link rel="mask-icon" href="https://jsor-labs.github.io/website/safari-pinned-tab.svg" color="#4f5b93">
+        <meta name="apple-mobile-web-app-title" content="ReactPHP">
+        <meta name="application-name" content="ReactPHP">
+        <meta name="theme-color" content="#f4f3f1">
+        <meta name="msapplication-config" content="https://jsor-labs.github.io/website/browserconfig.xml" />
+
+        <meta property="og:image" content="https://jsor-labs.github.io/website/og-image.png">
+
+            <script>window.__assets = '../../assets/';</script>
+
+        <link rel="preload" href="../../assets/19ca4d35c8f94db0fa14422334dd2ad3.woff" as="font" type="font/woff" crossorigin>
+        <link rel="preload" href="../../assets/be4ba3dd17008135675e945b630be8f6.woff" as="font" type="font/woff" crossorigin>
+
+        <style>@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:400;font-display:swap;src:local("Source Sans Pro Regular"),local("SourceSansPro-Regular"),url(../../assets/19ca4d35c8f94db0fa14422334dd2ad3.woff) format("woff")}@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:700;font-display:swap;src:local("Source Sans Pro Bold"),local("SourceSansPro-Bold"),url(../../assets/be4ba3dd17008135675e945b630be8f6.woff) format("woff")}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;color:#584b4f;background-color:#fff}blockquote,fieldset,form,h1,h2,h3,h4,h5,h6,hr,ol,p,ul{margin:0 0 16px}ul{margin-bottom:0}hr{clear:both;height:0;border:0;border-bottom:1px dashed #eae8e3;padding:0}h1,h2,h3,h4,h5,h6{line-height:1;-webkit-font-smoothing:antialiased;color:#584b4f;font-family:Source Sans Pro,Helvetica Neue,Arial,sans-serif;font-weight:700}h1{font-size:2.4em;margin-bottom:32px;color:#4f5b93;letter-spacing:-1px}h1:not(:first-child){margin-top:32px}h2{font-size:1.8em;margin-bottom:32px}h2:not(:first-child){margin-top:32px}h3{font-size:1.4em;margin-bottom:24px;color:#4f5b93}h3:not(:first-child){margin-top:24px}h4{font-size:1.2em}h4:not(:first-child){margin-top:24px}@media (max-width:768px){h1{font-size:1.8em}h2{font-size:1.6em;margin-bottom:32px}}.container{padding:32px}@media (max-width:768px){.container{padding:16px}}.wrapper{max-width:960px;margin:auto}.wrapper--wide{max-width:1280px}.wrapper--narrow{max-width:640px}.main{width:calc(98% - 400px);margin-bottom:64px}.sidebar{width:calc(400px - 2%);margin-bottom:32px}@media (max-width:1024px){.main,.sidebar{width:auto}}.grid{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:102%;margin-left:-2%}.grid>*{margin-left:2%;max-width:100%}.grid--4cols>*{-ms-flex-preferred-size:23%;flex-basis:23%}.grid--3cols>*{-ms-flex-preferred-size:31.33%;flex-basis:31.33%}.grid--2cols>*{-ms-flex-preferred-size:48%;flex-basis:48%}@media (max-width:768px){.grid{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.grid>*{width:100%;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto}}.header{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;width:100%;border-bottom:1px dashed #eae8e3;padding:16px 32px}@media (max-width:768px){.header{padding:16px;margin-bottom:16px}}.header__logo{display:block;line-height:1}.header__logo svg{display:block;width:120px;height:18px}.header__search{margin:0;position:absolute;right:32px;top:8px;z-index:999}@media (max-width:768px){.header__search{right:16px}}.header__search input{width:400px}@media (max-width:768px){.header__search input{width:calc(100vw - 32px)}}.searchbox{width:100%}.searchbox,.searchbox:focus{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:4px 8px 4px 32px;font-size:16px;line-height:24px;color:#584b4f;border:1px solid #eae8e3}.searchbox--collapsed:not(:focus){background-color:transparent;border-color:transparent;width:32px!important;margin-right:-12px}.welcome__intro{padding:16px 0 136px;border-bottom:1px dashed #eae8e3;background-image:radial-gradient(ellipse at center,#fff 0,#eae8e3 100%);background-size:auto 100%;background-position:50% 0}.welcome__intro h1{font-size:2em;margin-bottom:16px;color:#4f5b93}.welcome__logo{display:block;margin:0 auto;max-width:320px}.welcome__logo svg{display:block;height:240px}.welcome__content{padding-top:16px;display:block;max-width:calc(98% - 320px)}.welcome__example{display:block;margin:auto;max-width:800px;margin-top:-160px}.welcome__example pre{background:#fcfcfc;border:1px dashed #eae8e3}.welcome__example .highlight pre{padding:32px;box-shadow:0 0 16px #d6d1c8}.welcome__intro .links a{color:#584b4f;text-decoration:none}.welcome__intro .links a:hover{color:#4f5b93;text-decoration:none}@media (max-width:768px){.welcome__content{padding:32px 16px 16px;max-width:100%}.welcome__logo svg{height:160px}.welcome__intro h1{text-align:center;font-size:1.6em;margin-bottom:16px;color:#4f5b93}.welcome__intro .links{text-align:center}}code,pre,tt{font-family:Consolas,Liberation Mono,Menlo,Courier,monospace}code,tt{font-size:12px}pre{font-size:85%;line-height:1.45}.links{margin:0;padding:0}.links li{display:inline-block;margin:0 8px;text-decoration:none}.links li:first-child{margin-left:0}.links li:last-child{margin-right:0}.links a{display:block}.links a,.links a:hover{text-decoration:none}.component-info__contributors,.component-info__title{display:-webkit-box;display:-ms-flexbox;display:flex}.component-info__contributors{-ms-flex-wrap:wrap;flex-wrap:wrap;padding:0;list-style:none}.component-info__contributors img{display:block;width:40px;height:auto}.version-selector__panel{position:fixed;top:-20000em;visibility:hidden}</style>
+        <link rel="preload" href="../../assets/main.7f00c7261f81f4d9246b.css" as="style" onload="this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../../assets/main.7f00c7261f81f4d9246b.css"></noscript>
+
+        <script>!function(e){function t(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var n={};t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=4)}([function(e,t,n){n.p=window.__assets},,,,function(e,t,n){n(0),e.exports=n(5)},function(e,t,n){n(6),n(7),n(9),n(10),n(12)},function(e,t,n){"use strict";function r(e){try{return(e||window).document.createElement("link").relList.supports("preload")}catch(e){return!1}}function o(e){function t(){for(var e=r.querySelectorAll('link[rel="preload"][as="style"]'),t=0;t<e.length;t++){var n,o;!function(){function i(){o.media=n.getAttribute("media")||"all",o.removeEventListener("load",i)}n=e[t],n.rel="",o=r.createElement("link"),o.rel="stylesheet",o.href=n.href,o.media="only x",o.addEventListener("load",i),n.parentNode.insertBefore(o,n.nextSibling||n)}()}}var n=e||window,r=n.document;if(t(),"complete"!==r.readyState){var o=n.setInterval(t,300);n.addEventListener("load",function(){t(),n.clearInterval(o)})}}Object.defineProperty(t,"__esModule",{value:!0}),t.supports=r,t.polyfill=o,r()||o()},function(e,t){},,function(e,t){},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(11);n.n(r)},function(e,t){},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(13);n.n(r)},function(e,t){}]);</script>
+            <link rel="canonical" href="../../child-process/v0.5.0/">
+    </head>
+
+    <body>
+            <header class="header">
+            <a class="header__logo" href="../../">
+                <svg xmlns="http://www.w3.org/2000/svg" width="320" height="47.29" viewBox="0 428.964 320 47.29"><path fill="#584B4F" d="M30.86 452.385c1.637-2.287 2.455-5 2.455-8.134 0-4.313-1.367-7.87-4.088-10.68-2.723-2.812-6.39-4.216-11.004-4.216h-7.71c-3.79 0-6.49.798-8.1 2.388C.806 433.332 0 435.872 0 439.355v36.512h9.08v-17.245h6.53l9.08 17.245h10.52L24.82 457.12c2.395-.87 4.41-2.447 6.04-4.735zm-8.488-3.334c-1.24 1.33-2.82 1.99-4.734 1.99H9.08v-9.47c0-2.74 1.35-4.112 4.05-4.112h4.508c2 0 3.603.61 4.8 1.83 1.196 1.22 1.797 2.82 1.797 4.802 0 1.982-.623 3.64-1.864 4.964v-.003zm20.348 14.536c0 4.572 1.055 7.766 3.167 9.57 2.114 1.81 5.782 2.71 11.008 2.71h16.46v-8.1H57.548c-2.18 0-3.68-.35-4.51-1.045-.83-.695-1.24-1.96-1.24-3.788v-6.467h14.434l.656-8.1h-15.09v-10.912h21.56v-8.098H42.72v34.23zm57.97-33.442c-.718-.523-1.665-.787-2.84-.787-1.177 0-2.168.285-2.972.85-.807.567-1.537 1.592-2.19 3.073l-14.89 42.585h9.47l2.55-8.03h15.613l2.613 8.03h9.47l-14.893-42.588c-.567-1.572-1.21-2.613-1.93-3.135v.002zM92.1 460.19l5.75-18.42 5.487 18.418H92.1v.002zm53.074 5.455c-1.155 1.678-3.245 2.512-6.27 2.512-3.03 0-5.258-.914-6.697-2.74-1.394-1.83-2.093-5.25-2.093-10.256v-4.052c0-1.783.045-3.2.13-4.243.178-3.27.785-5.576 1.833-6.928 1.48-1.914 3.745-2.873 6.794-2.873 2.613 0 4.532.653 5.75 1.96 1.218 1.308 2.07 3.245 2.547 5.813h8.49c0-5.14-1.557-9.07-4.67-11.79-3.114-2.723-7.153-4.084-12.116-4.084-3.398 0-6.293.564-8.687 1.7-6.097 2.783-9.146 9.686-9.146 20.704v3.918c0 13.982 5.945 20.968 17.833 20.968 5.4 0 9.58-1.59 12.54-4.77 2.964-3.176 4.44-7.73 4.44-13.653h-8.426c-.346 3.53-1.1 6.134-2.25 7.81v.005zm14.667-36.29v8.1h12.412v38.41h9.08v-38.41h12.47v-8.1"/><path fill="#4F5B93" d="M218.89 429.356h-18.03v46.51h9.086v-14.897h8.944c4.876 0 8.647-1.337 11.328-4.016 2.683-2.68 4.02-6.608 4.02-11.788s-1.337-9.112-4.02-11.788c-2.68-2.68-6.454-4.02-11.328-4.02v-.002zm4.538 21.686c-1.15 1.177-2.815 1.768-5 1.768h-8.485v-15.354h8.484c4.483 0 6.73 2.572 6.73 7.71 0 2.744-.578 4.703-1.73 5.88v-.004zm43.93-2.02H250.31v-19.666h-9.088v46.51h9.086v-18.81h17.05v18.81h9.076v-46.51h-9.078m48.63 4.02c-2.683-2.68-6.46-4.02-11.335-4.02h-18.027v46.507h9.085V460.97h8.943c4.877 0 8.654-1.336 11.337-4.014 2.68-2.678 4.013-6.608 4.013-11.788s-1.332-9.112-4.013-11.79v-.003zm-6.795 17.666c-1.154 1.177-2.822 1.768-5 1.768h-8.484v-15.354h8.485c4.483 0 6.734 2.572 6.734 7.71 0 2.744-.583 4.703-1.735 5.88v-.004z"/></svg>
+            </a>
+            <form class="header__search">
+                <input type="search" class="searchbox searchbox--collapsed" data-docsearch placeholder="Search documentation...">
+            </form>
+        </header>
+    
+        <div class="container">
+        <div class="grid grid--wrap grid--gutter">
+            <main class="main">
+                <h1>
+<a id="child-process-component" class="anchor" href="#child-process-component" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Child Process Component</h1>
+<p><a href="http://travis-ci.org/reactphp/child-process"><img src="https://camo.githubusercontent.com/51af78fab751610be206ccc4380c374bbef60a10/68747470733a2f2f7365637572652e7472617669732d63692e6f72672f72656163747068702f6368696c642d70726f636573732e706e673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://secure.travis-ci.org/reactphp/child-process.png?branch=master" style="max-width:100%;"></a> <a href="https://codeclimate.com/github/reactphp/child-process"><img src="https://camo.githubusercontent.com/a3daf5d25575d11e670e4afa34a7a3c69d5ceb2e/68747470733a2f2f636f6465636c696d6174652e636f6d2f6769746875622f72656163747068702f6368696c642d70726f636573732f6261646765732f6770612e737667" alt="Code Climate" data-canonical-src="https://codeclimate.com/github/reactphp/child-process/badges/gpa.svg" style="max-width:100%;"></a></p>
+<p>Library for executing child processes.</p>
+<p>This library integrates <a href="http://php.net/manual/en/book.exec.php">Program Execution</a>
+with the <a href="https://github.com/reactphp/event-loop">EventLoop</a>.
+Child processes launched may be signaled and will emit an
+<code>exit</code> event upon termination.
+Additionally, process I/O streams (i.e. STDIN, STDOUT, STDERR) are exposed
+as <a href="https://github.com/reactphp/stream">Streams</a>.</p>
+<p><strong>Table of contents</strong></p>
+<ul>
+<li><a href="#quickstart-example">Quickstart example</a></li>
+<li>
+<a href="#process">Process</a>
+<ul>
+<li><a href="#stream-properties">Stream Properties</a></li>
+<li><a href="#command">Command</a></li>
+<li><a href="#termination">Termination</a></li>
+<li><a href="#sigchild-compatibility">Sigchild Compatibility</a></li>
+<li><a href="#windows-compatibility">Windows Compatibility</a></li>
+</ul>
+</li>
+<li><a href="#install">Install</a></li>
+<li><a href="#tests">Tests</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2>
+<a id="quickstart-example" class="anchor" href="#quickstart-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quickstart example</h2>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$loop</span> <span class="pl-k">=</span> <span class="pl-c1">React\EventLoop\</span><span class="pl-c1">Factory</span><span class="pl-k">::</span>create();</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$process</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\ChildProcess\</span><span class="pl-c1">Process</span>(<span class="pl-s"><span class="pl-pds">'</span>echo foo<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>start(<span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span><span class="pl-smi">stdout</span><span class="pl-k">-&gt;</span>on(<span class="pl-s"><span class="pl-pds">'</span>data<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">$chunk</span>) {</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-smi">$chunk</span>;</span>
+<span class="pl-s1">});</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>on(<span class="pl-s"><span class="pl-pds">'</span>exit<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">$exitCode</span>, <span class="pl-smi">$termSignal</span>) {</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>Process exited with code <span class="pl-pds">'</span></span> <span class="pl-k">.</span> <span class="pl-smi">$exitCode</span> <span class="pl-k">.</span> <span class="pl-c1">PHP_EOL</span>;</span>
+<span class="pl-s1">});</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$loop</span><span class="pl-k">-&gt;</span>run();</span></pre></div>
+<p>See also the <a href="https:/github.com/reactphp/child-process/blob/3b8790deaa0e738dd4bdfb99e4da7c439240cd7d
+/examples">examples</a>.</p>
+<h2>
+<a id="process" class="anchor" href="#process" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Process</h2>
+<h3>
+<a id="stream-properties" class="anchor" href="#stream-properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Stream Properties</h3>
+<p>Once a process is started, its I/O streams will be constructed as instances of
+<code>React\Stream\ReadableStreamInterface</code> and <code>React\Stream\WritableStreamInterface</code>.
+Before <code>start()</code> is called, these properties are <code>null</code>.Once a process terminates,
+the streams will become closed but not unset.</p>
+<ul>
+<li><code>$stdin</code></li>
+<li><code>$stdout</code></li>
+<li><code>$stderr</code></li>
+</ul>
+<p>Each of these implement the underlying
+<a href="https://github.com/reactphp/stream#readablestreaminterface"><code>ReadableStreamInterface</code></a> or
+<a href="https://github.com/reactphp/stream#writablestreaminterface"><code>WritableStreamInterface</code></a> and
+you can use any of their events and methods as usual:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span><span class="pl-smi">stdout</span><span class="pl-k">-&gt;</span>on(<span class="pl-s"><span class="pl-pds">'</span>data<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">$chunk</span>) {</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-smi">$chunk</span>;</span>
+<span class="pl-s1">});</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span><span class="pl-smi">stdout</span><span class="pl-k">-&gt;</span>on(<span class="pl-s"><span class="pl-pds">'</span>end<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> () {</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>ended<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1">});</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span><span class="pl-smi">stdout</span><span class="pl-k">-&gt;</span>on(<span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-c1">Exception</span> <span class="pl-smi">$e</span>) {</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>error: <span class="pl-pds">'</span></span> <span class="pl-k">.</span> <span class="pl-smi">$e</span><span class="pl-k">-&gt;</span>getMessage();</span>
+<span class="pl-s1">});</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span><span class="pl-smi">stdout</span><span class="pl-k">-&gt;</span>on(<span class="pl-s"><span class="pl-pds">'</span>close<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> () {</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>closed<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1">});</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span><span class="pl-smi">stdin</span><span class="pl-k">-&gt;</span>write(<span class="pl-smi">$data</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span><span class="pl-smi">stdin</span><span class="pl-k">-&gt;</span>end(<span class="pl-smi">$data</span> <span class="pl-k">=</span> <span class="pl-c1">null</span>);</span>
+<span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> …</span></span></pre></div>
+<p>For more details, see the
+<a href="https://github.com/reactphp/stream#readablestreaminterface"><code>ReadableStreamInterface</code></a> and
+<a href="https://github.com/reactphp/stream#writablestreaminterface"><code>WritableStreamInterface</code></a>.</p>
+<h3>
+<a id="command" class="anchor" href="#command" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command</h3>
+<p>The <code>Process</code> class allows you to pass any kind of command line string:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$process</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Process</span>(<span class="pl-s"><span class="pl-pds">'</span>echo test<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>start(<span class="pl-smi">$loop</span>);</span></pre></div>
+<p>By default, PHP will launch processes by wrapping the given command line string
+in a <code>sh</code> command, so that the above example will actually execute
+<code>sh -c echo test</code> under the hood.</p>
+<p>This is a very useful feature because it does not only allow you to pass single
+commands, but actually allows you to pass any kind of shell command line and
+launch multiple sub-commands using command chains (with <code>&amp;&amp;</code>, <code>||</code>, <code>;</code> and
+others) and allows you to redirect STDIO streams (with <code>2&gt;&amp;1</code> and family).
+This can be used to pass complete command lines and receive the resulting STDIO
+streams from the wrapping shell command like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$process</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Process</span>(<span class="pl-s"><span class="pl-pds">'</span>echo run &amp;&amp; demo || echo failed<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>start(<span class="pl-smi">$loop</span>);</span></pre></div>
+<p>In other words, the underlying shell is responsible for managing this command
+line and launching the individual sub-commands and connecting their STDIO
+streams as appropriate.
+This implies that the <code>Process</code> class will only receive the resulting STDIO
+streams from the wrapping shell, which will thus contain the complete
+input/output with no way to discern the input/output of single sub-commands.</p>
+<p>If you want to discern the output of single sub-commands, you may want to
+implement some higher-level protocol logic, such as printing an explicit
+boundary between each sub-command like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$process</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Process</span>(<span class="pl-s"><span class="pl-pds">'</span>cat first &amp;&amp; echo --- &amp;&amp; cat second<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>start(<span class="pl-smi">$loop</span>);</span></pre></div>
+<p>As an alternative, considering launching one process at a time and listening on
+its <code>exit</code> event to conditionally start the next process in the chain.
+This will give you an opportunity to configure the subsequent process I/O streams:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$first</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Process</span>(<span class="pl-s"><span class="pl-pds">'</span>cat first<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$first</span><span class="pl-k">-&gt;</span>start(<span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$first</span><span class="pl-k">-&gt;</span>on(<span class="pl-s"><span class="pl-pds">'</span>exit<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-smi">$loop</span>) {</span>
+<span class="pl-s1">    <span class="pl-smi">$second</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Process</span>(<span class="pl-s"><span class="pl-pds">'</span>cat second<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">    <span class="pl-smi">$second</span><span class="pl-k">-&gt;</span>start(<span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1">});</span></pre></div>
+<p>Keep in mind that PHP uses the shell wrapper for ALL command lines.
+While this may seem reasonable for more complex command lines, this actually
+also applies to running the most simple single command:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$process</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Process</span>(<span class="pl-s"><span class="pl-pds">'</span>yes<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>start(<span class="pl-smi">$loop</span>);</span></pre></div>
+<p>This will actually spawn a command hierarchy similar to this:</p>
+<pre><code>5480 … \_ php example.php
+5481 …    \_ sh -c yes
+5482 …        \_ yes
+</code></pre>
+<p>This means that trying to get the underlying process PID or sending signals
+will actually target the wrapping shell, which may not be the desired result
+in many cases.</p>
+<p>If you do not want this wrapping shell process to show up, you can simply
+prepend the command string with <code>exec</code>, which will cause the wrapping shell
+process to be replaced by our process:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$process</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Process</span>(<span class="pl-s"><span class="pl-pds">'</span>exec yes<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>start(<span class="pl-smi">$loop</span>);</span></pre></div>
+<p>This will show a resulting command hierarchy similar to this:</p>
+<pre><code>5480 … \_ php example.php
+5481 …    \_ yes
+</code></pre>
+<p>This means that trying to get the underlying process PID and sending signals
+will now target the actual command as expected.</p>
+<p>Note that in this case, the command line will not be run in a wrapping shell.
+This implies that when using <code>exec</code>, there's no way to pass command lines such
+as those containing command chains or redirected STDIO streams.</p>
+<p>As a rule of thumb, most commands will likely run just fine with the wrapping
+shell.
+If you pass a complete command line (or are unsure), you SHOULD most likely keep
+the wrapping shell.
+If you want to pass an invidual command only, you MAY want to consider
+prepending the command string with <code>exec</code> to avoid the wrapping shell.</p>
+<h3>
+<a id="termination" class="anchor" href="#termination" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Termination</h3>
+<p>The <code>exit</code> event will be emitted whenever the process is no longer running.
+Event listeners will receive the exit code and termination signal as two
+arguments:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$process</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Process</span>(<span class="pl-s"><span class="pl-pds">'</span>sleep 10<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>start(<span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>on(<span class="pl-s"><span class="pl-pds">'</span>exit<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">$code</span>, <span class="pl-smi">$term</span>) {</span>
+<span class="pl-s1">    <span class="pl-k">if</span> (<span class="pl-smi">$term</span> <span class="pl-k">===</span> <span class="pl-c1">null</span>) {</span>
+<span class="pl-s1">        <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>exit with code <span class="pl-pds">'</span></span> <span class="pl-k">.</span> <span class="pl-smi">$code</span> <span class="pl-k">.</span> <span class="pl-c1">PHP_EOL</span>;</span>
+<span class="pl-s1">    } <span class="pl-k">else</span> {</span>
+<span class="pl-s1">        <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>terminated with signal <span class="pl-pds">'</span></span> <span class="pl-k">.</span> <span class="pl-smi">$term</span> <span class="pl-k">.</span> <span class="pl-c1">PHP_EOL</span>;</span>
+<span class="pl-s1">    }</span>
+<span class="pl-s1">});</span></pre></div>
+<p>Note that <code>$code</code> is <code>null</code> if the process has terminated, but the exit
+code could not be determined (for example
+<a href="#sigchild-compatibility">sigchild compatibility</a> was disabled).
+Similarly, <code>$term</code> is <code>null</code> unless the process has terminated in response to
+an uncaught signal sent to it.
+This is not a limitation of this project, but actual how exit codes and signals
+are exposed on POSIX systems, for more details see also
+<a href="https://unix.stackexchange.com/questions/99112/default-exit-code-when-process-is-terminated">here</a>.</p>
+<p>It's also worth noting that process termination depends on all file descriptors
+being closed beforehand.
+This means that all <a href="#stream-properties">process pipes</a> will emit a <code>close</code>
+event before the <code>exit</code> event and that no more <code>data</code> events will arrive after
+the <code>exit</code> event.
+Accordingly, if either of these pipes is in a paused state (<code>pause()</code> method
+or internally due to a <code>pipe()</code> call), this detection may not trigger.</p>
+<p>The <code>terminate(?int $signal = null): bool</code> method can be used to send the
+process a signal (SIGTERM by default).
+Depending on which signal you send to the process and whether it has a signal
+handler registered, this can be used to either merely signal a process or even
+forcefully terminate it.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>terminate(<span class="pl-c1">SIGUSR1</span>);</span></pre></div>
+<p>Keep the above section in mind if you want to forcefully terminate a process.
+If your process spawn sub-processes or implicitly uses the
+<a href="#command">wrapping shell mentioned above</a>, its file descriptors may be
+inherited to child processes and terminating the main process may not
+necessarily terminate the whole process tree.
+It is highly suggested that you explicitly <code>close()</code> all process pipes
+accordingly when terminating a process:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$process</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Process</span>(<span class="pl-s"><span class="pl-pds">'</span>sleep 10<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>start(<span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$loop</span><span class="pl-k">-&gt;</span>addTimer(<span class="pl-c1">2.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-smi">$process</span>) {</span>
+<span class="pl-s1">    <span class="pl-smi">$process</span><span class="pl-k">-&gt;</span><span class="pl-smi">stdin</span><span class="pl-k">-&gt;</span>close();</span>
+<span class="pl-s1">    <span class="pl-smi">$process</span><span class="pl-k">-&gt;</span><span class="pl-smi">stout</span><span class="pl-k">-&gt;</span>close();</span>
+<span class="pl-s1">    <span class="pl-smi">$process</span><span class="pl-k">-&gt;</span><span class="pl-smi">stderr</span><span class="pl-k">-&gt;</span>close();</span>
+<span class="pl-s1">    <span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>terminate(<span class="pl-c1">SIGKILL</span>);</span>
+<span class="pl-s1">});</span></pre></div>
+<p>For many simple programs these seamingly complicated steps can also be avoided
+by prefixing the command line with <code>exec</code> to avoid the wrapping shell and its
+inherited process pipes as <a href="#command">mentioned above</a>.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$process</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Process</span>(<span class="pl-s"><span class="pl-pds">'</span>exec sleep 10<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>start(<span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$loop</span><span class="pl-k">-&gt;</span>addTimer(<span class="pl-c1">2.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-smi">$process</span>) {</span>
+<span class="pl-s1">    <span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>terminate();</span>
+<span class="pl-s1">});</span></pre></div>
+<p>Many command line programs also wait for data on <code>STDIN</code> and terminate cleanly
+when this pipe is closed.
+For example, the following can be used to "soft-close" a <code>cat</code> process:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$process</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Process</span>(<span class="pl-s"><span class="pl-pds">'</span>cat<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span>start(<span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$loop</span><span class="pl-k">-&gt;</span>addTimer(<span class="pl-c1">2.0</span>, <span class="pl-k">function</span> () <span class="pl-k">use</span> (<span class="pl-smi">$process</span>) {</span>
+<span class="pl-s1">    <span class="pl-smi">$process</span><span class="pl-k">-&gt;</span><span class="pl-smi">stdin</span><span class="pl-k">-&gt;</span>end();</span>
+<span class="pl-s1">});</span></pre></div>
+<p>While process pipes and termination may seem confusing to newcomers, the above
+properties actually allow some fine grained control over process termination,
+such as first trying a soft-close and then applying a force-close after a
+timeout.</p>
+<h3>
+<a id="sigchild-compatibility" class="anchor" href="#sigchild-compatibility" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sigchild Compatibility</h3>
+<p>When PHP has been compiled with the <code>--enabled-sigchild</code> option, a child
+process' exit code cannot be reliably determined via <code>proc_close()</code> or
+<code>proc_get_status()</code>. Instead, we execute the child process with a fourth pipe
+and use that to retrieve its exit code.</p>
+<p>This behavior is used by default and only when necessary. It may be manually
+disabled by calling <code>setEnhanceSigchildCompatibility(false)</code> on the Process
+before it is started, in which case the <code>exit</code> event may receive <code>null</code> instead
+of the actual exit code.</p>
+<p><strong>Note:</strong> This functionality was taken from Symfony's
+<a href="https://github.com/symfony/process">Process</a> compoment.</p>
+<h3>
+<a id="windows-compatibility" class="anchor" href="#windows-compatibility" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Windows Compatibility</h3>
+<p>Due to the blocking nature of <code>STDIN</code>/<code>STDOUT</code>/<code>STDERR</code> pipes on Windows we can
+not guarantee this package works as expected on Windows directly. As such when
+instantiating <code>Process</code> it throws an exception when on native Windows.
+However this package does work on <a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux"><code>Windows Subsystem for Linux</code></a>
+(or WSL) without issues. We suggest <a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide">installing WSL</a>
+when you want to run this package on Windows.</p>
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+<p>The recommended way to install this library is <a href="http://getcomposer.org">through Composer</a>.
+<a href="http://getcomposer.org/doc/00-intro.md">New to Composer?</a></p>
+<p>This will install the latest supported version:</p>
+<div class="highlight highlight-source-shell"><pre>$ composer require react/child-process:^0.4.3</pre></div>
+<p>More details about version upgrades can be found in the <a href="changelog.html">CHANGELOG</a>.</p>
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
+<p>To run the test suite, you first need to clone this repo and then install all
+dependencies <a href="http://getcomposer.org">through Composer</a>:</p>
+<div class="highlight highlight-source-shell"><pre>$ composer install</pre></div>
+<p>To run the test suite, go to the project root and run:</p>
+<div class="highlight highlight-source-shell"><pre>$ php vendor/bin/phpunit</pre></div>
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<p>MIT, see <a href="license.html">LICENSE file</a>.</p>
+            </main>
+            <aside class="sidebar" role="complementary">
+                <section class="component-info">
+                    <h2 class="component-info__title">
+                        <a href="../../child-process/">ChildProcess</a>
+
+                        <div class="version-selector">
+                            <button class="version-selector__button" aria-expanded="false" aria-controls="component-version-selector" data-version-selector-toggle>
+                                v0.5.0
+
+                                <i class="icon-chevron-down" aria-hidden="true"></i>
+                                <i class="icon-chevron-up" aria-hidden="true"></i>
+                            </button>
+
+                            <div id="component-version-selector" class="version-selector__panel" aria-hidden="true">
+                                <ul class="version-selector__list">
+                                                                    <li>
+                                        <a href="../../child-process/v0.5.0/">
+                                            <span class="version-selector__version version-selector__version--selected version-selector__version--latest">v0.5.0</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../child-process/v0.4.3/">
+                                            <span class="version-selector__version">v0.4.3</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../child-process/v0.4.2/">
+                                            <span class="version-selector__version">v0.4.2</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../child-process/v0.4.1/">
+                                            <span class="version-selector__version">v0.4.1</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../child-process/v0.4.0/">
+                                            <span class="version-selector__version">v0.4.0</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../child-process/v0.3.0/">
+                                            <span class="version-selector__version">v0.3.0</span>
+                                        </a>
+                                    </li>
+                                                                </ul>
+                            </div>
+                        </div>
+                    </h2>
+
+                
+                    <ul class="component-info__info">
+                        <li>
+                            <a href="https://github.com/reactphp/child-process">
+                                <i class="icon-github" aria-hidden="true"></i> reactphp/child-process
+                            </a>
+                        </li>
+                        <li>
+                            <a href="license.html">
+                                <i class="icon-law" aria-hidden="true"></i> MIT License
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h3 class="component-info__subtitle">Contributors</h3>
+
+                    <ul class="component-info__contributors">
+                                            <li>
+                            <a href="https://github.com/clue">
+                                <img src="https://avatars1.githubusercontent.com/u/776829?v=4&amp;s=40" alt="clue" title="clue (29 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/WyriHaximus">
+                                <img src="https://avatars2.githubusercontent.com/u/147145?v=4&amp;s=40" alt="WyriHaximus" title="WyriHaximus (28 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/jmikola">
+                                <img src="https://avatars3.githubusercontent.com/u/244663?v=4&amp;s=40" alt="jmikola" title="jmikola (20 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/cboden">
+                                <img src="https://avatars0.githubusercontent.com/u/617694?v=4&amp;s=40" alt="cboden" title="cboden (17 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/igorw">
+                                <img src="https://avatars2.githubusercontent.com/u/88061?v=4&amp;s=40" alt="igorw" title="igorw (2 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/jsor">
+                                <img src="https://avatars2.githubusercontent.com/u/55574?v=4&amp;s=40" alt="jsor" title="jsor (2 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/staabm">
+                                <img src="https://avatars2.githubusercontent.com/u/120441?v=4&amp;s=40" alt="staabm" title="staabm (2 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/mdrost">
+                                <img src="https://avatars1.githubusercontent.com/u/4083346?v=4&amp;s=40" alt="mdrost" title="mdrost (1 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/e3betht">
+                                <img src="https://avatars0.githubusercontent.com/u/1811561?v=4&amp;s=40" alt="e3betht" title="e3betht (1 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/mbonneau">
+                                <img src="https://avatars3.githubusercontent.com/u/748287?v=4&amp;s=40" alt="mbonneau" title="mbonneau (1 contribution)">
+                            </a>
+                        </li>
+                                        </ul>
+
+                    <h3 class="component-info__subtitle">Activity</h3>
+
+                    <div class="component-info__participation">
+                        <svg width="320" height="42">
+    <defs>
+        <linearGradient id="reactphp-child-process-participation-gradient" x1="0" x2="0" y1="1" y2="0">
+            <stop offset="10%" stop-color="#40a977"></stop>
+            <stop offset="90%" stop-color="#ba3525"></stop>
+        </linearGradient>
+        <mask id="reactphp-child-process-participation-sparkline" x="0" y="0" width="320" height="40" >
+            <polyline 
+                transform="translate(0, 40) scale(1,-1)"
+                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,2 108,1 114,1 120,1 126,1 132,3 138,18 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,2 222,4 228,1 234,1 240,4 246,2 252,1 258,4 264,9 270,5 276,3 282,1 288,1 294,1 300,1 306,1" 
+                fill="transparent" 
+                stroke="#40a977" 
+                stroke-width="2"
+            >
+        </mask>
+    </defs>
+
+    <g transform="translate(0, -1.5)">
+        <rect 
+            x="0" 
+            y="-2" 
+            width="320" 
+            height="42"
+            style="stroke:none;fill:url(#reactphp-child-process-participation-gradient);mask:url(#reactphp-child-process-participation-sparkline)"
+        ></rect>
+    </g>
+</svg>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+
+            <footer class="footer">
+            <div class="wrapper">
+                <ul class="links">
+                    <li><a href="https://github.com/reactphp"><i class="icon-github" aria-hidden="true"></i> GitHub</a></li>
+                    <li><a href="https://twitter.com/reactphp"><i class="icon-twitter" aria-hidden="true"></i> Twitter</a></li>
+                    <li><a href="irc://irc.freenode.net/reactphp"><i class="icon-hash" aria-hidden="true"></i> IRC</a></li>
+                </ul>
+            </div>
+        </footer>
+    
+    <script async src="../../assets/main.7f00c7261f81f4d9246b.js"></script>
+    </body>
+</html>

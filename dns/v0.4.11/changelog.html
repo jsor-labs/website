@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>DNS: 
+Changelog - ReactPHP</title>
+
+        <meta name="description" content="Async DNS resolver for ReactPHP.">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="https://jsor-labs.github.io/website/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://jsor-labs.github.io/website/favicon-32x32.png">
+        <link rel="manifest" href="https://jsor-labs.github.io/website/manifest.json">
+        <link rel="mask-icon" href="https://jsor-labs.github.io/website/safari-pinned-tab.svg" color="#4f5b93">
+        <meta name="apple-mobile-web-app-title" content="ReactPHP">
+        <meta name="application-name" content="ReactPHP">
+        <meta name="theme-color" content="#f4f3f1">
+        <meta name="msapplication-config" content="https://jsor-labs.github.io/website/browserconfig.xml" />
+
+        <meta property="og:image" content="https://jsor-labs.github.io/website/og-image.png">
+
+            <script>window.__assets = '../../assets/';</script>
+
+        <link rel="preload" href="../../assets/19ca4d35c8f94db0fa14422334dd2ad3.woff" as="font" type="font/woff" crossorigin>
+        <link rel="preload" href="../../assets/be4ba3dd17008135675e945b630be8f6.woff" as="font" type="font/woff" crossorigin>
+
+        <style>@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:400;font-display:swap;src:local("Source Sans Pro Regular"),local("SourceSansPro-Regular"),url(../../assets/19ca4d35c8f94db0fa14422334dd2ad3.woff) format("woff")}@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:700;font-display:swap;src:local("Source Sans Pro Bold"),local("SourceSansPro-Bold"),url(../../assets/be4ba3dd17008135675e945b630be8f6.woff) format("woff")}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;color:#584b4f;background-color:#fff}blockquote,fieldset,form,h1,h2,h3,h4,h5,h6,hr,ol,p,ul{margin:0 0 16px}ul{margin-bottom:0}hr{clear:both;height:0;border:0;border-bottom:1px dashed #eae8e3;padding:0}h1,h2,h3,h4,h5,h6{line-height:1;-webkit-font-smoothing:antialiased;color:#584b4f;font-family:Source Sans Pro,Helvetica Neue,Arial,sans-serif;font-weight:700}h1{font-size:2.4em;margin-bottom:32px;color:#4f5b93;letter-spacing:-1px}h1:not(:first-child){margin-top:32px}h2{font-size:1.8em;margin-bottom:32px}h2:not(:first-child){margin-top:32px}h3{font-size:1.4em;margin-bottom:24px;color:#4f5b93}h3:not(:first-child){margin-top:24px}h4{font-size:1.2em}h4:not(:first-child){margin-top:24px}@media (max-width:768px){h1{font-size:1.8em}h2{font-size:1.6em;margin-bottom:32px}}.container{padding:32px}@media (max-width:768px){.container{padding:16px}}.wrapper{max-width:960px;margin:auto}.wrapper--wide{max-width:1280px}.wrapper--narrow{max-width:640px}.main{width:calc(98% - 400px);margin-bottom:64px}.sidebar{width:calc(400px - 2%);margin-bottom:32px}@media (max-width:1024px){.main,.sidebar{width:auto}}.grid{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:102%;margin-left:-2%}.grid>*{margin-left:2%;max-width:100%}.grid--4cols>*{-ms-flex-preferred-size:23%;flex-basis:23%}.grid--3cols>*{-ms-flex-preferred-size:31.33%;flex-basis:31.33%}.grid--2cols>*{-ms-flex-preferred-size:48%;flex-basis:48%}@media (max-width:768px){.grid{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.grid>*{width:100%;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto}}.header{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;width:100%;border-bottom:1px dashed #eae8e3;padding:16px 32px}@media (max-width:768px){.header{padding:16px;margin-bottom:16px}}.header__logo{display:block;line-height:1}.header__logo svg{display:block;width:120px;height:18px}.header__search{margin:0;position:absolute;right:32px;top:8px;z-index:999}@media (max-width:768px){.header__search{right:16px}}.header__search input{width:400px}@media (max-width:768px){.header__search input{width:calc(100vw - 32px)}}.searchbox{width:100%}.searchbox,.searchbox:focus{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:4px 8px 4px 32px;font-size:16px;line-height:24px;color:#584b4f;border:1px solid #eae8e3}.searchbox--collapsed:not(:focus){background-color:transparent;border-color:transparent;width:32px!important;margin-right:-12px}.welcome__intro{padding:16px 0 136px;border-bottom:1px dashed #eae8e3;background-image:radial-gradient(ellipse at center,#fff 0,#eae8e3 100%);background-size:auto 100%;background-position:50% 0}.welcome__intro h1{font-size:2em;margin-bottom:16px;color:#4f5b93}.welcome__logo{display:block;margin:0 auto;max-width:320px}.welcome__logo svg{display:block;height:240px}.welcome__content{padding-top:16px;display:block;max-width:calc(98% - 320px)}.welcome__example{display:block;margin:auto;max-width:800px;margin-top:-160px}.welcome__example pre{background:#fcfcfc;border:1px dashed #eae8e3}.welcome__example .highlight pre{padding:32px;box-shadow:0 0 16px #d6d1c8}.welcome__intro .links a{color:#584b4f;text-decoration:none}.welcome__intro .links a:hover{color:#4f5b93;text-decoration:none}@media (max-width:768px){.welcome__content{padding:32px 16px 16px;max-width:100%}.welcome__logo svg{height:160px}.welcome__intro h1{text-align:center;font-size:1.6em;margin-bottom:16px;color:#4f5b93}.welcome__intro .links{text-align:center}}code,pre,tt{font-family:Consolas,Liberation Mono,Menlo,Courier,monospace}code,tt{font-size:12px}pre{font-size:85%;line-height:1.45}.links{margin:0;padding:0}.links li{display:inline-block;margin:0 8px;text-decoration:none}.links li:first-child{margin-left:0}.links li:last-child{margin-right:0}.links a{display:block}.links a,.links a:hover{text-decoration:none}.component-info__contributors,.component-info__title{display:-webkit-box;display:-ms-flexbox;display:flex}.component-info__contributors{-ms-flex-wrap:wrap;flex-wrap:wrap;padding:0;list-style:none}.component-info__contributors img{display:block;width:40px;height:auto}.version-selector__panel{position:fixed;top:-20000em;visibility:hidden}</style>
+        <link rel="preload" href="../../assets/main.7f00c7261f81f4d9246b.css" as="style" onload="this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../../assets/main.7f00c7261f81f4d9246b.css"></noscript>
+
+        <script>!function(e){function t(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var n={};t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=4)}([function(e,t,n){n.p=window.__assets},,,,function(e,t,n){n(0),e.exports=n(5)},function(e,t,n){n(6),n(7),n(9),n(10),n(12)},function(e,t,n){"use strict";function r(e){try{return(e||window).document.createElement("link").relList.supports("preload")}catch(e){return!1}}function o(e){function t(){for(var e=r.querySelectorAll('link[rel="preload"][as="style"]'),t=0;t<e.length;t++){var n,o;!function(){function i(){o.media=n.getAttribute("media")||"all",o.removeEventListener("load",i)}n=e[t],n.rel="",o=r.createElement("link"),o.rel="stylesheet",o.href=n.href,o.media="only x",o.addEventListener("load",i),n.parentNode.insertBefore(o,n.nextSibling||n)}()}}var n=e||window,r=n.document;if(t(),"complete"!==r.readyState){var o=n.setInterval(t,300);n.addEventListener("load",function(){t(),n.clearInterval(o)})}}Object.defineProperty(t,"__esModule",{value:!0}),t.supports=r,t.polyfill=o,r()||o()},function(e,t){},,function(e,t){},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(11);n.n(r)},function(e,t){},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(13);n.n(r)},function(e,t){}]);</script>
+            <link rel="canonical" href="../../dns/v0.4.11/">
+    </head>
+
+    <body>
+            <header class="header">
+            <a class="header__logo" href="../../">
+                <svg xmlns="http://www.w3.org/2000/svg" width="320" height="47.29" viewBox="0 428.964 320 47.29"><path fill="#584B4F" d="M30.86 452.385c1.637-2.287 2.455-5 2.455-8.134 0-4.313-1.367-7.87-4.088-10.68-2.723-2.812-6.39-4.216-11.004-4.216h-7.71c-3.79 0-6.49.798-8.1 2.388C.806 433.332 0 435.872 0 439.355v36.512h9.08v-17.245h6.53l9.08 17.245h10.52L24.82 457.12c2.395-.87 4.41-2.447 6.04-4.735zm-8.488-3.334c-1.24 1.33-2.82 1.99-4.734 1.99H9.08v-9.47c0-2.74 1.35-4.112 4.05-4.112h4.508c2 0 3.603.61 4.8 1.83 1.196 1.22 1.797 2.82 1.797 4.802 0 1.982-.623 3.64-1.864 4.964v-.003zm20.348 14.536c0 4.572 1.055 7.766 3.167 9.57 2.114 1.81 5.782 2.71 11.008 2.71h16.46v-8.1H57.548c-2.18 0-3.68-.35-4.51-1.045-.83-.695-1.24-1.96-1.24-3.788v-6.467h14.434l.656-8.1h-15.09v-10.912h21.56v-8.098H42.72v34.23zm57.97-33.442c-.718-.523-1.665-.787-2.84-.787-1.177 0-2.168.285-2.972.85-.807.567-1.537 1.592-2.19 3.073l-14.89 42.585h9.47l2.55-8.03h15.613l2.613 8.03h9.47l-14.893-42.588c-.567-1.572-1.21-2.613-1.93-3.135v.002zM92.1 460.19l5.75-18.42 5.487 18.418H92.1v.002zm53.074 5.455c-1.155 1.678-3.245 2.512-6.27 2.512-3.03 0-5.258-.914-6.697-2.74-1.394-1.83-2.093-5.25-2.093-10.256v-4.052c0-1.783.045-3.2.13-4.243.178-3.27.785-5.576 1.833-6.928 1.48-1.914 3.745-2.873 6.794-2.873 2.613 0 4.532.653 5.75 1.96 1.218 1.308 2.07 3.245 2.547 5.813h8.49c0-5.14-1.557-9.07-4.67-11.79-3.114-2.723-7.153-4.084-12.116-4.084-3.398 0-6.293.564-8.687 1.7-6.097 2.783-9.146 9.686-9.146 20.704v3.918c0 13.982 5.945 20.968 17.833 20.968 5.4 0 9.58-1.59 12.54-4.77 2.964-3.176 4.44-7.73 4.44-13.653h-8.426c-.346 3.53-1.1 6.134-2.25 7.81v.005zm14.667-36.29v8.1h12.412v38.41h9.08v-38.41h12.47v-8.1"/><path fill="#4F5B93" d="M218.89 429.356h-18.03v46.51h9.086v-14.897h8.944c4.876 0 8.647-1.337 11.328-4.016 2.683-2.68 4.02-6.608 4.02-11.788s-1.337-9.112-4.02-11.788c-2.68-2.68-6.454-4.02-11.328-4.02v-.002zm4.538 21.686c-1.15 1.177-2.815 1.768-5 1.768h-8.485v-15.354h8.484c4.483 0 6.73 2.572 6.73 7.71 0 2.744-.578 4.703-1.73 5.88v-.004zm43.93-2.02H250.31v-19.666h-9.088v46.51h9.086v-18.81h17.05v18.81h9.076v-46.51h-9.078m48.63 4.02c-2.683-2.68-6.46-4.02-11.335-4.02h-18.027v46.507h9.085V460.97h8.943c4.877 0 8.654-1.336 11.337-4.014 2.68-2.678 4.013-6.608 4.013-11.788s-1.332-9.112-4.013-11.79v-.003zm-6.795 17.666c-1.154 1.177-2.822 1.768-5 1.768h-8.484v-15.354h8.485c4.483 0 6.734 2.572 6.734 7.71 0 2.744-.583 4.703-1.735 5.88v-.004z"/></svg>
+            </a>
+            <form class="header__search">
+                <input type="search" class="searchbox searchbox--collapsed" data-docsearch placeholder="Search documentation...">
+            </form>
+        </header>
+    
+        <div class="container">
+        <div class="grid grid--wrap grid--gutter">
+            <main class="main">
+                <h1>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Changelog</h1>
+<h2>
+<a id="0411-2017-08-25" class="anchor" href="#0411-2017-08-25" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.11 (2017-08-25)</h2>
+<ul>
+<li>
+<p>Feature: Support resolving from default hosts file
+(#75, #76 and #77 by @clue)</p>
+<p>This means that resolving hosts such as <code>localhost</code> will now work as
+expected across all platforms with no changes required:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$resolver</span><span class="pl-k">-&gt;</span>resolve(<span class="pl-s"><span class="pl-pds">'</span>localhost<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>then(<span class="pl-k">function</span> (<span class="pl-smi">$ip</span>) {</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>IP: <span class="pl-pds">'</span></span> <span class="pl-k">.</span> <span class="pl-smi">$ip</span>;</span>
+<span class="pl-s1">});</span></pre></div>
+<p>The new <code>HostsExecutor</code> exists for advanced usage and is otherwise used
+internally for this feature.</p>
+</li>
+</ul>
+<h2>
+<a id="0410-2017-08-10" class="anchor" href="#0410-2017-08-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.10 (2017-08-10)</h2>
+<ul>
+<li>
+<p>Feature: Forward compatibility with EventLoop v1.0 and v0.5 and
+lock minimum dependencies and work around circular dependency for tests
+(#70 and #71 by @clue)</p>
+</li>
+<li>
+<p>Fix: Work around DNS timeout issues for Windows users
+(#74 by @clue)</p>
+</li>
+<li>
+<p>Documentation and examples for advanced usage
+(#66 by @WyriHaximus)</p>
+</li>
+<li>
+<p>Remove broken TCP code, do not retry with invalid TCP query
+(#73 by @clue)</p>
+</li>
+<li>
+<p>Improve test suite by fixing HHVM build for now again and ignore future HHVM build errors and
+lock Travis distro so new defaults will not break the build and
+fix failing tests for PHP 7.1
+(#68 by @WyriHaximus and #69 and #72 by @clue)</p>
+</li>
+</ul>
+<h2>
+<a id="049-2017-05-01" class="anchor" href="#049-2017-05-01" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.9 (2017-05-01)</h2>
+<ul>
+<li>Feature: Forward compatibility with upcoming Socket v1.0 and v0.8
+(#61 by @clue)</li>
+</ul>
+<h2>
+<a id="048-2017-04-16" class="anchor" href="#048-2017-04-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.8 (2017-04-16)</h2>
+<ul>
+<li>
+<p>Feature: Add support for the AAAA record type to the protocol parser
+(#58 by @othillo)</p>
+</li>
+<li>
+<p>Feature: Add support for the PTR record type to the protocol parser
+(#59 by @othillo)</p>
+</li>
+</ul>
+<h2>
+<a id="047-2017-03-31" class="anchor" href="#047-2017-03-31" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.7 (2017-03-31)</h2>
+<ul>
+<li>Feature: Forward compatibility with upcoming Socket v0.6 and v0.7 component
+(#57 by @clue)</li>
+</ul>
+<h2>
+<a id="046-2017-03-11" class="anchor" href="#046-2017-03-11" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.6 (2017-03-11)</h2>
+<ul>
+<li>
+<p>Fix: Fix DNS timeout issues for Windows users and add forward compatibility
+with Stream v0.5 and upcoming v0.6
+(#53 by @clue)</p>
+</li>
+<li>
+<p>Improve test suite by adding PHPUnit to <code>require-dev</code>
+(#54 by @clue)</p>
+</li>
+</ul>
+<h2>
+<a id="045-2017-03-02" class="anchor" href="#045-2017-03-02" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.5 (2017-03-02)</h2>
+<ul>
+<li>
+<p>Fix: Ensure we ignore the case of the answer
+(#51 by @WyriHaximus)</p>
+</li>
+<li>
+<p>Feature: Add <code>TimeoutExecutor</code> and simplify internal APIs to allow internal
+code re-use for upcoming versions.
+(#48 and #49 by @clue)</p>
+</li>
+</ul>
+<h2>
+<a id="044-2017-02-13" class="anchor" href="#044-2017-02-13" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.4 (2017-02-13)</h2>
+<ul>
+<li>
+<p>Fix: Fix handling connection and stream errors
+(#45 by @clue)</p>
+</li>
+<li>
+<p>Feature: Add examples and forward compatibility with upcoming Socket v0.5 component
+(#46 and #47 by @clue)</p>
+</li>
+</ul>
+<h2>
+<a id="043-2016-07-31" class="anchor" href="#043-2016-07-31" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.3 (2016-07-31)</h2>
+<ul>
+<li>
+<p>Feature: Allow for cache adapter injection (#38 by @WyriHaximus)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$factory</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\Dns\Resolver\</span><span class="pl-c1">Factory</span>();</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$cache</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">MyCustomCacheInstance</span>();</span>
+<span class="pl-s1"><span class="pl-smi">$resolver</span> <span class="pl-k">=</span> <span class="pl-smi">$factory</span><span class="pl-k">-&gt;</span>createCached(<span class="pl-s"><span class="pl-pds">'</span>8.8.8.8<span class="pl-pds">'</span></span>, <span class="pl-smi">$loop</span>, <span class="pl-smi">$cache</span>);</span></pre></div>
+</li>
+<li>
+<p>Feature: Support Promise cancellation (#35 by @clue)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$promise</span> <span class="pl-k">=</span> <span class="pl-smi">$resolver</span><span class="pl-k">-&gt;</span>resolve(<span class="pl-s"><span class="pl-pds">'</span>reactphp.org<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$promise</span><span class="pl-k">-&gt;</span>cancel();</span></pre></div>
+</li>
+</ul>
+<h2>
+<a id="042-2016-02-24" class="anchor" href="#042-2016-02-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.2 (2016-02-24)</h2>
+<ul>
+<li>Repository maintenance, split off from main repo, improve test suite and documentation</li>
+<li>First class support for PHP7 and HHVM (#34 by @clue)</li>
+<li>Adjust compatibility to 5.3 (#30 by @clue)</li>
+</ul>
+<h2>
+<a id="041-2014-04-13" class="anchor" href="#041-2014-04-13" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.1 (2014-04-13)</h2>
+<ul>
+<li>Bug fix: Fixed PSR-4 autoload path (@marcj/WyriHaximus)</li>
+</ul>
+<h2>
+<a id="040-2014-02-02" class="anchor" href="#040-2014-02-02" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.0 (2014-02-02)</h2>
+<ul>
+<li>BC break: Bump minimum PHP version to PHP 5.4, remove 5.3 specific hacks</li>
+<li>BC break: Update to React/Promise 2.0</li>
+<li>Bug fix: Properly resolve CNAME aliases</li>
+<li>Dependency: Autoloading and filesystem structure now PSR-4 instead of PSR-0</li>
+<li>Bump React dependencies to v0.4</li>
+</ul>
+<h2>
+<a id="032-2013-05-10" class="anchor" href="#032-2013-05-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.3.2 (2013-05-10)</h2>
+<ul>
+<li>Feature: Support default port for IPv6 addresses (@clue)</li>
+</ul>
+<h2>
+<a id="030-2013-04-14" class="anchor" href="#030-2013-04-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.3.0 (2013-04-14)</h2>
+<ul>
+<li>Bump React dependencies to v0.3</li>
+</ul>
+<h2>
+<a id="026-2012-12-26" class="anchor" href="#026-2012-12-26" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.2.6 (2012-12-26)</h2>
+<ul>
+<li>Feature: New cache component, used by DNS</li>
+</ul>
+<h2>
+<a id="025-2012-11-26" class="anchor" href="#025-2012-11-26" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.2.5 (2012-11-26)</h2>
+<ul>
+<li>Version bump</li>
+</ul>
+<h2>
+<a id="024-2012-11-18" class="anchor" href="#024-2012-11-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.2.4 (2012-11-18)</h2>
+<ul>
+<li>Feature: Change to promise-based API (@jsor)</li>
+</ul>
+<h2>
+<a id="023-2012-11-14" class="anchor" href="#023-2012-11-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.2.3 (2012-11-14)</h2>
+<ul>
+<li>Version bump</li>
+</ul>
+<h2>
+<a id="022-2012-10-28" class="anchor" href="#022-2012-10-28" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.2.2 (2012-10-28)</h2>
+<ul>
+<li>Feature: DNS executor timeout handling (@arnaud-lb)</li>
+<li>Feature: DNS retry executor (@arnaud-lb)</li>
+</ul>
+<h2>
+<a id="021-2012-10-14" class="anchor" href="#021-2012-10-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.2.1 (2012-10-14)</h2>
+<ul>
+<li>Minor adjustments to DNS parser</li>
+</ul>
+<h2>
+<a id="020-2012-09-10" class="anchor" href="#020-2012-09-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.2.0 (2012-09-10)</h2>
+<ul>
+<li>Feature: DNS resolver</li>
+</ul>
+            </main>
+            <aside class="sidebar" role="complementary">
+                <section class="component-info">
+                    <h2 class="component-info__title">
+                        <a href="../../dns/">DNS</a>
+
+                        <div class="version-selector">
+                            <button class="version-selector__button" aria-expanded="false" aria-controls="component-version-selector" data-version-selector-toggle>
+                                v0.4.11
+
+                                <i class="icon-chevron-down" aria-hidden="true"></i>
+                                <i class="icon-chevron-up" aria-hidden="true"></i>
+                            </button>
+
+                            <div id="component-version-selector" class="version-selector__panel" aria-hidden="true">
+                                <ul class="version-selector__list">
+                                                                    <li>
+                                        <a href="../../dns/v0.4.11/">
+                                            <span class="version-selector__version version-selector__version--selected version-selector__version--latest">v0.4.11</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.4.10/">
+                                            <span class="version-selector__version">v0.4.10</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.4.9/">
+                                            <span class="version-selector__version">v0.4.9</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.4.8/">
+                                            <span class="version-selector__version">v0.4.8</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.4.7/">
+                                            <span class="version-selector__version">v0.4.7</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.4.6/">
+                                            <span class="version-selector__version">v0.4.6</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.4.5/">
+                                            <span class="version-selector__version">v0.4.5</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.4.4/">
+                                            <span class="version-selector__version">v0.4.4</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.4.3/">
+                                            <span class="version-selector__version">v0.4.3</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.4.2/">
+                                            <span class="version-selector__version">v0.4.2</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.4.1/">
+                                            <span class="version-selector__version">v0.4.1</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.4.0/">
+                                            <span class="version-selector__version">v0.4.0</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.3.2/">
+                                            <span class="version-selector__version">v0.3.2</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.3.0/">
+                                            <span class="version-selector__version">v0.3.0</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.2.6/">
+                                            <span class="version-selector__version">v0.2.6</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.2.5/">
+                                            <span class="version-selector__version">v0.2.5</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.2.4/">
+                                            <span class="version-selector__version">v0.2.4</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.2.3/">
+                                            <span class="version-selector__version">v0.2.3</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.2.2/">
+                                            <span class="version-selector__version">v0.2.2</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.2.1/">
+                                            <span class="version-selector__version">v0.2.1</span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../dns/v0.2.0/">
+                                            <span class="version-selector__version">v0.2.0</span>
+                                        </a>
+                                    </li>
+                                                                </ul>
+                            </div>
+                        </div>
+                    </h2>
+
+                
+                    <ul class="component-info__info">
+                        <li>
+                            <a href="https://github.com/reactphp/dns">
+                                <i class="icon-github" aria-hidden="true"></i> reactphp/dns
+                            </a>
+                        </li>
+                        <li>
+                            <a href="license.html">
+                                <i class="icon-law" aria-hidden="true"></i> MIT License
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h3 class="component-info__subtitle">Contributors</h3>
+
+                    <ul class="component-info__contributors">
+                                            <li>
+                            <a href="https://github.com/clue">
+                                <img src="https://avatars1.githubusercontent.com/u/776829?v=4&amp;s=40" alt="clue" title="clue (79 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/igorw">
+                                <img src="https://avatars2.githubusercontent.com/u/88061?v=4&amp;s=40" alt="igorw" title="igorw (47 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/WyriHaximus">
+                                <img src="https://avatars2.githubusercontent.com/u/147145?v=4&amp;s=40" alt="WyriHaximus" title="WyriHaximus (42 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/cboden">
+                                <img src="https://avatars0.githubusercontent.com/u/617694?v=4&amp;s=40" alt="cboden" title="cboden (16 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/jsor">
+                                <img src="https://avatars2.githubusercontent.com/u/55574?v=4&amp;s=40" alt="jsor" title="jsor (14 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/arnaud-lb">
+                                <img src="https://avatars3.githubusercontent.com/u/365207?v=4&amp;s=40" alt="arnaud-lb" title="arnaud-lb (3 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/othillo">
+                                <img src="https://avatars3.githubusercontent.com/u/2786663?v=4&amp;s=40" alt="othillo" title="othillo (2 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/nrk">
+                                <img src="https://avatars0.githubusercontent.com/u/17923?v=4&amp;s=40" alt="nrk" title="nrk (1 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/uniquoooo">
+                                <img src="https://avatars3.githubusercontent.com/u/991872?v=4&amp;s=40" alt="uniquoooo" title="uniquoooo (1 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/e3betht">
+                                <img src="https://avatars0.githubusercontent.com/u/1811561?v=4&amp;s=40" alt="e3betht" title="e3betht (1 contribution)">
+                            </a>
+                        </li>
+                                        </ul>
+
+                    <h3 class="component-info__subtitle">Activity</h3>
+
+                    <div class="component-info__participation">
+                        <svg width="320" height="42">
+    <defs>
+        <linearGradient id="reactphp-dns-participation-gradient" x1="0" x2="0" y1="1" y2="0">
+            <stop offset="10%" stop-color="#40a977"></stop>
+            <stop offset="90%" stop-color="#ba3525"></stop>
+        </linearGradient>
+        <mask id="reactphp-dns-participation-sparkline" x="0" y="0" width="320" height="40" >
+            <polyline 
+                transform="translate(0, 40) scale(1,-1)"
+                points="0,1 6,3 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,1 108,1 114,10 120,3 126,5 132,3 138,5 144,1 150,3 156,2 162,3 168,4 174,1 180,5 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,7 240,1 246,1 252,1 258,1 264,18 270,11 276,6 282,2 288,1 294,1 300,1 306,1" 
+                fill="transparent" 
+                stroke="#40a977" 
+                stroke-width="2"
+            >
+        </mask>
+    </defs>
+
+    <g transform="translate(0, -1.5)">
+        <rect 
+            x="0" 
+            y="-2" 
+            width="320" 
+            height="42"
+            style="stroke:none;fill:url(#reactphp-dns-participation-gradient);mask:url(#reactphp-dns-participation-sparkline)"
+        ></rect>
+    </g>
+</svg>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+
+            <footer class="footer">
+            <div class="wrapper">
+                <ul class="links">
+                    <li><a href="https://github.com/reactphp"><i class="icon-github" aria-hidden="true"></i> GitHub</a></li>
+                    <li><a href="https://twitter.com/reactphp"><i class="icon-twitter" aria-hidden="true"></i> Twitter</a></li>
+                    <li><a href="irc://irc.freenode.net/reactphp"><i class="icon-hash" aria-hidden="true"></i> IRC</a></li>
+                </ul>
+            </div>
+        </footer>
+    
+    <script async src="../../assets/main.7f00c7261f81f4d9246b.js"></script>
+    </body>
+</html>
