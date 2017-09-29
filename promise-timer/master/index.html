@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>PromiseTimer: 
+react/promise-timer 
+ - ReactPHP</title>
+
+        <meta name="description" content="Trivial timeout implementation for ReactPHP&#039;s Promise lib.">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="https://jsor-labs.github.io/website/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://jsor-labs.github.io/website/favicon-32x32.png">
+        <link rel="manifest" href="https://jsor-labs.github.io/website/manifest.json">
+        <link rel="mask-icon" href="https://jsor-labs.github.io/website/safari-pinned-tab.svg" color="#4f5b93">
+        <meta name="apple-mobile-web-app-title" content="ReactPHP">
+        <meta name="application-name" content="ReactPHP">
+        <meta name="theme-color" content="#f4f3f1">
+        <meta name="msapplication-config" content="https://jsor-labs.github.io/website/browserconfig.xml" />
+
+        <meta property="og:image" content="https://jsor-labs.github.io/website/og-image.png">
+
+            <script>window.__assets = '../../assets/';</script>
+
+        <link rel="preload" href="../../assets/19ca4d35c8f94db0fa14422334dd2ad3.woff" as="font" type="font/woff" crossorigin>
+        <link rel="preload" href="../../assets/be4ba3dd17008135675e945b630be8f6.woff" as="font" type="font/woff" crossorigin>
+
+        <style>@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:400;font-display:swap;src:local("Source Sans Pro Regular"),local("SourceSansPro-Regular"),url(../../assets/19ca4d35c8f94db0fa14422334dd2ad3.woff) format("woff")}@font-face{font-family:Source Sans Pro;font-style:normal;font-weight:700;font-display:swap;src:local("Source Sans Pro Bold"),local("SourceSansPro-Bold"),url(../../assets/be4ba3dd17008135675e945b630be8f6.woff) format("woff")}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;color:#584b4f;background-color:#fff}blockquote,fieldset,form,h1,h2,h3,h4,h5,h6,hr,ol,p,ul{margin:0 0 16px}ul{margin-bottom:0}hr{clear:both;height:0;border:0;border-bottom:1px dashed #eae8e3;padding:0}h1,h2,h3,h4,h5,h6{line-height:1;-webkit-font-smoothing:antialiased;color:#584b4f;font-family:Source Sans Pro,Helvetica Neue,Arial,sans-serif;font-weight:700}h1{font-size:2.4em;margin-bottom:32px;color:#4f5b93;letter-spacing:-1px}h1:not(:first-child){margin-top:32px}h2{font-size:1.8em;margin-bottom:32px}h2:not(:first-child){margin-top:32px}h3{font-size:1.4em;margin-bottom:24px;color:#4f5b93}h3:not(:first-child){margin-top:24px}h4{font-size:1.2em}h4:not(:first-child){margin-top:24px}@media (max-width:768px){h1{font-size:1.8em}h2{font-size:1.6em;margin-bottom:32px}}.container{padding:32px}@media (max-width:768px){.container{padding:16px}}.wrapper{max-width:960px;margin:auto}.wrapper--wide{max-width:1280px}.wrapper--narrow{max-width:640px}.main{width:calc(98% - 400px);margin-bottom:64px}.sidebar{width:calc(400px - 2%);margin-bottom:32px}@media (max-width:1024px){.main,.sidebar{width:auto}}.grid{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:102%;margin-left:-2%}.grid>*{margin-left:2%;max-width:100%}.grid--4cols>*{-ms-flex-preferred-size:23%;flex-basis:23%}.grid--3cols>*{-ms-flex-preferred-size:31.33%;flex-basis:31.33%}.grid--2cols>*{-ms-flex-preferred-size:48%;flex-basis:48%}@media (max-width:768px){.grid{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.grid,.grid>*{width:100%;margin-left:0}.grid>*{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto}}.header{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;width:100%;border-bottom:1px dashed #eae8e3;padding:16px 32px}@media (max-width:768px){.header{padding:16px;margin-bottom:16px}}.header__logo{display:block;line-height:1}.header__logo svg{display:block;width:120px;height:18px}.header__search{margin:0;position:absolute;right:32px;top:8px;z-index:999}@media (max-width:768px){.header__search{right:16px}}.header__search input{width:400px}@media (max-width:768px){.header__search input{width:calc(100vw - 32px)}}.searchbox{width:100%}.searchbox,.searchbox:focus{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:4px 8px 4px 32px;font-size:16px;line-height:24px;color:#584b4f;border:1px dashed #eae8e3}.searchbox--collapsed:not(:focus){background-color:transparent;border-color:transparent;width:32px!important;margin-right:-12px}.welcome__intro{padding:16px 0 136px;border-bottom:1px dashed #eae8e3;background-image:radial-gradient(ellipse at center,#fff 0,#eae8e3 100%);background-size:auto 100%;background-position:50% 0}.welcome__intro h1{font-size:2em;margin-bottom:16px;color:#4f5b93}.welcome__logo{display:block;margin:0 auto;max-width:320px}.welcome__logo svg{display:block;height:240px}.welcome__content{padding-top:16px;display:block;max-width:calc(98% - 320px)}.welcome__example{display:block;margin:auto;max-width:800px;margin-top:-160px}.welcome__example pre{background:#fcfcfc;border:1px dashed #eae8e3}.welcome__example .highlight pre{padding:32px;box-shadow:0 0 16px #d6d1c8}.welcome__intro .links a{color:#584b4f;text-decoration:none}.welcome__intro .links a:hover{color:#4f5b93;text-decoration:none}@media (max-width:768px){.welcome__content{padding:32px 16px 16px;max-width:100%}.welcome__logo svg{height:160px}.welcome__intro h1{text-align:center;font-size:1.6em;margin-bottom:16px;color:#4f5b93}.welcome__intro .links{text-align:center}}code,pre,tt{font-family:Consolas,Liberation Mono,Menlo,Courier,monospace}code,tt{font-size:12px}pre{font-size:85%;line-height:1.45}.links{margin:0;padding:0}.links li{display:inline-block;margin:0 8px;text-decoration:none}.links li:first-child{margin-left:0}.links li:last-child{margin-right:0}.links a{display:block}.links a,.links a:hover{text-decoration:none}.component-info__contributors,.component-info__title{display:-webkit-box;display:-ms-flexbox;display:flex}.component-info__contributors{-ms-flex-wrap:wrap;flex-wrap:wrap;padding:0;list-style:none}.component-info__contributors img{display:block;width:40px;height:auto}.version-selector__panel{position:fixed;top:-20000em;visibility:hidden}</style>
+        <link rel="preload" href="../../assets/main.7f00c7261f81f4d9246b.css" as="style" onload="this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="../../assets/main.7f00c7261f81f4d9246b.css"></noscript>
+
+        <script>!function(e){function t(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var n={};t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=4)}([function(e,t,n){n.p=window.__assets},,,,function(e,t,n){n(0),e.exports=n(5)},function(e,t,n){n(6),n(7),n(9),n(10),n(12)},function(e,t,n){"use strict";function r(e){try{return(e||window).document.createElement("link").relList.supports("preload")}catch(e){return!1}}function o(e){function t(){for(var e=r.querySelectorAll('link[rel="preload"][as="style"]'),t=0;t<e.length;t++){var n,o;!function(){function i(){o.media=n.getAttribute("media")||"all",o.removeEventListener("load",i)}n=e[t],n.rel="",o=r.createElement("link"),o.rel="stylesheet",o.href=n.href,o.media="only x",o.addEventListener("load",i),n.parentNode.insertBefore(o,n.nextSibling||n)}()}}var n=e||window,r=n.document;if(t(),"complete"!==r.readyState){var o=n.setInterval(t,300);n.addEventListener("load",function(){t(),n.clearInterval(o)})}}Object.defineProperty(t,"__esModule",{value:!0}),t.supports=r,t.polyfill=o,r()||o()},function(e,t){},,function(e,t){},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(11);n.n(r)},function(e,t){},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(13);n.n(r)},function(e,t){}]);</script>
+            </head>
+
+    <body>
+            <header class="header">
+            <a class="header__logo" href="../../">
+                <svg xmlns="http://www.w3.org/2000/svg" width="320" height="47.29" viewBox="0 428.964 320 47.29"><path fill="#584B4F" d="M30.86 452.385c1.637-2.287 2.455-5 2.455-8.134 0-4.313-1.367-7.87-4.088-10.68-2.723-2.812-6.39-4.216-11.004-4.216h-7.71c-3.79 0-6.49.798-8.1 2.388C.806 433.332 0 435.872 0 439.355v36.512h9.08v-17.245h6.53l9.08 17.245h10.52L24.82 457.12c2.395-.87 4.41-2.447 6.04-4.735zm-8.488-3.334c-1.24 1.33-2.82 1.99-4.734 1.99H9.08v-9.47c0-2.74 1.35-4.112 4.05-4.112h4.508c2 0 3.603.61 4.8 1.83 1.196 1.22 1.797 2.82 1.797 4.802 0 1.982-.623 3.64-1.864 4.964v-.003zm20.348 14.536c0 4.572 1.055 7.766 3.167 9.57 2.114 1.81 5.782 2.71 11.008 2.71h16.46v-8.1H57.548c-2.18 0-3.68-.35-4.51-1.045-.83-.695-1.24-1.96-1.24-3.788v-6.467h14.434l.656-8.1h-15.09v-10.912h21.56v-8.098H42.72v34.23zm57.97-33.442c-.718-.523-1.665-.787-2.84-.787-1.177 0-2.168.285-2.972.85-.807.567-1.537 1.592-2.19 3.073l-14.89 42.585h9.47l2.55-8.03h15.613l2.613 8.03h9.47l-14.893-42.588c-.567-1.572-1.21-2.613-1.93-3.135v.002zM92.1 460.19l5.75-18.42 5.487 18.418H92.1v.002zm53.074 5.455c-1.155 1.678-3.245 2.512-6.27 2.512-3.03 0-5.258-.914-6.697-2.74-1.394-1.83-2.093-5.25-2.093-10.256v-4.052c0-1.783.045-3.2.13-4.243.178-3.27.785-5.576 1.833-6.928 1.48-1.914 3.745-2.873 6.794-2.873 2.613 0 4.532.653 5.75 1.96 1.218 1.308 2.07 3.245 2.547 5.813h8.49c0-5.14-1.557-9.07-4.67-11.79-3.114-2.723-7.153-4.084-12.116-4.084-3.398 0-6.293.564-8.687 1.7-6.097 2.783-9.146 9.686-9.146 20.704v3.918c0 13.982 5.945 20.968 17.833 20.968 5.4 0 9.58-1.59 12.54-4.77 2.964-3.176 4.44-7.73 4.44-13.653h-8.426c-.346 3.53-1.1 6.134-2.25 7.81v.005zm14.667-36.29v8.1h12.412v38.41h9.08v-38.41h12.47v-8.1"/><path fill="#4F5B93" d="M218.89 429.356h-18.03v46.51h9.086v-14.897h8.944c4.876 0 8.647-1.337 11.328-4.016 2.683-2.68 4.02-6.608 4.02-11.788s-1.337-9.112-4.02-11.788c-2.68-2.68-6.454-4.02-11.328-4.02v-.002zm4.538 21.686c-1.15 1.177-2.815 1.768-5 1.768h-8.485v-15.354h8.484c4.483 0 6.73 2.572 6.73 7.71 0 2.744-.578 4.703-1.73 5.88v-.004zm43.93-2.02H250.31v-19.666h-9.088v46.51h9.086v-18.81h17.05v18.81h9.076v-46.51h-9.078m48.63 4.02c-2.683-2.68-6.46-4.02-11.335-4.02h-18.027v46.507h9.085V460.97h8.943c4.877 0 8.654-1.336 11.337-4.014 2.68-2.678 4.013-6.608 4.013-11.788s-1.332-9.112-4.013-11.79v-.003zm-6.795 17.666c-1.154 1.177-2.822 1.768-5 1.768h-8.484v-15.354h8.485c4.483 0 6.734 2.572 6.734 7.71 0 2.744-.583 4.703-1.735 5.88v-.004z"/></svg>
+            </a>
+            <form class="header__search">
+                <input type="search" class="searchbox searchbox--collapsed" data-docsearch placeholder="Search documentation...">
+            </form>
+        </header>
+    
+        <div class="container">
+        <div class="grid grid--wrap grid--gutter">
+            <main class="main">
+                                    <p class="alert">
+                        You are browsing the documentation for <strong>PromiseTimer <code>master</code></strong> which is a development version.
+                        <a href="../../promise-timer/v1.2.0/">Go to the latest stable version <strong>v1.2.0</strong>.</a>
+                    </p>
+                
+                <h1>
+<a id="reactpromise-timer-" class="anchor" href="#reactpromise-timer-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>react/promise-timer <a href="https://travis-ci.org/reactphp/promise-timer"><img src="https://camo.githubusercontent.com/8af458f5d0f7dfb3c2f68f3641943e6d77d6b8fe/68747470733a2f2f7472617669732d63692e6f72672f72656163747068702f70726f6d6973652d74696d65722e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/reactphp/promise-timer.svg?branch=master" style="max-width:100%;"></a>
+</h1>
+<p>A trivial implementation of timeouts for <code>Promise</code>s, built on top of <a href="http://reactphp.org/">React PHP</a>.</p>
+<p><strong>Table of contents</strong></p>
+<ul>
+<li>
+<a href="#usage">Usage</a>
+<ul>
+<li>
+<a href="#timeout">timeout()</a>
+<ul>
+<li><a href="#timeout-cancellation">Timeout cancellation</a></li>
+<li><a href="#cancellation-handler">Cancellation handler</a></li>
+<li><a href="#input-cancellation">Input cancellation</a></li>
+<li><a href="#output-cancellation">Output cancellation</a></li>
+<li><a href="#collections">Collections</a></li>
+</ul>
+</li>
+<li>
+<a href="#resolve">resolve()</a>
+<ul>
+<li><a href="#resolve-cancellation">Resolve cancellation</a></li>
+</ul>
+</li>
+<li>
+<a href="#reject">reject()</a>
+<ul>
+<li><a href="#reject-cancellation">Reject cancellation</a></li>
+</ul>
+</li>
+<li><a href="#timeoutexception">TimeoutException</a></li>
+</ul>
+</li>
+<li><a href="#install">Install</a></li>
+<li><a href="#tests">Tests</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+<p>This lightweight library consists only of a few simple functions.
+All functions reside under the <code>React\Promise\Timer</code> namespace.</p>
+<p>The below examples assume you use an import statement similar to this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">React\Promise\Timer</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">Timer\</span>timeout(…);</span></pre></div>
+<p>Alternatively, you can also refer to them with their fully-qualified name:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">\React\Promise\Timer\</span>timeout(…);</span></pre></div>
+<h3>
+<a id="timeout" class="anchor" href="#timeout" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>timeout()</h3>
+<p>The <code>timeout(PromiseInterface $promise, $time, LoopInterface $loop)</code> function
+can be used to <em>cancel</em> operations that take <em>too long</em>.
+You need to pass in an input <code>$promise</code> that represents a pending operation and timeout parameters.
+It returns a new <code>Promise</code> with the following resolution behavior:</p>
+<ul>
+<li>If the input <code>$promise</code> resolves before <code>$time</code> seconds, resolve the resulting promise with its fulfillment value.</li>
+<li>If the input <code>$promise</code> rejects before <code>$time</code> seconds, reject the resulting promise with its rejection value.</li>
+<li>If the input <code>$promise</code> does not settle before <code>$time</code> seconds, <em>cancel</em> the operation and reject the resulting promise with a <a href="#timeoutexception"><code>TimeoutException</code></a>.</li>
+</ul>
+<p>Internally, the given <code>$time</code> value will be used to start a timer that will
+<em>cancel</em> the pending operation once it triggers.
+This implies that if you pass a really small (or negative) value, it will still
+start a timer and will thus trigger at the earliest possible time in the future.</p>
+<p>If the input <code>$promise</code> is already settled, then the resulting promise will
+resolve or reject immediately without starting a timer at all.</p>
+<p>A common use case for handling only resolved values looks like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$promise</span> <span class="pl-k">=</span> accessSomeRemoteResource();</span>
+<span class="pl-s1"><span class="pl-c1">Timer\</span>timeout(<span class="pl-smi">$promise</span>, <span class="pl-c1">10.0</span>, <span class="pl-smi">$loop</span>)<span class="pl-k">-&gt;</span>then(<span class="pl-k">function</span> (<span class="pl-smi">$value</span>) {</span>
+<span class="pl-s1">    <span class="pl-c"><span class="pl-c">//</span> the operation finished within 10.0 seconds</span></span>
+<span class="pl-s1">});</span></pre></div>
+<p>A more complete example could look like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$promise</span> <span class="pl-k">=</span> accessSomeRemoteResource();</span>
+<span class="pl-s1"><span class="pl-c1">Timer\</span>timeout(<span class="pl-smi">$promise</span>, <span class="pl-c1">10.0</span>, <span class="pl-smi">$loop</span>)<span class="pl-k">-&gt;</span>then(</span>
+<span class="pl-s1">    <span class="pl-k">function</span> (<span class="pl-smi">$value</span>) {</span>
+<span class="pl-s1">        <span class="pl-c"><span class="pl-c">//</span> the operation finished within 10.0 seconds</span></span>
+<span class="pl-s1">    },</span>
+<span class="pl-s1">    <span class="pl-k">function</span> (<span class="pl-smi">$error</span>) {</span>
+<span class="pl-s1">        <span class="pl-k">if</span> (<span class="pl-smi">$error</span> <span class="pl-k">instanceof</span> <span class="pl-c1">Timer\</span><span class="pl-c1">TimeoutException</span>) {</span>
+<span class="pl-s1">            <span class="pl-c"><span class="pl-c">//</span> the operation has failed due to a timeout</span></span>
+<span class="pl-s1">        } <span class="pl-k">else</span> {</span>
+<span class="pl-s1">            <span class="pl-c"><span class="pl-c">//</span> the input operation has failed due to some other error</span></span>
+<span class="pl-s1">        }</span>
+<span class="pl-s1">    }</span>
+<span class="pl-s1">);</span></pre></div>
+<p>Or if you're using <a href="https://github.com/reactphp/promise">react/promise v2.2.0</a> or up:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">Timer\</span>timeout(<span class="pl-smi">$promise</span>, <span class="pl-c1">10.0</span>, <span class="pl-smi">$loop</span>)</span>
+<span class="pl-s1">    <span class="pl-k">-&gt;</span>then(<span class="pl-k">function</span> (<span class="pl-smi">$value</span>) {</span>
+<span class="pl-s1">        <span class="pl-c"><span class="pl-c">//</span> the operation finished within 10.0 seconds</span></span>
+<span class="pl-s1">    })</span>
+<span class="pl-s1">    <span class="pl-k">-&gt;</span>otherwise(<span class="pl-k">function</span> (<span class="pl-c1">Timer\</span><span class="pl-c1">TimeoutException</span> <span class="pl-smi">$error</span>) {</span>
+<span class="pl-s1">        <span class="pl-c"><span class="pl-c">//</span> the operation has failed due to a timeout</span></span>
+<span class="pl-s1">    })</span>
+<span class="pl-s1">    <span class="pl-k">-&gt;</span>otherwise(<span class="pl-k">function</span> (<span class="pl-smi">$error</span>) {</span>
+<span class="pl-s1">        <span class="pl-c"><span class="pl-c">//</span> the input operation has failed due to some other error</span></span>
+<span class="pl-s1">    })</span>
+<span class="pl-s1">;</span></pre></div>
+<h4>
+<a id="timeout-cancellation" class="anchor" href="#timeout-cancellation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Timeout cancellation</h4>
+<p>As discussed above, the <a href="#timeout"><code>timeout()</code></a> function will <em>cancel</em> the
+underlying operation if it takes <em>too long</em>.
+This means that you can be sure the resulting promise will then be rejected
+with a <a href="#timeoutexception"><code>TimeoutException</code></a>.</p>
+<p>However, what happens to the underlying input <code>$promise</code> is a bit more tricky:
+Once the timer fires, we will try to call
+<a href="https://github.com/reactphp/promise#cancellablepromiseinterfacecancel"><code>$promise-&gt;cancel()</code></a>
+on the input <code>$promise</code> which in turn invokes its <a href="#cancellation-handler">cancellation handler</a>.</p>
+<p>This means that it's actually up the input <code>$promise</code> to handle
+<a href="https://github.com/reactphp/promise#cancellablepromiseinterface">cancellation support</a>.</p>
+<ul>
+<li>
+<p>A common use case involves cleaning up any resources like open network sockets or
+file handles or terminating external processes or timers.</p>
+</li>
+<li>
+<p>If the given input <code>$promise</code> does not support cancellation, then this is a NO-OP.
+This means that while the resulting promise will still be rejected, the underlying
+input <code>$promise</code> may still be pending and can hence continue consuming resources.</p>
+</li>
+</ul>
+<p>See the following chapter for more details on the cancellation handler.</p>
+<h4>
+<a id="cancellation-handler" class="anchor" href="#cancellation-handler" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cancellation handler</h4>
+<p>For example, an implementation for the above operation could look like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">function</span> <span class="pl-en">accessSomeRemoteResource</span>()</span>
+<span class="pl-s1">{</span>
+<span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-c1">Promise</span>(</span>
+<span class="pl-s1">        <span class="pl-k">function</span> (<span class="pl-smi">$resolve</span>, <span class="pl-smi">$reject</span>) <span class="pl-k">use</span> (<span class="pl-k">&amp;</span><span class="pl-smi">$socket</span>) {</span>
+<span class="pl-s1">            <span class="pl-c"><span class="pl-c">//</span> this will be called once the promise is created</span></span>
+<span class="pl-s1">            <span class="pl-c"><span class="pl-c">//</span> a common use case involves opening any resources and eventually resolving</span></span>
+<span class="pl-s1">            <span class="pl-smi">$socket</span> <span class="pl-k">=</span> createSocket();</span>
+<span class="pl-s1">            <span class="pl-smi">$socket</span><span class="pl-k">-&gt;</span>on(<span class="pl-s"><span class="pl-pds">'</span>data<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">$data</span>) <span class="pl-k">use</span> (<span class="pl-smi">$resolve</span>) {</span>
+<span class="pl-s1">                $<span class="pl-smi">resolve</span>(<span class="pl-smi">$data</span>);</span>
+<span class="pl-s1">            });</span>
+<span class="pl-s1">        },</span>
+<span class="pl-s1">        <span class="pl-k">function</span> (<span class="pl-smi">$resolve</span>, <span class="pl-smi">$reject</span>) <span class="pl-k">use</span> (<span class="pl-k">&amp;</span><span class="pl-smi">$socket</span>) {</span>
+<span class="pl-s1">            <span class="pl-c"><span class="pl-c">//</span> this will be called once calling `cancel()` on this promise</span></span>
+<span class="pl-s1">            <span class="pl-c"><span class="pl-c">//</span> a common use case involves cleaning any resources and then rejecting</span></span>
+<span class="pl-s1">            <span class="pl-smi">$socket</span><span class="pl-k">-&gt;</span>close();</span>
+<span class="pl-s1">            $<span class="pl-smi">reject</span>(<span class="pl-k">new</span> <span class="pl-c1">\RuntimeException</span>(<span class="pl-s"><span class="pl-pds">'</span>Operation cancelled<span class="pl-pds">'</span></span>));</span>
+<span class="pl-s1">        }</span>
+<span class="pl-s1">    );</span>
+<span class="pl-s1">}</span></pre></div>
+<p>In this example, calling <code>$promise-&gt;cancel()</code> will invoke the registered cancellation
+handler which then closes the network socket and rejects the <code>Promise</code> instance.</p>
+<p>If no cancellation handler is passed to the <code>Promise</code> constructor, then invoking
+its <code>cancel()</code> method it is effectively a NO-OP.
+This means that it may still be pending and can hence continue consuming resources.</p>
+<p>For more details on the promise cancellation, please refer to the
+<a href="https://github.com/reactphp/promise#cancellablepromiseinterface">Promise documentation</a>.</p>
+<h4>
+<a id="input-cancellation" class="anchor" href="#input-cancellation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Input cancellation</h4>
+<p>Irrespective of the timout handling, you can also explicitly <code>cancel()</code> the
+input <code>$promise</code> at any time.
+This means that the <code>timeout()</code> handling does not affect cancellation of the
+input <code>$promise</code>, as demonstrated in the following example:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$promise</span> <span class="pl-k">=</span> accessSomeRemoteResource();</span>
+<span class="pl-s1"><span class="pl-smi">$timeout</span> <span class="pl-k">=</span> <span class="pl-c1">Timer\</span>timeout(<span class="pl-smi">$promise</span>, <span class="pl-c1">10.0</span>, <span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$promise</span><span class="pl-k">-&gt;</span>cancel();</span></pre></div>
+<p>The registered <a href="#cancellation-handler">cancellation handler</a> is responsible for
+handling the <code>cancel()</code> call:</p>
+<ul>
+<li>A described above, a common use involves resource cleanup and will then <em>reject</em>
+the <code>Promise</code>.
+If the input <code>$promise</code> is being rejected, then the timeout will be aborted
+and the resulting promise will also be rejected.</li>
+<li>If the input <code>$promise</code> is still pending, then the timout will continue
+running until the timer expires.
+The same happens if the input <code>$promise</code> does not register a
+<a href="#cancellation-handler">cancellation handler</a>.</li>
+</ul>
+<h4>
+<a id="output-cancellation" class="anchor" href="#output-cancellation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Output cancellation</h4>
+<p>Similarily, you can also explicitly <code>cancel()</code> the resulting promise like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$promise</span> <span class="pl-k">=</span> accessSomeRemoteResource();</span>
+<span class="pl-s1"><span class="pl-smi">$timeout</span> <span class="pl-k">=</span> <span class="pl-c1">Timer\</span>timeout(<span class="pl-smi">$promise</span>, <span class="pl-c1">10.0</span>, <span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$timeout</span><span class="pl-k">-&gt;</span>cancel();</span></pre></div>
+<p>Note how this looks very similar to the above <a href="#input-cancellation">input cancellation</a>
+example. Accordingly, it also behaves very similar.</p>
+<p>Calling <code>cancel()</code> on the resulting promise will merely try
+to <code>cancel()</code> the input <code>$promise</code>.
+This means that we do not take over responsibility of the outcome and it's
+entirely up to the input <code>$promise</code> to handle cancellation support.</p>
+<p>The registered <a href="#cancellation-handler">cancellation handler</a> is responsible for
+handling the <code>cancel()</code> call:</p>
+<ul>
+<li>As described above, a common use involves resource cleanup and will then <em>reject</em>
+the <code>Promise</code>.
+If the input <code>$promise</code> is being rejected, then the timeout will be aborted
+and the resulting promise will also be rejected.</li>
+<li>If the input <code>$promise</code> is still pending, then the timout will continue
+running until the timer expires.
+The same happens if the input <code>$promise</code> does not register a
+<a href="#cancellation-handler">cancellation handler</a>.</li>
+</ul>
+<p>To re-iterate, note that calling <code>cancel()</code> on the resulting promise will merely
+try to cancel the input <code>$promise</code> only.
+It is then up to the cancellation handler of the input promise to settle the promise.
+If the input promise is still pending when the timeout occurs, then the normal
+<a href="#timeout-cancellation">timeout cancellation</a> handling will trigger, effectively rejecting
+the output promise with a <a href="#timeoutexception"><code>TimeoutException</code></a>.</p>
+<p>This is done for consistency with the <a href="#timeout-cancellation">timeout cancellation</a>
+handling and also because it is assumed this is often used like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$timeout</span> <span class="pl-k">=</span> <span class="pl-c1">Timer\</span>timeout(accessSomeRemoteResource(), <span class="pl-c1">10.0</span>, <span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$timeout</span><span class="pl-k">-&gt;</span>cancel();</span></pre></div>
+<p>As described above, this example works as expected and cleans up any resources
+allocated for the input <code>$promise</code>.</p>
+<p>Note that if the given input <code>$promise</code> does not support cancellation, then this
+is a NO-OP.
+This means that while the resulting promise will still be rejected after the
+timeout, the underlying input <code>$promise</code> may still be pending and can hence
+continue consuming resources.</p>
+<h4>
+<a id="collections" class="anchor" href="#collections" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Collections</h4>
+<p>If you want to wait for multiple promises to resolve, you can use the normal promise primitives like this:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$promises</span> <span class="pl-k">=</span> <span class="pl-c1">array</span>(</span>
+<span class="pl-s1">    accessSomeRemoteResource(),</span>
+<span class="pl-s1">    accessSomeRemoteResource(),</span>
+<span class="pl-s1">    accessSomeRemoteResource()</span>
+<span class="pl-s1">);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$promise</span> <span class="pl-k">=</span> <span class="pl-c1">\React\Promise\</span>all(<span class="pl-smi">$promises</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">Timer\</span>timeout(<span class="pl-smi">$promise</span>, <span class="pl-c1">10</span>, <span class="pl-smi">$loop</span>)<span class="pl-k">-&gt;</span>then(<span class="pl-k">function</span> (<span class="pl-smi">$values</span>) {</span>
+<span class="pl-s1">    <span class="pl-c"><span class="pl-c">//</span> *all* promises resolved</span></span>
+<span class="pl-s1">});</span></pre></div>
+<p>The applies to all promise collection primitives alike, i.e. <code>all()</code>, <code>race()</code>, <code>any()</code>, <code>some()</code> etc.</p>
+<p>For more details on the promise primitives, please refer to the
+<a href="https://github.com/reactphp/promise#functions">Promise documentation</a>.</p>
+<h3>
+<a id="resolve" class="anchor" href="#resolve" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>resolve()</h3>
+<p>The <code>resolve($time, LoopInterface $loop)</code> function can be used to create a new Promise that
+resolves in <code>$time</code> seconds with the <code>$time</code> as the fulfillment value.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">Timer\</span>resolve(<span class="pl-c1">1.5</span>, <span class="pl-smi">$loop</span>)<span class="pl-k">-&gt;</span>then(<span class="pl-k">function</span> (<span class="pl-smi">$time</span>) {</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>Thanks for waiting <span class="pl-pds">'</span></span> <span class="pl-k">.</span> <span class="pl-smi">$time</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span> seconds<span class="pl-pds">'</span></span> <span class="pl-k">.</span> <span class="pl-c1">PHP_EOL</span>;</span>
+<span class="pl-s1">});</span></pre></div>
+<p>Internally, the given <code>$time</code> value will be used to start a timer that will
+resolve the promise once it triggers.
+This implies that if you pass a really small (or negative) value, it will still
+start a timer and will thus trigger at the earliest possible time in the future.</p>
+<h4>
+<a id="resolve-cancellation" class="anchor" href="#resolve-cancellation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Resolve cancellation</h4>
+<p>You can explicitly <code>cancel()</code> the resulting timer promise at any time:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$timer</span> <span class="pl-k">=</span> <span class="pl-c1">Timer\</span>resolve(<span class="pl-c1">2.0</span>, <span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$timer</span><span class="pl-k">-&gt;</span>cancel();</span></pre></div>
+<p>This will abort the timer and <em>reject</em> with a <code>RuntimeException</code>.</p>
+<h3>
+<a id="reject" class="anchor" href="#reject" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>reject()</h3>
+<p>The <code>reject($time, LoopInterface $loop)</code> function can be used to create a new Promise
+which rejects in <code>$time</code> seconds with a <code>TimeoutException</code>.</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">Timer\</span>reject(<span class="pl-c1">2.0</span>, <span class="pl-smi">$loop</span>)<span class="pl-k">-&gt;</span>then(<span class="pl-c1">null</span>, <span class="pl-k">function</span> (<span class="pl-c1">TimeoutException</span> <span class="pl-smi">$e</span>) {</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>Rejected after <span class="pl-pds">'</span></span> <span class="pl-k">.</span> <span class="pl-smi">$e</span><span class="pl-k">-&gt;</span>getTimeout() <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span> seconds <span class="pl-pds">'</span></span> <span class="pl-k">.</span> <span class="pl-c1">PHP_EOL</span>;</span>
+<span class="pl-s1">});</span></pre></div>
+<p>Internally, the given <code>$time</code> value will be used to start a timer that will
+reject the promise once it triggers.
+This implies that if you pass a really small (or negative) value, it will still
+start a timer and will thus trigger at the earliest possible time in the future.</p>
+<p>This function complements the <a href="#resolve"><code>resolve()</code></a> function
+and can be used as a basic building block for higher-level promise consumers.</p>
+<h4>
+<a id="reject-cancellation" class="anchor" href="#reject-cancellation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Reject cancellation</h4>
+<p>You can explicitly <code>cancel()</code> the resulting timer promise at any time:</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$timer</span> <span class="pl-k">=</span> <span class="pl-c1">Timer\</span>reject(<span class="pl-c1">2.0</span>, <span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$timer</span><span class="pl-k">-&gt;</span>cancel();</span></pre></div>
+<p>This will abort the timer and <em>reject</em> with a <code>RuntimeException</code>.</p>
+<h3>
+<a id="timeoutexception" class="anchor" href="#timeoutexception" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TimeoutException</h3>
+<p>The <code>TimeoutException</code> extends PHP's built-in <code>RuntimeException</code>.</p>
+<p>The <code>getTimeout()</code> method can be used to get the timeout value in seconds.</p>
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+<p>The recommended way to install this library is <a href="http://getcomposer.org">through Composer</a>.
+<a href="http://getcomposer.org/doc/00-intro.md">New to Composer?</a></p>
+<p>This will install the latest supported version:</p>
+<div class="highlight highlight-source-shell"><pre>$ composer require react/promise-timer:^1.2</pre></div>
+<p>More details and upgrade guides can be found in the <a href="changelog.html">CHANGELOG</a>.</p>
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h2>
+<p>To run the test suite, you first need to clone this repo and then install all
+dependencies <a href="http://getcomposer.org">through Composer</a>:</p>
+<div class="highlight highlight-source-shell"><pre>$ composer install</pre></div>
+<p>To run the test suite, go to the project root and run:</p>
+<div class="highlight highlight-source-shell"><pre>$ php vendor/bin/phpunit</pre></div>
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+<p>MIT</p>
+            </main>
+            <aside class="sidebar" role="complementary">
+                <section class="component-info">
+                    <h2 class="component-info__title">
+                        <a href="../../promise-timer/">PromiseTimer</a>
+
+                        <div class="version-selector">
+                            <button class="version-selector__button" aria-expanded="false" aria-controls="component-version-selector" data-version-selector-toggle>
+                                master
+
+                                <i class="icon-chevron-down" aria-hidden="true"></i>
+                                <i class="icon-chevron-up" aria-hidden="true"></i>
+                            </button>
+
+                            <div id="component-version-selector" class="version-selector__panel" aria-hidden="true">
+                                <ul class="version-selector__list">
+                                                                    <li>
+                                        <a href="../../promise-timer/v1.2.0/" class="version-selector__version version-selector__version--latest">
+                                            v1.2.0
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../promise-timer/v1.1.1/" class="version-selector__version">
+                                            v1.1.1
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../promise-timer/v1.1.0/" class="version-selector__version">
+                                            v1.1.0
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../promise-timer/v1.0.0/" class="version-selector__version">
+                                            v1.0.0
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../../promise-timer/master/" class="version-selector__version version-selector__version--dev">
+                                            master
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </h2>
+
+                    <ul class="component-info__info">
+                        <li>
+                            <a href="https://github.com/reactphp/promise-timer">
+                                <i class="icon-github" aria-hidden="true"></i> reactphp/promise-timer
+                            </a>
+                        </li>
+                        <li>
+                            <a href="license.html">
+                                <i class="icon-law" aria-hidden="true"></i> MIT License
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h3 class="component-info__subtitle">Contributors</h3>
+
+                    <ul class="component-info__contributors">
+                                            <li>
+                            <a href="https://github.com/clue">
+                                <img src="https://avatars1.githubusercontent.com/u/776829?v=4&amp;s=40" alt="clue" title="clue (35 contributions)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/WyriHaximus">
+                                <img src="https://avatars2.githubusercontent.com/u/147145?v=4&amp;s=40" alt="WyriHaximus" title="WyriHaximus (2 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/cboden">
+                                <img src="https://avatars0.githubusercontent.com/u/617694?v=4&amp;s=40" alt="cboden" title="cboden (1 contribution)">
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://github.com/jsor">
+                                <img src="https://avatars2.githubusercontent.com/u/55574?v=4&amp;s=40" alt="jsor" title="jsor (1 contribution)">
+                            </a>
+                        </li>
+                                        </ul>
+
+                    <h3 class="component-info__subtitle">Activity</h3>
+
+                    <div class="component-info__participation">
+                        <svg width="320" height="42">
+    <defs>
+        <linearGradient id="reactphp-promise-timer-participation-gradient" x1="0" x2="0" y1="1" y2="0">
+            <stop offset="10%" stop-color="#40a977"></stop>
+            <stop offset="90%" stop-color="#ba3525"></stop>
+        </linearGradient>
+        <mask id="reactphp-promise-timer-participation-sparkline" x="0" y="0" width="320" height="40" >
+            <polyline 
+                transform="translate(0, 40) scale(1,-1)"
+                points="0,1 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,1 54,1 60,1 66,1 72,5 78,2 84,1 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,1 138,1 144,1 150,1 156,6 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,2 234,1 240,1 246,1 252,1 258,1 264,8 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                fill="transparent" 
+                stroke="#40a977" 
+                stroke-width="2"
+            >
+        </mask>
+    </defs>
+
+    <g transform="translate(0, -1.5)">
+        <rect 
+            x="0" 
+            y="-2" 
+            width="320" 
+            height="42"
+            style="stroke:none;fill:url(#reactphp-promise-timer-participation-gradient);mask:url(#reactphp-promise-timer-participation-sparkline)"
+        ></rect>
+    </g>
+</svg>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+
+            <footer class="footer">
+            <div class="wrapper">
+                <ul class="links">
+                    <li><a href="https://github.com/reactphp"><i class="icon-github" aria-hidden="true"></i> GitHub</a></li>
+                    <li><a href="https://twitter.com/reactphp"><i class="icon-twitter" aria-hidden="true"></i> Twitter</a></li>
+                    <li><a href="irc://irc.freenode.net/reactphp"><i class="icon-hash" aria-hidden="true"></i> IRC</a></li>
+                </ul>
+            </div>
+        </footer>
+    
+    <script async src="../../assets/main.7f00c7261f81f4d9246b.js"></script>
+    </body>
+</html>
