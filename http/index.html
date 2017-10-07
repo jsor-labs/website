@@ -246,7 +246,7 @@ a respective <a href="#response">response</a> object in return.</p>
 instance of <code>React\Socket\ServerInterface</code> which emits underlying streaming
 connections in order to then parse incoming data as HTTP.</p>
 <p>You can attach this to a
-<a href="../socket/#server"><code>React\Socket\Server</code></a>
+<a href="https://github.com/reactphp/socket#server"><code>React\Socket\Server</code></a>
 in order to start a plaintext HTTP server like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Server</span>(<span class="pl-smi">$handler</span>);</span>
 <span class="pl-s1"></span>
@@ -254,7 +254,7 @@ in order to start a plaintext HTTP server like this:</p>
 <span class="pl-s1"><span class="pl-smi">$server</span><span class="pl-k">-&gt;</span>listen(<span class="pl-smi">$socket</span>);</span></pre></div>
 <p>See also the <code>listen()</code> method and the <a href="https://github.com/reactphp/http/blob/v0.7.4/examples">first example</a> for more details.</p>
 <p>Similarly, you can also attach this to a
-<a href="../socket/#secureserver"><code>React\Socket\SecureServer</code></a>
+<a href="https://github.com/reactphp/socket#secureserver"><code>React\Socket\SecureServer</code></a>
 in order to start a secure HTTPS server like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Server</span>(<span class="pl-smi">$handler</span>);</span>
 <span class="pl-s1"></span>
@@ -409,7 +409,7 @@ such as accepting a huge file upload or possibly unlimited request body stream.<
 <p>The <code>getBody()</code> method can be used to access the request body stream.
 This method returns a stream instance that implements both the
 <a href="http://www.php-fig.org/psr/psr-7/#psrhttpmessagestreaminterface">PSR-7 StreamInterface</a>
-and the <a href="../stream/#readablestreaminterface">ReactPHP ReadableStreamInterface</a>.
+and the <a href="https://github.com/reactphp/stream#readablestreaminterface">ReactPHP ReadableStreamInterface</a>.
 However, most of the <code>PSR-7 StreamInterface</code> methods have been
 designed under the assumption of being in control of the request body.
 Given that this does not apply to this server, the following
@@ -461,7 +461,7 @@ The server will automatically <code>pause()</code> the connection instead of clo
 A response message can still be sent (unless the connection is already closed).</p>
 <p>A <code>close</code> event will be emitted after an <code>error</code> or <code>end</code> event.</p>
 <p>For more details about the request body stream, check out the documentation of
-<a href="../stream/#readablestreaminterface">ReactPHP ReadableStreamInterface</a>.</p>
+<a href="https://github.com/reactphp/stream#readablestreaminterface">ReactPHP ReadableStreamInterface</a>.</p>
 <p>The <code>getSize(): ?int</code> method can be used if you only want to know the request
 body size.
 This method returns the complete size of the request body as defined by the
@@ -555,7 +555,7 @@ which will be delivered to the client.
 This function MUST return an instance implementing
 <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-7-http-message.md#33-psrhttpmessageresponseinterface">PSR-7 ResponseInterface</a>
 object or a
-<a href="../promise/#reactpromise">ReactPHP Promise</a>
+<a href="https://github.com/reactphp/promise#reactpromise">ReactPHP Promise</a>
 which will resolve a <code>PSR-7 ResponseInterface</code> object.</p>
 <p>You will find a <code>Response</code> class
 which implements the <code>PSR-7 ResponseInterface</code> in this project.
@@ -575,7 +575,7 @@ Using a database, the file system or long calculations
 (in fact every action that will take &gt;=1ms) to create your
 response, will slow down the server.
 To prevent this you SHOULD use a
-<a href="../promise/#reactpromise">ReactPHP Promise</a>.
+<a href="https://github.com/reactphp/promise#reactpromise">ReactPHP Promise</a>.
 This example shows how such a long-term action could look like:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Server</span>(<span class="pl-k">function</span> (<span class="pl-c1">ServerRequestInterface</span> <span class="pl-smi">$request</span>) <span class="pl-k">use</span> (<span class="pl-smi">$loop</span>) {</span>
 <span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-c1">Promise</span>(<span class="pl-k">function</span> (<span class="pl-smi">$resolve</span>, <span class="pl-smi">$reject</span>) <span class="pl-k">use</span> (<span class="pl-smi">$request</span>, <span class="pl-smi">$loop</span>) {</span>
@@ -600,7 +600,7 @@ The promise cancellation handler can be used to clean up any pending resources
 allocated in this case (if applicable).
 If a promise is resolved after the client closes, it will simply be ignored.</p>
 <p>The <code>Response</code> class in this project supports to add an instance which implements the
-<a href="../stream/#readablestreaminterface">ReactPHP ReadableStreamInterface</a>
+<a href="https://github.com/reactphp/stream#readablestreaminterface">ReactPHP ReadableStreamInterface</a>
 for the response body.
 So you are able stream data directly into the response body.
 Note that other implementations of the <code>PSR-7 ResponseInterface</code> likely
@@ -673,7 +673,7 @@ to the message if the same request would have used an (unconditional) <code>GET<
 <blockquote>
 <p>Note that special care has to be taken if you use a body stream instance that
 implements ReactPHP's
-<a href="../stream/#duplexstreaminterface"><code>DuplexStreamInterface</code></a>
+<a href="https://github.com/reactphp/stream#duplexstreaminterface"><code>DuplexStreamInterface</code></a>
 (such as the <code>ThroughStream</code> in the above example).</p>
 <p>For <em>most</em> cases, this will simply only consume its readable side and forward
 (send) any data that is emitted by the stream, thus entirely ignoring the
@@ -776,7 +776,7 @@ dependencies <a href="http://getcomposer.org">through Composer</a>:</p>
 
                                     <ul class="version-selector__list">
                                         <li>
-                                            <a href="#readme" class="version-selector__version version-selector__version--dev">
+                                            <a href="https://github.com/reactphp/http#readme" class="version-selector__version version-selector__version--dev">
                                                 master
                                             </a>
                                         </li>
@@ -882,7 +882,7 @@ dependencies <a href="http://getcomposer.org">through Composer</a>:</p>
 
                         <ul class="component-info__info">
                             <li>
-                                <a href="">
+                                <a href="https://github.com/reactphp/http">
                                     <i class="icon-github" aria-hidden="true"></i> Repository
                                 </a>
                             </li>
@@ -1009,7 +1009,7 @@ dependencies <a href="http://getcomposer.org">through Composer</a>:</p>
         <mask id="reactphp-http-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,2 6,1 12,1 18,1 24,3 30,1 36,1 42,2 48,1 54,1 60,2 66,1 72,1 78,1 84,1 90,1 96,1 102,24 108,38 114,30 120,8 126,21 132,5 138,4 144,16 150,10 156,6 162,7 168,14 174,3 180,4 186,8 192,9 198,10 204,3 210,2 216,5 222,4 228,5 234,1 240,7 246,1 252,3 258,4 264,5 270,1 276,1 282,3 288,9 294,5 300,3 306,5" 
+                points="0,2 6,1 12,1 18,1 24,3 30,1 36,1 42,2 48,1 54,2 60,1 66,1 72,1 78,1 84,1 90,1 96,1 102,32 108,37 114,23 120,15 126,15 132,4 138,8 144,15 150,11 156,3 162,13 168,7 174,3 180,6 186,6 192,11 198,8 204,3 210,4 216,4 222,3 228,5 234,5 240,3 246,2 252,4 258,2 264,5 270,1 276,1 282,5 288,7 294,5 300,3 306,5" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
