@@ -274,7 +274,7 @@ resolve or reject immediately without starting a timer at all.</p>
 <span class="pl-s1">        }</span>
 <span class="pl-s1">    }</span>
 <span class="pl-s1">);</span></pre></div>
-<p>Or if you're using <a href="https://github.com/reactphp/promise">react/promise v2.2.0</a> or up:</p>
+<p>Or if you're using <a href="../promise/">react/promise v2.2.0</a> or up:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">Timer\</span>timeout(<span class="pl-smi">$promise</span>, <span class="pl-c1">10.0</span>, <span class="pl-smi">$loop</span>)</span>
 <span class="pl-s1">    <span class="pl-k">-&gt;</span>then(<span class="pl-k">function</span> (<span class="pl-smi">$value</span>) {</span>
 <span class="pl-s1">        <span class="pl-c"><span class="pl-c">//</span> the operation finished within 10.0 seconds</span></span>
@@ -294,10 +294,10 @@ This means that you can be sure the resulting promise will then be rejected
 with a <a href="#timeoutexception"><code>TimeoutException</code></a>.</p>
 <p>However, what happens to the underlying input <code>$promise</code> is a bit more tricky:
 Once the timer fires, we will try to call
-<a href="https://github.com/reactphp/promise#cancellablepromiseinterfacecancel"><code>$promise-&gt;cancel()</code></a>
+<a href="../promise/#cancellablepromiseinterfacecancel"><code>$promise-&gt;cancel()</code></a>
 on the input <code>$promise</code> which in turn invokes its <a href="#cancellation-handler">cancellation handler</a>.</p>
 <p>This means that it's actually up the input <code>$promise</code> to handle
-<a href="https://github.com/reactphp/promise#cancellablepromiseinterface">cancellation support</a>.</p>
+<a href="../promise/#cancellablepromiseinterface">cancellation support</a>.</p>
 <ul>
 <li>
 <p>A common use case involves cleaning up any resources like open network sockets or
@@ -338,7 +338,7 @@ handler which then closes the network socket and rejects the <code>Promise</code
 its <code>cancel()</code> method it is effectively a NO-OP.
 This means that it may still be pending and can hence continue consuming resources.</p>
 <p>For more details on the promise cancellation, please refer to the
-<a href="https://github.com/reactphp/promise#cancellablepromiseinterface">Promise documentation</a>.</p>
+<a href="../promise/#cancellablepromiseinterface">Promise documentation</a>.</p>
 <h4>
 <a id="input-cancellation" class="anchor" href="#input-cancellation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Input cancellation</h4>
 <p>Irrespective of the timout handling, you can also explicitly <code>cancel()</code> the
@@ -420,7 +420,7 @@ continue consuming resources.</p>
 <span class="pl-s1">});</span></pre></div>
 <p>The applies to all promise collection primitives alike, i.e. <code>all()</code>, <code>race()</code>, <code>any()</code>, <code>some()</code> etc.</p>
 <p>For more details on the promise primitives, please refer to the
-<a href="https://github.com/reactphp/promise#functions">Promise documentation</a>.</p>
+<a href="../promise/#functions">Promise documentation</a>.</p>
 <h3>
 <a id="resolve" class="anchor" href="#resolve" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>resolve()</h3>
 <p>The <code>resolve($time, LoopInterface $loop)</code> function can be used to create a new Promise that

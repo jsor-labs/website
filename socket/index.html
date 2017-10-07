@@ -195,8 +195,8 @@ Socket - ReactPHP</title>
 <p>Async, streaming plaintext TCP/IP and secure TLS socket server and client
 connections for <a href="https://reactphp.org/">ReactPHP</a></p>
 <p>The socket library provides re-usable interfaces for a socket-layer
-server and client based on the <a href="https://github.com/reactphp/event-loop"><code>EventLoop</code></a>
-and <a href="https://github.com/reactphp/stream"><code>Stream</code></a> components.
+server and client based on the <a href="../event-loop/"><code>EventLoop</code></a>
+and <a href="../stream/"><code>Stream</code></a> components.
 Its server component allows you to build networking servers that accept incoming
 connections from networking clients (such as an HTTP server).
 Its client component allows you to build networking clients that establish
@@ -312,14 +312,14 @@ send it a string:</p>
 connection, such as a normal TCP/IP connection.</p>
 <p>An incoming or outgoing connection is a duplex stream (both readable and
 writable) that implements React's
-<a href="https://github.com/reactphp/stream#duplexstreaminterface"><code>DuplexStreamInterface</code></a>.
+<a href="../stream/#duplexstreaminterface"><code>DuplexStreamInterface</code></a>.
 It contains additional properties for the local and remote address (client IP)
 where this connection has been established to/from.</p>
 <p>Most commonly, instances implementing this <code>ConnectionInterface</code> are emitted
 by all classes implementing the <a href="#serverinterface"><code>ServerInterface</code></a> and
 used by all classes implementing the <a href="#connectorinterface"><code>ConnectorInterface</code></a>.</p>
 <p>Because the <code>ConnectionInterface</code> implements the underlying
-<a href="https://github.com/reactphp/stream#duplexstreaminterface"><code>DuplexStreamInterface</code></a>
+<a href="../stream/#duplexstreaminterface"><code>DuplexStreamInterface</code></a>
 you can use any of its events and methods as usual:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$connection</span><span class="pl-k">-&gt;</span>on(<span class="pl-s"><span class="pl-pds">'</span>data<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">$chunk</span>) {</span>
 <span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-smi">$chunk</span>;</span>
@@ -342,7 +342,7 @@ you can use any of its events and methods as usual:</p>
 <span class="pl-s1"><span class="pl-smi">$connection</span><span class="pl-k">-&gt;</span>close();</span>
 <span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> …</span></span></pre></div>
 <p>For more details, see the
-<a href="https://github.com/reactphp/stream#duplexstreaminterface"><code>DuplexStreamInterface</code></a>.</p>
+<a href="../stream/#duplexstreaminterface"><code>DuplexStreamInterface</code></a>.</p>
 <h4>
 <a id="getremoteaddress" class="anchor" href="#getremoteaddress" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>getRemoteAddress()</h4>
 <p>The <code>getRemoteAddress(): ?string</code> method returns the full remote address
@@ -782,7 +782,7 @@ swap this implementation against any other implementation of this interface.</p>
 <a id="connect" class="anchor" href="#connect" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>connect()</h4>
 <p>The <code>connect(string $uri): PromiseInterface&lt;ConnectionInterface, Exception&gt;</code> method
 can be used to create a streaming connection to the given remote address.</p>
-<p>It returns a <a href="https://github.com/reactphp/promise">Promise</a> which either
+<p>It returns a <a href="../promise/">Promise</a> which either
 fulfills with a stream implementing <a href="#connectioninterface"><code>ConnectionInterface</code></a>
 on success or rejects with an <code>Exception</code> if the connection is not successful:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$connector</span><span class="pl-k">-&gt;</span>connect(<span class="pl-s"><span class="pl-pds">'</span>google.com:443<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>then(</span>

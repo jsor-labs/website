@@ -194,11 +194,11 @@ Child Process Component - ReactPHP</title>
 <p><a href="http://travis-ci.org/reactphp/child-process"><img src="https://camo.githubusercontent.com/51af78fab751610be206ccc4380c374bbef60a10/68747470733a2f2f7365637572652e7472617669732d63692e6f72672f72656163747068702f6368696c642d70726f636573732e706e673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://secure.travis-ci.org/reactphp/child-process.png?branch=master" style="max-width:100%;"></a> <a href="https://codeclimate.com/github/reactphp/child-process"><img src="https://camo.githubusercontent.com/a3daf5d25575d11e670e4afa34a7a3c69d5ceb2e/68747470733a2f2f636f6465636c696d6174652e636f6d2f6769746875622f72656163747068702f6368696c642d70726f636573732f6261646765732f6770612e737667" alt="Code Climate" data-canonical-src="https://codeclimate.com/github/reactphp/child-process/badges/gpa.svg" style="max-width:100%;"></a></p>
 <p>Library for executing child processes.</p>
 <p>This library integrates <a href="http://php.net/manual/en/book.exec.php">Program Execution</a>
-with the <a href="https://github.com/reactphp/event-loop">EventLoop</a>.
+with the <a href="../event-loop/">EventLoop</a>.
 Child processes launched may be signaled and will emit an
 <code>exit</code> event upon termination.
 Additionally, process I/O streams (i.e. STDIN, STDOUT, STDERR) are exposed
-as <a href="https://github.com/reactphp/stream">Streams</a>.</p>
+as <a href="../stream/">Streams</a>.</p>
 <p><strong>Table of contents</strong></p>
 <ul>
 <li><a href="#quickstart-example">Quickstart example</a></li>
@@ -247,8 +247,8 @@ the streams will become closed but not unset.</p>
 <li><code>$stderr</code></li>
 </ul>
 <p>Each of these implement the underlying
-<a href="https://github.com/reactphp/stream#readablestreaminterface"><code>ReadableStreamInterface</code></a> or
-<a href="https://github.com/reactphp/stream#writablestreaminterface"><code>WritableStreamInterface</code></a> and
+<a href="../stream/#readablestreaminterface"><code>ReadableStreamInterface</code></a> or
+<a href="../stream/#writablestreaminterface"><code>WritableStreamInterface</code></a> and
 you can use any of their events and methods as usual:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span><span class="pl-smi">stdout</span><span class="pl-k">-&gt;</span>on(<span class="pl-s"><span class="pl-pds">'</span>data<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">$chunk</span>) {</span>
 <span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-smi">$chunk</span>;</span>
@@ -270,8 +270,8 @@ you can use any of their events and methods as usual:</p>
 <span class="pl-s1"><span class="pl-smi">$process</span><span class="pl-k">-&gt;</span><span class="pl-smi">stdin</span><span class="pl-k">-&gt;</span>end(<span class="pl-smi">$data</span> <span class="pl-k">=</span> <span class="pl-c1">null</span>);</span>
 <span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> …</span></span></pre></div>
 <p>For more details, see the
-<a href="https://github.com/reactphp/stream#readablestreaminterface"><code>ReadableStreamInterface</code></a> and
-<a href="https://github.com/reactphp/stream#writablestreaminterface"><code>WritableStreamInterface</code></a>.</p>
+<a href="../stream/#readablestreaminterface"><code>ReadableStreamInterface</code></a> and
+<a href="../stream/#writablestreaminterface"><code>WritableStreamInterface</code></a>.</p>
 <h3>
 <a id="command" class="anchor" href="#command" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Command</h3>
 <p>The <code>Process</code> class allows you to pass any kind of command line string:</p>
