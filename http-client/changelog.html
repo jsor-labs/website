@@ -5,8 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>HTTPClient: 
-Changelog - ReactPHP</title>
+        <title>HTTPClient: Changelog - ReactPHP</title>
 
         <meta name="description" content="Event-driven, streaming HTTP client for ReactPHP.">
 
@@ -204,71 +203,175 @@ Changelog - ReactPHP</title>
             <div class="grid grid--wrap grid--gutter">
                 <main class="main">
                     <h1>
-<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Changelog</h1>
-<h2>
-<a id="059-2018-04-10" class="anchor" href="#059-2018-04-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.9 (2018-04-10)</h2>
-<ul>
+        HTTPClient Changelog
+    </h1>
+
+    <ul class="toc">
+            <li><a href="#2018" title="Jump to year 2018 (3 releases)">2018</a></li>
+            <li><a href="#2017" title="Jump to year 2017 (9 releases)">2017</a></li>
+            <li><a href="#2016" title="Jump to year 2016 (8 releases)">2016</a></li>
+            <li><a href="#2015" title="Jump to year 2015 (7 releases)">2015</a></li>
+            <li><a href="#2014" title="Jump to year 2014 (2 releases)">2014</a></li>
+            <li><a href="#2013" title="Jump to year 2013 (2 releases)">2013</a></li>
+            <li><a href="#2012" title="Jump to year 2012 (4 releases)">2012</a></li>
+        </ul>
+
+    <h2>
+        <a id="2018" class="anchor" href="#2018" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2018
+    </h2>
+
+    
+            <h3>
+        <a id="059-2018-04-10" class="anchor" href="#059-2018-04-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.5.9
+
+        <small>
+            (2018-04-10)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.5.9" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature: Support legacy HTTP servers that use only <code>LF</code> instead of <code>CRLF</code>.
-(#130 by @clue)</p>
+<p>Feature: Support legacy HTTP servers that use only <code>LF</code> instead of <code>CRLF</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="312210317" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/130" href="https://github.com/reactphp/http-client/pull/130">#130</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Improve test suite by applying maximum test timeouts for integration tests.
-(#131 by @clue)</p>
-</li>
-</ul>
-<h2>
-<a id="058-2018-02-09" class="anchor" href="#058-2018-02-09" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.8 (2018-02-09)</h2>
-<ul>
-<li>
-<p>Support legacy PHP 5.3 through PHP 7.2 and HHVM
-(#126 and #127 by @clue)</p>
-</li>
-<li>
-<p>Improve backwards compatibility with Promise v1 and
-use RingCentral to improve interoperability with react/http.
-(#124 and #125 by @clue)</p>
-</li>
-</ul>
-<h2>
-<a id="057-2018-02-08" class="anchor" href="#057-2018-02-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.7 (2018-02-08)</h2>
-<ul>
-<li>
-<p>Fix: Ignore excessive whitespace in chunk header for <code>Transfer-Encoding: chunked</code>
-(#123 by @DangerLifter and @clue)</p>
-</li>
-<li>
-<p>Fix: Ignore invalid incoming <code>Transfer-Encoding</code> response header
-(#122 by @clue)</p>
-</li>
-<li>
-<p>Improve documentation for <code>Client</code> (and advanced <code>Connector</code>)
-(#111 by @jsor and #121 by @clue)</p>
-</li>
-<li>
-<p>Improve test suite by adding support for PHPUnit 6
-(#112 by @carusogabriel)</p>
+<p>Improve test suite by applying maximum test timeouts for integration tests.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="312426580" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/131" href="https://github.com/reactphp/http-client/pull/131">#131</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
-<h2>
-<a id="056-2017-09-17" class="anchor" href="#056-2017-09-17" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.6 (2017-09-17)</h2>
-<ul>
-<li>Feature: Update Socket component to support HTTP over Unix domain sockets (UDS)
-(#110 by @clue)</li>
-</ul>
-<h2>
-<a id="055-2017-09-10" class="anchor" href="#055-2017-09-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.5 (2017-09-10)</h2>
-<ul>
-<li>Fix: Update Socket component to work around sending secure HTTPS requests with PHP &lt; 7.1.4
-(#109 by @clue)</li>
-</ul>
-<h2>
-<a id="054-2017-08-25" class="anchor" href="#054-2017-08-25" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.4 (2017-08-25)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="058-2018-02-09" class="anchor" href="#058-2018-02-09" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.5.8
+
+        <small>
+            (2018-02-09)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.5.8" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature: Update Socket dependency to support hosts file on all platforms
-(#108 by @clue)</p>
-<p>This means that HTTP requests to hosts such as <code>localhost</code> will now work as
+<p>Support legacy PHP 5.3 through PHP 7.2 and HHVM<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="295501645" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/126" href="https://github.com/reactphp/http-client/pull/126">#126</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="295633906" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/127" href="https://github.com/reactphp/http-client/pull/127">#127</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Improve backwards compatibility with Promise v1 and<br>
+use RingCentral to improve interoperability with react/http.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="295478982" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/124" href="https://github.com/reactphp/http-client/pull/124">#124</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="295482222" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/125" href="https://github.com/reactphp/http-client/pull/125">#125</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="057-2018-02-08" class="anchor" href="#057-2018-02-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.5.7
+
+        <small>
+            (2018-02-08)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.5.7" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Fix: Ignore excessive whitespace in chunk header for <code>Transfer-Encoding: chunked</code><br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="295225835" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/123" href="https://github.com/reactphp/http-client/pull/123">#123</a> by <a class="user-mention" data-hovercard-user-id="4678032" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/DangerLifter">@DangerLifter</a> and <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Fix: Ignore invalid incoming <code>Transfer-Encoding</code> response header<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="294932198" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/122" href="https://github.com/reactphp/http-client/pull/122">#122</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Improve documentation for <code>Client</code> (and advanced <code>Connector</code>)<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="261999749" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/111" href="https://github.com/reactphp/http-client/pull/111">#111</a> by <a class="user-mention" data-hovercard-user-id="55574" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="294503625" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/121" href="https://github.com/reactphp/http-client/pull/121">#121</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Improve test suite by adding support for PHPUnit 6<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="274009027" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/112" href="https://github.com/reactphp/http-client/pull/112">#112</a> by <a class="user-mention" data-hovercard-user-id="16328050" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/carusogabriel">@carusogabriel</a>)</p>
+</li>
+</ul>
+
+    <hr>
+        <h2>
+        <a id="2017" class="anchor" href="#2017" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2017
+    </h2>
+
+    
+            <h3>
+        <a id="056-2017-09-17" class="anchor" href="#056-2017-09-17" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.5.6
+
+        <small>
+            (2017-09-17)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.5.6" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Update Socket component to support HTTP over Unix domain sockets (UDS)<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="258055894" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/110" href="https://github.com/reactphp/http-client/pull/110">#110</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="055-2017-09-10" class="anchor" href="#055-2017-09-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.5.5
+
+        <small>
+            (2017-09-10)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.5.5" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Fix: Update Socket component to work around sending secure HTTPS requests with PHP &lt; 7.1.4<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="256304682" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/109" href="https://github.com/reactphp/http-client/pull/109">#109</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="054-2017-08-25" class="anchor" href="#054-2017-08-25" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.5.4
+
+        <small>
+            (2017-08-25)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.5.4" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Update Socket dependency to support hosts file on all platforms<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="252882498" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/108" href="https://github.com/reactphp/http-client/pull/108">#108</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>This means that HTTP requests to hosts such as <code>localhost</code> will now work as<br>
 expected across all platforms with no changes required:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$client</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Client</span>(<span class="pl-smi">$loop</span>);</span>
 <span class="pl-s1"><span class="pl-smi">$request</span> <span class="pl-k">=</span> <span class="pl-smi">$client</span><span class="pl-k">-&gt;</span>request(<span class="pl-s"><span class="pl-pds">'</span>GET<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>http://localhost/<span class="pl-pds">'</span></span>);</span>
@@ -278,54 +381,110 @@ expected across all platforms with no changes required:</p>
 <span class="pl-s1"><span class="pl-smi">$request</span><span class="pl-k">-&gt;</span>end();</span></pre></div>
 </li>
 </ul>
-<h2>
-<a id="053-2017-08-16" class="anchor" href="#053-2017-08-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.3 (2017-08-16)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="053-2017-08-16" class="anchor" href="#053-2017-08-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.5.3
+
+        <small>
+            (2017-08-16)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.5.3" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature: Target evenement 3.0 a long side 2.0
-(#106 by @WyriHaximus)</p>
+<p>Feature: Target evenement 3.0 a long side 2.0<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="250408805" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/106" href="https://github.com/reactphp/http-client/pull/106">#106</a> by <a class="user-mention" data-hovercard-user-id="147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
 </li>
 <li>
-<p>Improve test suite by locking Travis distro so new defaults will not break the build
-(#105 by @clue)</p>
-</li>
-</ul>
-<h2>
-<a id="052-2017-06-27" class="anchor" href="#052-2017-06-27" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.2 (2017-06-27)</h2>
-<ul>
-<li>
-<p>Feature: Support passing arrays for request header values
-(#100 by @clue)</p>
-</li>
-<li>
-<p>Fix: Fix merging default headers if overwritten with custom case headers
-(#101 by @clue)</p>
-</li>
-</ul>
-<h2>
-<a id="051-2017-06-18" class="anchor" href="#051-2017-06-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.1 (2017-06-18)</h2>
-<ul>
-<li>
-<p>Feature: Emit <code>error</code> event if request URL is invalid
-(#99 by @clue)</p>
-</li>
-<li>
-<p>Feature: Support OPTIONS method with asterisk-form (<code>OPTIONS * HTTP/1.1</code>)
-(#98 by @clue)</p>
-</li>
-<li>
-<p>Improve documentation for event semantics
-(#97 by @clue)</p>
+<p>Improve test suite by locking Travis distro so new defaults will not break the build<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="248355281" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/105" href="https://github.com/reactphp/http-client/pull/105">#105</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
-<h2>
-<a id="050-2017-05-22" class="anchor" href="#050-2017-05-22" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.0 (2017-05-22)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="052-2017-06-27" class="anchor" href="#052-2017-06-27" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.5.2
+
+        <small>
+            (2017-06-27)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.5.2" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature / BC break: Replace <code>Factory</code> with simple <code>Client</code> constructor
-(#85 by @clue)</p>
-<p>The <code>Client</code> now accepts a required <code>LoopInterface</code> and an optional
-<code>ConnectorInterface</code>. It will now create a default <code>Connector</code> if none
+<p>Feature: Support passing arrays for request header values<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="238563555" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/100" href="https://github.com/reactphp/http-client/pull/100">#100</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Fix: Fix merging default headers if overwritten with custom case headers<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="238607661" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/101" href="https://github.com/reactphp/http-client/pull/101">#101</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="051-2017-06-18" class="anchor" href="#051-2017-06-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.5.1
+
+        <small>
+            (2017-06-18)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.5.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Emit <code>error</code> event if request URL is invalid<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="236451406" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/99" href="https://github.com/reactphp/http-client/pull/99">#99</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Feature: Support OPTIONS method with asterisk-form (<code>OPTIONS * HTTP/1.1</code>)<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="236445567" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/98" href="https://github.com/reactphp/http-client/pull/98">#98</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Improve documentation for event semantics<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="236436774" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/97" href="https://github.com/reactphp/http-client/pull/97">#97</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="050-2017-05-22" class="anchor" href="#050-2017-05-22" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.5.0
+
+        <small>
+            (2017-05-22)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.5.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature / BC break: Replace <code>Factory</code> with simple <code>Client</code> constructor<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="223729891" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/85" href="https://github.com/reactphp/http-client/pull/85">#85</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>The <code>Client</code> now accepts a required <code>LoopInterface</code> and an optional<br>
+<code>ConnectorInterface</code>. It will now create a default <code>Connector</code> if none<br>
 has been given.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> old</span></span>
 <span class="pl-s1"><span class="pl-smi">$dnsResolverFactory</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\Dns\Resolver\</span><span class="pl-c1">Factory</span>();</span>
@@ -337,166 +496,541 @@ has been given.</p>
 <span class="pl-s1"><span class="pl-smi">$client</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\HttpClient\</span><span class="pl-c1">Client</span>(<span class="pl-smi">$loop</span>);</span></pre></div>
 </li>
 <li>
-<p>Feature: <code>Request::close()</code> now cancels pending connection attempt
-(#91 by @clue)</p>
+<p>Feature: <code>Request::close()</code> now cancels pending connection attempt<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="229973854" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/91" href="https://github.com/reactphp/http-client/pull/91">#91</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Feature / BC break: Replace deprecated SocketClient with new Socket component
-(#74, #84 and #88 by @clue)</p>
+<p>Feature / BC break: Replace deprecated SocketClient with new Socket component<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="212950109" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/74" href="https://github.com/reactphp/http-client/pull/74">#74</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="223596848" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/84" href="https://github.com/reactphp/http-client/pull/84">#84</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="229669330" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/88" href="https://github.com/reactphp/http-client/pull/88">#88</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Feature / BC break: Consistent stream semantics and forward compatibility with upcoming Stream v1.0
-(#90 by @clue)</p>
+<p>Feature / BC break: Consistent stream semantics and forward compatibility with upcoming Stream v1.0<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="229961716" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/90" href="https://github.com/reactphp/http-client/pull/90">#90</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Feature: Forward compatibility with upcoming EventLoop v1.0 and v0.5
-(#89 by @clue)</p>
+<p>Feature: Forward compatibility with upcoming EventLoop v1.0 and v0.5<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="229670915" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/89" href="https://github.com/reactphp/http-client/pull/89">#89</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Fix: Catch Guzzle parser exception
-(#82 by @djagya)</p>
+<p>Fix: Catch Guzzle parser exception<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="221963228" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/82" href="https://github.com/reactphp/http-client/pull/82">#82</a> by <a class="user-mention" data-hovercard-user-id="2600431" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/djagya">@djagya</a>)</p>
 </li>
 </ul>
-<h2>
-<a id="0417-2017-03-20" class="anchor" href="#0417-2017-03-20" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.17 (2017-03-20)</h2>
-<ul>
-<li>Improvement: Add PHPUnit to require-dev #75 @jsor</li>
-<li>Fix: Fix chunk header to be case-insensitive and allow leading zeros for end chunk #77 @mdrost</li>
+
+    <hr>
+    
+            <h3>
+        <a id="0417-2017-03-20" class="anchor" href="#0417-2017-03-20" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.17
+
+        <small>
+            (2017-03-20)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.17" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improvement: Add PHPUnit to require-dev <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="213152427" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/75" href="https://github.com/reactphp/http-client/pull/75">#75</a> <a class="user-mention" data-hovercard-user-id="55574" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a></li>
+<li>Fix: Fix chunk header to be case-insensitive and allow leading zeros for end chunk <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="215234817" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/77" href="https://github.com/reactphp/http-client/pull/77">#77</a> <a class="user-mention" data-hovercard-user-id="4083346" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/mdrost">@mdrost</a></li>
 </ul>
-<h2>
-<a id="0416-2017-03-01" class="anchor" href="#0416-2017-03-01" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.16 (2017-03-01)</h2>
-<ul>
-<li>Fix: Trim leading zeros from chunk size #73 @maciejmrozinski</li>
+
+    <hr>
+    
+            <h3>
+        <a id="0416-2017-03-01" class="anchor" href="#0416-2017-03-01" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.16
+
+        <small>
+            (2017-03-01)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.16" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Fix: Trim leading zeros from chunk size <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="210721736" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/73" href="https://github.com/reactphp/http-client/pull/73">#73</a> <a class="user-mention" data-hovercard-user-id="1927895" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/maciejmrozinski">@maciejmrozinski</a></li>
 </ul>
-<h2>
-<a id="0415-2016-12-02" class="anchor" href="#0415-2016-12-02" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.15 (2016-12-02)</h2>
-<ul>
-<li>Improvement: Add examples #69 @clue</li>
-<li>Fix: Ensure checking for 0 length chunk, when we should check for it #71 @WyriHaximus</li>
+
+    <hr>
+        <h2>
+        <a id="2016" class="anchor" href="#2016" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2016
+    </h2>
+
+    
+            <h3>
+        <a id="0415-2016-12-02" class="anchor" href="#0415-2016-12-02" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.15
+
+        <small>
+            (2016-12-02)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.15" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improvement: Add examples <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="186643776" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/69" href="https://github.com/reactphp/http-client/pull/69">#69</a> <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a></li>
+<li>Fix: Ensure checking for 0 length chunk, when we should check for it <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="191326473" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/71" href="https://github.com/reactphp/http-client/pull/71">#71</a> <a class="user-mention" data-hovercard-user-id="147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a></li>
 </ul>
-<h2>
-<a id="0414-2016-10-28" class="anchor" href="#0414-2016-10-28" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.14 (2016-10-28)</h2>
-<ul>
-<li>Fix: Ensure the first bit of body directly after the headers is emitted into the stream #68 @WyriHaximus</li>
+
+    <hr>
+    
+            <h3>
+        <a id="0414-2016-10-28" class="anchor" href="#0414-2016-10-28" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.14
+
+        <small>
+            (2016-10-28)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.14" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Fix: Ensure the first bit of body directly after the headers is emitted into the stream <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="185845038" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/68" href="https://github.com/reactphp/http-client/pull/68">#68</a> <a class="user-mention" data-hovercard-user-id="147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a></li>
 </ul>
-<h2>
-<a id="0413-2016-10-13" class="anchor" href="#0413-2016-10-13" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.13 (2016-10-13)</h2>
-<ul>
-<li>Fix: Ensure Request emits initial Response data as string #66 @mmelvin0</li>
+
+    <hr>
+    
+            <h3>
+        <a id="0413-2016-10-19" class="anchor" href="#0413-2016-10-19" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.13
+
+        <small>
+            (2016-10-19)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.13" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Fix: Ensure Request emits initial Response data as string <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="183818439" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/66" href="https://github.com/reactphp/http-client/pull/66">#66</a> <a class="user-mention" data-hovercard-user-id="762247" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/mmelvin0">@mmelvin0</a></li>
 </ul>
-<h2>
-<a id="0412-2016-10-06" class="anchor" href="#0412-2016-10-06" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.12 (2016-10-06)</h2>
-<ul>
-<li>Fix: Changed $stream from DuplexStreamInterface to ReadableStreamInterface in Response constructor #63 @WyriHaximus</li>
+
+    <hr>
+    
+            <h3>
+        <a id="0412-2016-10-06" class="anchor" href="#0412-2016-10-06" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.12
+
+        <small>
+            (2016-10-06)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.12" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Fix: Changed $stream from DuplexStreamInterface to ReadableStreamInterface in Response constructor <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="178946525" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http-client/issues/63" href="https://github.com/reactphp/http-client/pull/63">#63</a> <a class="user-mention" data-hovercard-user-id="147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a></li>
 </ul>
-<h2>
-<a id="0411-2016-09-15" class="anchor" href="#0411-2016-09-15" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.11 (2016-09-15)</h2>
-<ul>
-<li>Feature: Chunked encoding @WyriHaximus</li>
+
+    <hr>
+    
+            <h3>
+        <a id="0411-2016-09-15" class="anchor" href="#0411-2016-09-15" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.11
+
+        <small>
+            (2016-09-15)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.11" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Chunked encoding <a class="user-mention" data-hovercard-user-id="147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a></li>
 </ul>
-<h2>
-<a id="0410-2016-03-21" class="anchor" href="#0410-2016-03-21" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.10 (2016-03-21)</h2>
-<ul>
-<li>Improvement: Update react/socket-client dependency to all supported versions @clue</li>
+
+    <hr>
+    
+            <h3>
+        <a id="0410-2016-03-21" class="anchor" href="#0410-2016-03-21" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.10
+
+        <small>
+            (2016-03-21)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.10" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improvement: Update react/socket-client dependency to all supported versions <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a></li>
 </ul>
-<h2>
-<a id="049-2016-03-08" class="anchor" href="#049-2016-03-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.9 (2016-03-08)</h2>
-<ul>
-<li>Improvement: PHP 7 memory leak, related to PHP bug <a href="https://bugs.php.net/bug.php?id=71737" rel="nofollow">71737</a> @jmalloc</li>
-<li>Improvement: Clean up all listeners when closing request @weichenlin</li>
+
+    <hr>
+    
+            <h3>
+        <a id="049-2016-03-08" class="anchor" href="#049-2016-03-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.9
+
+        <small>
+            (2016-03-08)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.9" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improvement: PHP 7 memory leak, related to PHP bug <a href="https://bugs.php.net/bug.php?id=71737" rel="nofollow">71737</a> <a class="user-mention" data-hovercard-user-id="761536" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jmalloc">@jmalloc</a></li>
+<li>Improvement: Clean up all listeners when closing request <a class="user-mention" data-hovercard-user-id="3406567" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/weichenlin">@weichenlin</a></li>
 </ul>
-<h2>
-<a id="048-2015-10-05" class="anchor" href="#048-2015-10-05" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.8 (2015-10-05)</h2>
-<ul>
-<li>Improvement: Avoid hiding exceptions thrown in HttpClient\Request error handlers @arnaud-lb</li>
+
+    <hr>
+    
+            <h3>
+        <a id="032-2016-03-24" class="anchor" href="#032-2016-03-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.3.2
+
+        <small>
+            (2016-03-24)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.3.2" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improvement: Broader guzzle/parser version req <a class="user-mention" data-hovercard-user-id="617694" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/cboden">@cboden</a></li>
+<li>Improvement: Improve forwards compatibility with all supported versions <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a></li>
 </ul>
-<h2>
-<a id="047-2015-09-24" class="anchor" href="#047-2015-09-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.7 (2015-09-24)</h2>
-<ul>
-<li>Improvement: Set protocol version on request creation @WyriHaximus</li>
+
+    <hr>
+        <h2>
+        <a id="2015" class="anchor" href="#2015" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2015
+    </h2>
+
+    
+            <h3>
+        <a id="048-2015-10-05" class="anchor" href="#048-2015-10-05" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.8
+
+        <small>
+            (2015-10-05)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.8" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improvement: Avoid hiding exceptions thrown in HttpClient\Request error handlers <a class="user-mention" data-hovercard-user-id="365207" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/arnaud-lb">@arnaud-lb</a></li>
 </ul>
-<h2>
-<a id="046-2015-09-20" class="anchor" href="#046-2015-09-20" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.6 (2015-09-20)</h2>
-<ul>
-<li>Improvement: Support explicitly using HTTP/1.1 protocol version @clue</li>
+
+    <hr>
+    
+            <h3>
+        <a id="047-2015-09-24" class="anchor" href="#047-2015-09-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.7
+
+        <small>
+            (2015-09-24)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.7" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improvement: Set protocol version on request creation <a class="user-mention" data-hovercard-user-id="147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a></li>
 </ul>
-<h2>
-<a id="045-2015-08-31" class="anchor" href="#045-2015-08-31" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.5 (2015-08-31)</h2>
-<ul>
-<li>Improvement: Replaced the abandoned guzzle/parser with guzzlehttp/psr7 @WyriHaximus</li>
+
+    <hr>
+    
+            <h3>
+        <a id="046-2015-09-20" class="anchor" href="#046-2015-09-20" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.6
+
+        <small>
+            (2015-09-20)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.6" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improvement: Support explicitly using HTTP/1.1 protocol version <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a></li>
 </ul>
-<h2>
-<a id="044-2015-06-16" class="anchor" href="#044-2015-06-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.4 (2015-06-16)</h2>
-<ul>
-<li>Improvement: Emit drain event when the request is ready to receive more data by @arnaud-lb</li>
+
+    <hr>
+    
+            <h3>
+        <a id="045-2015-08-31" class="anchor" href="#045-2015-08-31" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.5
+
+        <small>
+            (2015-08-31)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.5" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improvement: Replaced the abandoned guzzle/parser with guzzlehttp/psr7 <a class="user-mention" data-hovercard-user-id="147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a></li>
 </ul>
-<h2>
-<a id="043-2015-06-15" class="anchor" href="#043-2015-06-15" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.3 (2015-06-15)</h2>
-<ul>
-<li>Improvement: Added support for using auth informations from URL by @arnaud-lb</li>
+
+    <hr>
+    
+            <h3>
+        <a id="044-2015-06-16" class="anchor" href="#044-2015-06-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.4
+
+        <small>
+            (2015-06-16)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.4" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improvement: Emit drain event when the request is ready to receive more data by <a class="user-mention" data-hovercard-user-id="365207" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/arnaud-lb">@arnaud-lb</a></li>
 </ul>
-<h2>
-<a id="042-2015-05-14" class="anchor" href="#042-2015-05-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.2 (2015-05-14)</h2>
-<ul>
-<li>Improvement: Pass Response object on with data emit by @dpovshed</li>
+
+    <hr>
+    
+            <h3>
+        <a id="043-2015-06-15" class="anchor" href="#043-2015-06-15" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.3
+
+        <small>
+            (2015-06-15)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.3" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improvement: Added support for using auth informations from URL by <a class="user-mention" data-hovercard-user-id="365207" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/arnaud-lb">@arnaud-lb</a></li>
 </ul>
-<h2>
-<a id="041-2014-11-23" class="anchor" href="#041-2014-11-23" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.1 (2014-11-23)</h2>
-<ul>
-<li>Improvement: Use EventEmitterTrait instead of base class by @cursedcoder</li>
-<li>Improvement: Changed Stream to DuplexStreamInterface in Response::__construct by @mbonneau</li>
+
+    <hr>
+    
+            <h3>
+        <a id="042-2015-05-14" class="anchor" href="#042-2015-05-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.2
+
+        <small>
+            (2015-05-14)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.2" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improvement: Pass Response object on with data emit by <a class="user-mention" data-hovercard-user-id="786020" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/dpovshed">@dpovshed</a></li>
 </ul>
-<h2>
-<a id="040-2014-02-02" class="anchor" href="#040-2014-02-02" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.0 (2014-02-02)</h2>
-<ul>
-<li>BC break: Drop unused <code>Response::getBody()</code>
-</li>
+
+    <hr>
+        <h2>
+        <a id="2014" class="anchor" href="#2014" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2014
+    </h2>
+
+    
+            <h3>
+        <a id="041-2014-11-23" class="anchor" href="#041-2014-11-23" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.1
+
+        <small>
+            (2014-11-23)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improvement: Use EventEmitterTrait instead of base class by <a class="user-mention" data-hovercard-user-id="899452" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/cursedcoder">@cursedcoder</a></li>
+<li>Improvement: Changed Stream to DuplexStreamInterface in Response::__construct by <a class="user-mention" data-hovercard-user-id="748287" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/mbonneau">@mbonneau</a></li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="040-2014-02-02" class="anchor" href="#040-2014-02-02" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.0
+
+        <small>
+            (2014-02-02)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.4.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>BC break: Drop unused <code>Response::getBody()</code></li>
 <li>BC break: Bump minimum PHP version to PHP 5.4, remove 5.3 specific hacks</li>
-<li>BC break: Remove <code>$loop</code> argument from <code>HttpClient</code>: <code>Client</code>, <code>Request</code>, <code>Response</code>
-</li>
+<li>BC break: Remove <code>$loop</code> argument from <code>HttpClient</code>: <code>Client</code>, <code>Request</code>, <code>Response</code></li>
 <li>BC break: Update to React/Promise 2.0</li>
 <li>Dependency: Autoloading and filesystem structure now PSR-4 instead of PSR-0</li>
 <li>Bump React dependencies to v0.4</li>
 </ul>
-<h2>
-<a id="032-2016-03-25" class="anchor" href="#032-2016-03-25" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.3.2 (2016-03-25)</h2>
-<ul>
-<li>Improvement: Broader guzzle/parser version req @cboden</li>
-<li>Improvement: Improve forwards compatibility with all supported versions @clue</li>
-</ul>
-<h2>
-<a id="031-2013-04-21" class="anchor" href="#031-2013-04-21" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.3.1 (2013-04-21)</h2>
-<ul>
+
+    <hr>
+        <h2>
+        <a id="2013" class="anchor" href="#2013" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2013
+    </h2>
+
+    
+            <h3>
+        <a id="031-2013-04-21" class="anchor" href="#031-2013-04-21" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.3.1
+
+        <small>
+            (2013-04-21)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.3.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>Bug fix: Correct requirement for socket-client</li>
 </ul>
-<h2>
-<a id="030-2013-04-14" class="anchor" href="#030-2013-04-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.3.0 (2013-04-14)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="030-2013-04-14" class="anchor" href="#030-2013-04-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.3.0
+
+        <small>
+            (2013-04-14)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.3.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>BC break: Socket connection handling moved to new SocketClient component</li>
 <li>Bump React dependencies to v0.3</li>
 </ul>
-<h2>
-<a id="026-2012-12-26" class="anchor" href="#026-2012-12-26" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.2.6 (2012-12-26)</h2>
-<ul>
+
+    <hr>
+        <h2>
+        <a id="2012" class="anchor" href="#2012" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2012
+    </h2>
+
+    
+            <h3>
+        <a id="026-2012-12-26" class="anchor" href="#026-2012-12-26" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.2.6
+
+        <small>
+            (2012-12-26)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.2.6" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>Version bump</li>
 </ul>
-<h2>
-<a id="025-2012-11-26" class="anchor" href="#025-2012-11-26" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.2.5 (2012-11-26)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="025-2012-11-26" class="anchor" href="#025-2012-11-26" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.2.5
+
+        <small>
+            (2012-11-26)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.2.5" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>Feature: Use a promise-based API internally</li>
 <li>Bug fix: Use DNS resolver correctly</li>
 </ul>
-<h2>
-<a id="023-2012-11-14" class="anchor" href="#023-2012-11-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.2.3 (2012-11-14)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="023-2012-11-05" class="anchor" href="#023-2012-11-05" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.2.3
+
+        <small>
+            (2012-11-05)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.2.3" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>Version bump</li>
 </ul>
-<h2>
-<a id="022-2012-10-28" class="anchor" href="#022-2012-10-28" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.2.2 (2012-10-28)</h2>
-<ul>
-<li>Feature: HTTP client (@arnaud-lb)</li>
+
+    <hr>
+    
+            <h3>
+        <a id="022-2012-10-28" class="anchor" href="#022-2012-10-28" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.2.2
+
+        <small>
+            (2012-10-28)
+            <a href="https://github.com/reactphp/http-client/releases/tag/v0.2.2" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: HTTP client (<a class="user-mention" data-hovercard-user-id="365207" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/arnaud-lb">@arnaud-lb</a>)</li>
 </ul>
-                </main>
+
+    <hr>
+                    </main>
                 <aside class="sidebar" role="complementary">
                     <section class="component-info">
                         <h2 class="component-info__title">
@@ -818,7 +1352,7 @@ has been given.</p>
         <mask id="reactphp-http-client-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,9 12,6 18,1 24,1 30,1 36,1 42,1 48,4 54,4 60,1 66,4 72,1 78,5 84,4 90,1 96,3 102,1 108,1 114,1 120,1 126,1 132,3 138,1 144,1 150,1 156,2 162,1 168,1 174,1 180,1 186,1 192,1 198,5 204,3 210,9 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,6 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,1 6,9 12,6 18,1 24,1 30,1 36,1 42,1 48,4 54,4 60,1 66,4 72,1 78,5 84,4 90,1 96,3 102,1 108,1 114,1 120,1 126,1 132,3 138,1 144,1 150,1 156,2 162,1 168,1 174,1 180,1 186,1 192,1 198,5 204,9 210,3 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,6 264,1 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

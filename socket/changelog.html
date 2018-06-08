@@ -5,8 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Socket: 
-Changelog - ReactPHP</title>
+        <title>Socket: Changelog - ReactPHP</title>
 
         <meta name="description" content="Async, streaming plaintext TCP/IP and secure TLS socket server and client connections for ReactPHP.">
 
@@ -204,24 +203,66 @@ Changelog - ReactPHP</title>
             <div class="grid grid--wrap grid--gutter">
                 <main class="main">
                     <h1>
-<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Changelog</h1>
-<h2>
-<a id="0811-2018-04-24" class="anchor" href="#0811-2018-04-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.8.11 (2018-04-24)</h2>
-<ul>
-<li>Feature: Improve memory consumption for cancelled connection attempts and
-simplify skipping DNS lookup when connecting to IP addresses.
-(#159 and #160 by @clue)</li>
+        Socket Changelog
+    </h1>
+
+    <ul class="toc">
+            <li><a href="#2018" title="Jump to year 2018 (4 releases)">2018</a></li>
+            <li><a href="#2017" title="Jump to year 2017 (16 releases)">2017</a></li>
+            <li><a href="#2016" title="Jump to year 2016 (2 releases)">2016</a></li>
+            <li><a href="#2014" title="Jump to year 2014 (4 releases)">2014</a></li>
+            <li><a href="#2013" title="Jump to year 2013 (4 releases)">2013</a></li>
+            <li><a href="#2012" title="Jump to year 2012 (5 releases)">2012</a></li>
+        </ul>
+
+    <h2>
+        <a id="2018" class="anchor" href="#2018" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2018
+    </h2>
+
+    
+            <h3>
+        <a id="0811-2018-04-24" class="anchor" href="#0811-2018-04-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.11
+
+        <small>
+            (2018-04-24)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.11" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Improve memory consumption for cancelled connection attempts and<br>
+simplify skipping DNS lookup when connecting to IP addresses.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="316722153" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/159" href="https://github.com/reactphp/socket/pull/159">#159</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="316745437" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/160" href="https://github.com/reactphp/socket/pull/160">#160</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
-<h2>
-<a id="0810-2018-02-28" class="anchor" href="#0810-2018-02-28" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.8.10 (2018-02-28)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="0810-2018-02-28" class="anchor" href="#0810-2018-02-28" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.10
+
+        <small>
+            (2018-02-28)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.10" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature: Update DNS dependency to support loading system default DNS
-nameserver config on all supported platforms
-(<code>/etc/resolv.conf</code> on Unix/Linux/Mac/Docker/WSL and WMIC on Windows)
-(#152 by @clue)</p>
-<p>This means that connecting to hosts that are managed by a local DNS server,
-such as a corporate DNS server or when using Docker containers, will now
+<p>Feature: Update DNS dependency to support loading system default DNS<br>
+nameserver config on all supported platforms<br>
+(<code>/etc/resolv.conf</code> on Unix/Linux/Mac/Docker/WSL and WMIC on Windows)<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="300621054" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/152" href="https://github.com/reactphp/socket/pull/152">#152</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>This means that connecting to hosts that are managed by a local DNS server,<br>
+such as a corporate DNS server or when using Docker containers, will now<br>
 work as expected across all platforms with no changes required:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$connector</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Connector</span>(<span class="pl-smi">$loop</span>);</span>
 <span class="pl-s1"><span class="pl-smi">$connector</span><span class="pl-k">-&gt;</span>connect(<span class="pl-s"><span class="pl-pds">'</span>intranet.example:80<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>then(<span class="pl-k">function</span> (<span class="pl-smi">$connection</span>) {</span>
@@ -229,15 +270,29 @@ work as expected across all platforms with no changes required:</p>
 <span class="pl-s1">});</span></pre></div>
 </li>
 </ul>
-<h2>
-<a id="089-2018-01-18" class="anchor" href="#089-2018-01-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.8.9 (2018-01-18)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="089-2018-01-18" class="anchor" href="#089-2018-01-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.9
+
+        <small>
+            (2018-01-18)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.9" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature: Support explicitly choosing TLS version to negotiate with remote side
-by respecting <code>crypto_method</code> context parameter for all classes.
-(#149 by @clue)</p>
-<p>By default, all connector and server classes support TLSv1.0+ and exclude
-support for legacy SSLv2/SSLv3. As of PHP 5.6+ you can also explicitly
+<p>Feature: Support explicitly choosing TLS version to negotiate with remote side<br>
+by respecting <code>crypto_method</code> context parameter for all classes.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="288880718" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/149" href="https://github.com/reactphp/socket/pull/149">#149</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>By default, all connector and server classes support TLSv1.0+ and exclude<br>
+support for legacy SSLv2/SSLv3. As of PHP 5.6+ you can also explicitly<br>
 choose the TLS version you want to negotiate with the remote side:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> new: now supports 'crypto_method` context parameter for all classes</span></span>
 <span class="pl-s1"><span class="pl-smi">$connector</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Connector</span>(<span class="pl-smi">$loop</span>, <span class="pl-c1">array</span>(</span>
@@ -247,39 +302,86 @@ choose the TLS version you want to negotiate with the remote side:</p>
 <span class="pl-s1">));</span></pre></div>
 </li>
 <li>
-<p>Minor internal clean up to unify class imports
-(#148 by @clue)</p>
+<p>Minor internal clean up to unify class imports<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="288872868" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/148" href="https://github.com/reactphp/socket/pull/148">#148</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
-<h2>
-<a id="088-2018-01-06" class="anchor" href="#088-2018-01-06" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.8.8 (2018-01-06)</h2>
-<ul>
-<li>Improve test suite by adding test group to skip integration tests relying on
-internet connection and fix minor documentation typo.
-(#146 by @clue and #145 by @cn007b)</li>
+
+    <hr>
+    
+            <h3>
+        <a id="088-2018-01-06" class="anchor" href="#088-2018-01-06" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.8
+
+        <small>
+            (2018-01-06)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.8" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improve test suite by adding test group to skip integration tests relying on<br>
+internet connection and fix minor documentation typo.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="286403640" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/146" href="https://github.com/reactphp/socket/pull/146">#146</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="285625461" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/145" href="https://github.com/reactphp/socket/pull/145">#145</a> by <a class="user-mention" data-hovercard-user-id="5052324" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/cn007b">@cn007b</a>)</li>
 </ul>
-<h2>
-<a id="087-2017-12-24" class="anchor" href="#087-2017-12-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.8.7 (2017-12-24)</h2>
-<ul>
+
+    <hr>
+        <h2>
+        <a id="2017" class="anchor" href="#2017" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2017
+    </h2>
+
+    
+            <h3>
+        <a id="087-2017-12-24" class="anchor" href="#087-2017-12-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.7
+
+        <small>
+            (2017-12-24)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.7" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Fix: Fix closing socket resource before removing from loop
-(#141 by @clue)</p>
-<p>This fixes the root cause of an uncaught <code>Exception</code> that only manifested
-itself after the recent Stream v0.7.4 component update and only if you're
+<p>Fix: Fix closing socket resource before removing from loop<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="284322182" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/141" href="https://github.com/reactphp/socket/pull/141">#141</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>This fixes the root cause of an uncaught <code>Exception</code> that only manifested<br>
+itself after the recent Stream v0.7.4 component update and only if you're<br>
 using <code>ext-event</code> (<code>ExtEventLoop</code>).</p>
 </li>
 <li>
-<p>Improve test suite by testing against PHP 7.2
-(#140 by @carusogabriel)</p>
+<p>Improve test suite by testing against PHP 7.2<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="278458521" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/140" href="https://github.com/reactphp/socket/pull/140">#140</a> by <a class="user-mention" data-hovercard-user-id="16328050" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/carusogabriel">@carusogabriel</a>)</p>
 </li>
 </ul>
-<h2>
-<a id="086-2017-11-18" class="anchor" href="#086-2017-11-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.8.6 (2017-11-18)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="086-2017-11-18" class="anchor" href="#086-2017-11-18" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.6
+
+        <small>
+            (2017-11-18)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.6" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature: Add Unix domain socket (UDS) support to <code>Server</code> with <code>unix://</code> URI scheme
-and add advanced <code>UnixServer</code> class.
-(#120 by @andig)</p>
+<p>Feature: Add Unix domain socket (UDS) support to <code>Server</code> with <code>unix://</code> URI scheme<br>
+and add advanced <code>UnixServer</code> class.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="263643414" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/120" href="https://github.com/reactphp/socket/pull/120">#120</a> by <a class="user-mention" data-hovercard-user-id="184815" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/andig">@andig</a>)</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> new: Server now supports "unix://" scheme</span></span>
 <span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Server</span>(<span class="pl-s"><span class="pl-pds">'</span>unix:///tmp/server.sock<span class="pl-pds">'</span></span>, <span class="pl-smi">$loop</span>);</span>
 <span class="pl-s1"></span>
@@ -287,45 +389,73 @@ and add advanced <code>UnixServer</code> class.
 <span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">UnixServer</span>(<span class="pl-s"><span class="pl-pds">'</span>/tmp/server.sock<span class="pl-pds">'</span></span>, <span class="pl-smi">$loop</span>);</span></pre></div>
 </li>
 <li>
-<p>Restructure examples to ease getting started
-(#136 by @clue)</p>
+<p>Restructure examples to ease getting started<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="275084657" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/136" href="https://github.com/reactphp/socket/pull/136">#136</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Improve test suite by adding forward compatibility with PHPUnit 6 and
-ignore Mac OS X test failures for now until Travis tests work again
-(#133 by @gabriel-caruso and #134 by @clue)</p>
-</li>
-</ul>
-<h2>
-<a id="085-2017-10-23" class="anchor" href="#085-2017-10-23" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.8.5 (2017-10-23)</h2>
-<ul>
-<li>
-<p>Fix: Work around PHP bug with Unix domain socket (UDS) paths for Mac OS X
-(#123 by @andig)</p>
-</li>
-<li>
-<p>Fix: Fix <code>SecureServer</code> to return <code>null</code> URI if server socket is already closed
-(#129 by @clue)</p>
-</li>
-<li>
-<p>Improve test suite by adding forward compatibility with PHPUnit v5 and
-forward compatibility with upcoming EventLoop releases in tests and
-test Mac OS X on Travis
-(#122 by @andig and #125, #127 and #130 by @clue)</p>
-</li>
-<li>
-<p>Readme improvements
-(#118 by @jsor)</p>
+<p>Improve test suite by adding forward compatibility with PHPUnit 6 and<br>
+ignore Mac OS X test failures for now until Travis tests work again<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="273192715" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/133" href="https://github.com/reactphp/socket/pull/133">#133</a> by @gabriel-caruso and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="273485503" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/134" href="https://github.com/reactphp/socket/pull/134">#134</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
-<h2>
-<a id="084-2017-09-16" class="anchor" href="#084-2017-09-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.8.4 (2017-09-16)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="085-2017-10-23" class="anchor" href="#085-2017-10-23" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.5
+
+        <small>
+            (2017-10-23)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.5" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature: Add <code>FixedUriConnector</code> decorator to use fixed, preconfigured URI instead
-(#117 by @clue)</p>
-<p>This can be useful for consumers that do not support certain URIs, such as
-when you want to explicitly connect to a Unix domain socket (UDS) path
+<p>Fix: Work around PHP bug with Unix domain socket (UDS) paths for Mac OS X<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="263655223" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/123" href="https://github.com/reactphp/socket/pull/123">#123</a> by <a class="user-mention" data-hovercard-user-id="184815" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/andig">@andig</a>)</p>
+</li>
+<li>
+<p>Fix: Fix <code>SecureServer</code> to return <code>null</code> URI if server socket is already closed<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="265358393" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/129" href="https://github.com/reactphp/socket/pull/129">#129</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Improve test suite by adding forward compatibility with PHPUnit v5 and<br>
+forward compatibility with upcoming EventLoop releases in tests and<br>
+test Mac OS X on Travis<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="263651039" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/122" href="https://github.com/reactphp/socket/pull/122">#122</a> by <a class="user-mention" data-hovercard-user-id="184815" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/andig">@andig</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="263719207" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/125" href="https://github.com/reactphp/socket/pull/125">#125</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="264684286" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/127" href="https://github.com/reactphp/socket/pull/127">#127</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="267480956" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/130" href="https://github.com/reactphp/socket/pull/130">#130</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Readme improvements<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="262001059" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/118" href="https://github.com/reactphp/socket/pull/118">#118</a> by <a class="user-mention" data-hovercard-user-id="55574" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+            <h3>
+        <a id="084-2017-09-16" class="anchor" href="#084-2017-09-16" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.4
+
+        <small>
+            (2017-09-16)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.4" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Add <code>FixedUriConnector</code> decorator to use fixed, preconfigured URI instead<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="258032672" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/117" href="https://github.com/reactphp/socket/pull/117">#117</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>This can be useful for consumers that do not support certain URIs, such as<br>
+when you want to explicitly connect to a Unix domain socket (UDS) path<br>
 instead of connecting to a default address assumed by an higher-level API:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$connector</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">FixedUriConnector</span>(</span>
 <span class="pl-s1">    <span class="pl-s"><span class="pl-pds">'</span>unix:///var/run/docker.sock<span class="pl-pds">'</span></span>,</span>
@@ -336,25 +466,53 @@ instead of connecting to a default address assumed by an higher-level API:</p>
 <span class="pl-s1"><span class="pl-smi">$promise</span> <span class="pl-k">=</span> <span class="pl-smi">$connector</span><span class="pl-k">-&gt;</span>connect(<span class="pl-s"><span class="pl-pds">'</span>localhost:80<span class="pl-pds">'</span></span>);</span></pre></div>
 </li>
 </ul>
-<h2>
-<a id="083-2017-09-08" class="anchor" href="#083-2017-09-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.8.3 (2017-09-08)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="083-2017-09-08" class="anchor" href="#083-2017-09-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.3
+
+        <small>
+            (2017-09-08)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.3" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature: Reduce memory consumption for failed connections
-(#113 by @valga)</p>
+<p>Feature: Reduce memory consumption for failed connections<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="254614468" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/113" href="https://github.com/reactphp/socket/pull/113">#113</a> by <a class="user-mention" data-hovercard-user-id="23472603" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/valga">@valga</a>)</p>
 </li>
 <li>
-<p>Fix: Work around write chunk size for TLS streams for PHP &lt; 7.1.14
-(#114 by @clue)</p>
+<p>Fix: Work around write chunk size for TLS streams for PHP &lt; 7.1.14<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="256246825" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/114" href="https://github.com/reactphp/socket/pull/114">#114</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
-<h2>
-<a id="082-2017-08-25" class="anchor" href="#082-2017-08-25" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.8.2 (2017-08-25)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="082-2017-08-25" class="anchor" href="#082-2017-08-25" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.2
+
+        <small>
+            (2017-08-25)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.2" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature: Update DNS dependency to support hosts file on all platforms
-(#112 by @clue)</p>
-<p>This means that connecting to hosts such as <code>localhost</code> will now work as
+<p>Feature: Update DNS dependency to support hosts file on all platforms<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="252837020" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/112" href="https://github.com/reactphp/socket/pull/112">#112</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>This means that connecting to hosts such as <code>localhost</code> will now work as<br>
 expected across all platforms with no changes required:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$connector</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Connector</span>(<span class="pl-smi">$loop</span>);</span>
 <span class="pl-s1"><span class="pl-smi">$connector</span><span class="pl-k">-&gt;</span>connect(<span class="pl-s"><span class="pl-pds">'</span>localhost:8080<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>then(<span class="pl-k">function</span> (<span class="pl-smi">$connection</span>) {</span>
@@ -362,84 +520,153 @@ expected across all platforms with no changes required:</p>
 <span class="pl-s1">});</span></pre></div>
 </li>
 </ul>
-<h2>
-<a id="081-2017-08-15" class="anchor" href="#081-2017-08-15" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.8.1 (2017-08-15)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="081-2017-08-15" class="anchor" href="#081-2017-08-15" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.1
+
+        <small>
+            (2017-08-15)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature: Forward compatibility with upcoming EventLoop v1.0 and v0.5 and
-target evenement 3.0 a long side 2.0 and 1.0
-(#104 by @clue and #111 by @WyriHaximus)</p>
+<p>Feature: Forward compatibility with upcoming EventLoop v1.0 and v0.5 and<br>
+target evenement 3.0 a long side 2.0 and 1.0<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="230023829" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/104" href="https://github.com/reactphp/socket/pull/104">#104</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="248200949" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/111" href="https://github.com/reactphp/socket/pull/111">#111</a> by <a class="user-mention" data-hovercard-user-id="147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
 </li>
 <li>
-<p>Improve test suite by locking Travis distro so new defaults will not break the build and
-fix HHVM build for now again and ignore future HHVM build errors
-(#109 and #110 by @clue)</p>
+<p>Improve test suite by locking Travis distro so new defaults will not break the build and<br>
+fix HHVM build for now again and ignore future HHVM build errors<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="235168171" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/109" href="https://github.com/reactphp/socket/pull/109">#109</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="248011984" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/110" href="https://github.com/reactphp/socket/pull/110">#110</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Minor documentation fixes
-(#103 by @christiaan and #108 by @hansott)</p>
+<p>Minor documentation fixes<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="228658383" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/103" href="https://github.com/reactphp/socket/pull/103">#103</a> by <a class="user-mention" data-hovercard-user-id="118490" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/christiaan">@christiaan</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="235095527" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/108" href="https://github.com/reactphp/socket/pull/108">#108</a> by <a class="user-mention" data-hovercard-user-id="3886384" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/hansott">@hansott</a>)</p>
 </li>
 </ul>
-<h2>
-<a id="080-2017-05-09" class="anchor" href="#080-2017-05-09" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.8.0 (2017-05-09)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="080-2017-05-09" class="anchor" href="#080-2017-05-09" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.8.0
+
+        <small>
+            (2017-05-09)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.8.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature: New <code>Server</code> class now acts as a facade for existing server classes
-and renamed old <code>Server</code> to <code>TcpServer</code> for advanced usage.
-(#96 and #97 by @clue)</p>
-<p>The <code>Server</code> class is now the main class in this package that implements the
-<code>ServerInterface</code> and allows you to accept incoming streaming connections,
+<p>Feature: New <code>Server</code> class now acts as a facade for existing server classes<br>
+and renamed old <code>Server</code> to <code>TcpServer</code> for advanced usage.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="223777520" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/96" href="https://github.com/reactphp/socket/pull/96">#96</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="225122944" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/97" href="https://github.com/reactphp/socket/pull/97">#97</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>The <code>Server</code> class is now the main class in this package that implements the<br>
+<code>ServerInterface</code> and allows you to accept incoming streaming connections,<br>
 such as plaintext TCP/IP or secure TLS connection streams.</p>
 <blockquote>
 <p>This is not a BC break and consumer code does not have to be updated.</p>
 </blockquote>
 </li>
 <li>
-<p>Feature / BC break: All addresses are now URIs that include the URI scheme
-(#98 by @clue)</p>
+<p>Feature / BC break: All addresses are now URIs that include the URI scheme<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="225141367" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/98" href="https://github.com/reactphp/socket/pull/98">#98</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-source-diff"><pre><span class="pl-md"><span class="pl-md">-</span> $parts = parse_url('tcp://' . $conn-&gt;getRemoteAddress());</span>
 <span class="pl-mi1"><span class="pl-mi1">+</span> $parts = parse_url($conn-&gt;getRemoteAddress());</span></pre></div>
 </li>
 <li>
-<p>Fix: Fix <code>unix://</code> addresses for Unix domain socket (UDS) paths
-(#100 by @clue)</p>
+<p>Fix: Fix <code>unix://</code> addresses for Unix domain socket (UDS) paths<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="227005937" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/100" href="https://github.com/reactphp/socket/pull/100">#100</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Feature: Forward compatibility with Stream v1.0 and v0.7
-(#99 by @clue)</p>
+<p>Feature: Forward compatibility with Stream v1.0 and v0.7<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="226647809" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/99" href="https://github.com/reactphp/socket/pull/99">#99</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
-<h2>
-<a id="072-2017-04-24" class="anchor" href="#072-2017-04-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.7.2 (2017-04-24)</h2>
-<ul>
-<li>Fix: Work around latest PHP 7.0.18 and 7.1.4 no longer accepting full URIs
-(#94 by @clue)</li>
+
+    <hr>
+    
+            <h3>
+        <a id="072-2017-04-24" class="anchor" href="#072-2017-04-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.7.2
+
+        <small>
+            (2017-04-24)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.7.2" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Fix: Work around latest PHP 7.0.18 and 7.1.4 no longer accepting full URIs<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="223574812" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/94" href="https://github.com/reactphp/socket/pull/94">#94</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
-<h2>
-<a id="071-2017-04-10" class="anchor" href="#071-2017-04-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.7.1 (2017-04-10)</h2>
-<ul>
-<li>Fix: Ignore HHVM errors when closing connection that is already closing
-(#91 by @clue)</li>
+
+    <hr>
+    
+            <h3>
+        <a id="071-2017-04-10" class="anchor" href="#071-2017-04-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.7.1
+
+        <small>
+            (2017-04-10)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.7.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Fix: Ignore HHVM errors when closing connection that is already closing<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="220691001" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/91" href="https://github.com/reactphp/socket/pull/91">#91</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
-<h2>
-<a id="070-2017-04-10" class="anchor" href="#070-2017-04-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.7.0 (2017-04-10)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="070-2017-04-10" class="anchor" href="#070-2017-04-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.7.0
+
+        <small>
+            (2017-04-10)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.7.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature: Merge SocketClient component into this component
-(#87 by @clue)</p>
-<p>This means that this package now provides async, streaming plaintext TCP/IP
+<p>Feature: Merge SocketClient component into this component<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="219318125" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/87" href="https://github.com/reactphp/socket/pull/87">#87</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>This means that this package now provides async, streaming plaintext TCP/IP<br>
 and secure TLS socket server and client connections for ReactPHP.</p>
-<pre><code>$connector = new React\Socket\Connector($loop);
-$connector-&gt;connect('google.com:80')-&gt;then(function (ConnectionInterface $conn) {
-    $connection-&gt;write('…');
-});
-</code></pre>
-<p>Accordingly, the <code>ConnectionInterface</code> is now used to represent both incoming
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$connector</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\Socket\</span><span class="pl-c1">Connector</span>(<span class="pl-smi">$loop</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$connector</span><span class="pl-k">-&gt;</span>connect(<span class="pl-s"><span class="pl-pds">'</span>google.com:80<span class="pl-pds">'</span></span>)<span class="pl-k">-&gt;</span>then(<span class="pl-k">function</span> (<span class="pl-c1">ConnectionInterface</span> <span class="pl-smi">$conn</span>) {</span>
+<span class="pl-s1">    <span class="pl-smi">$connection</span><span class="pl-k">-&gt;</span>write(<span class="pl-s"><span class="pl-pds">'</span>…<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1">});</span></pre></div>
+<p>Accordingly, the <code>ConnectionInterface</code> is now used to represent both incoming<br>
 server side connections as well as outgoing client side connections.</p>
-<p>If you've previously used the SocketClient component to establish outgoing
-client connections, upgrading should take no longer than a few minutes.
-All classes have been merged as-is from the latest <code>v0.7.0</code> release with no
-other changes, so you can simply update your code to use the updated namespace
+<p>If you've previously used the SocketClient component to establish outgoing<br>
+client connections, upgrading should take no longer than a few minutes.<br>
+All classes have been merged as-is from the latest <code>v0.7.0</code> release with no<br>
+other changes, so you can simply update your code to use the updated namespace<br>
 like this:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> old from SocketClient component and namespace</span></span>
 <span class="pl-s1"><span class="pl-smi">$connector</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\SocketClient\</span><span class="pl-c1">Connector</span>(<span class="pl-smi">$loop</span>);</span>
@@ -454,12 +681,26 @@ like this:</p>
 <span class="pl-s1">});</span></pre></div>
 </li>
 </ul>
-<h2>
-<a id="060-2017-04-04" class="anchor" href="#060-2017-04-04" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.6.0 (2017-04-04)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="060-2017-04-04" class="anchor" href="#060-2017-04-04" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.6.0
+
+        <small>
+            (2017-04-04)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.6.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature: Add <code>LimitingServer</code> to limit and keep track of open connections
-(#86 by @clue)</p>
+<p>Feature: Add <code>LimitingServer</code> to limit and keep track of open connections<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="218795441" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/86" href="https://github.com/reactphp/socket/pull/86">#86</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Server</span>(<span class="pl-c1">0</span>, <span class="pl-smi">$loop</span>);</span>
 <span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">LimitingServer</span>(<span class="pl-smi">$server</span>, <span class="pl-c1">100</span>);</span>
 <span class="pl-s1"></span>
@@ -469,9 +710,9 @@ like this:</p>
 <span class="pl-s1">});</span></pre></div>
 </li>
 <li>
-<p>Feature / BC break: Add <code>pause()</code> and <code>resume()</code> methods to limit active
-connections
-(#84 by @clue)</p>
+<p>Feature / BC break: Add <code>pause()</code> and <code>resume()</code> methods to limit active<br>
+connections<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="217096848" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/84" href="https://github.com/reactphp/socket/pull/84">#84</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Server</span>(<span class="pl-c1">0</span>, <span class="pl-smi">$loop</span>);</span>
 <span class="pl-s1"><span class="pl-smi">$server</span><span class="pl-k">-&gt;</span>pause();</span>
 <span class="pl-s1"></span>
@@ -480,27 +721,55 @@ connections
 <span class="pl-s1">});</span></pre></div>
 </li>
 </ul>
-<h2>
-<a id="051-2017-03-09" class="anchor" href="#051-2017-03-09" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.1 (2017-03-09)</h2>
-<ul>
-<li>Feature: Forward compatibility with Stream v0.5 and upcoming v0.6
-(#79 by @clue)</li>
+
+    <hr>
+    
+            <h3>
+        <a id="051-2017-03-09" class="anchor" href="#051-2017-03-09" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.5.1
+
+        <small>
+            (2017-03-09)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.5.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Forward compatibility with Stream v0.5 and upcoming v0.6<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="212760724" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/79" href="https://github.com/reactphp/socket/pull/79">#79</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
-<h2>
-<a id="050-2017-02-14" class="anchor" href="#050-2017-02-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.5.0 (2017-02-14)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="050-2017-02-14" class="anchor" href="#050-2017-02-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.5.0
+
+        <small>
+            (2017-02-14)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.5.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>Feature / BC break: Replace <code>listen()</code> call with URIs passed to constructor
-and reject listening on hostnames with <code>InvalidArgumentException</code>
-and replace <code>ConnectionException</code> with <code>RuntimeException</code> for consistency
-(#61, #66 and #72 by @clue)</p>
+<p>Feature / BC break: Replace <code>listen()</code> call with URIs passed to constructor<br>
+and reject listening on hostnames with <code>InvalidArgumentException</code><br>
+and replace <code>ConnectionException</code> with <code>RuntimeException</code> for consistency<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="201196498" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/61" href="https://github.com/reactphp/socket/pull/61">#61</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="203649238" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/66" href="https://github.com/reactphp/socket/pull/66">#66</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="206189853" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/72" href="https://github.com/reactphp/socket/pull/72">#72</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> old</span></span>
 <span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Server</span>(<span class="pl-smi">$loop</span>);</span>
 <span class="pl-s1"><span class="pl-smi">$server</span><span class="pl-k">-&gt;</span>listen(<span class="pl-c1">8080</span>);</span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> new</span></span>
 <span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Server</span>(<span class="pl-c1">8080</span>, <span class="pl-smi">$loop</span>);</span></pre></div>
-<p>Similarly, you can now pass a full listening URI to the constructor to change
+<p>Similarly, you can now pass a full listening URI to the constructor to change<br>
 the listening host:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> old</span></span>
 <span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Server</span>(<span class="pl-smi">$loop</span>);</span>
@@ -508,7 +777,7 @@ the listening host:</p>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> new</span></span>
 <span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Server</span>(<span class="pl-s"><span class="pl-pds">'</span>127.0.0.1:8080<span class="pl-pds">'</span></span>, <span class="pl-smi">$loop</span>);</span></pre></div>
-<p>Trying to start listening on (DNS) host names will now throw an
+<p>Trying to start listening on (DNS) host names will now throw an<br>
 <code>InvalidArgumentException</code>, use IP addresses instead:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> old</span></span>
 <span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Server</span>(<span class="pl-smi">$loop</span>);</span>
@@ -516,8 +785,8 @@ the listening host:</p>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> new</span></span>
 <span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Server</span>(<span class="pl-s"><span class="pl-pds">'</span>127.0.0.1:8080<span class="pl-pds">'</span></span>, <span class="pl-smi">$loop</span>);</span></pre></div>
-<p>If trying to listen fails (such as if port is already in use or port below
-1024 may require root access etc.), it will now throw a <code>RuntimeException</code>,
+<p>If trying to listen fails (such as if port is already in use or port below<br>
+1024 may require root access etc.), it will now throw a <code>RuntimeException</code>,<br>
 the <code>ConnectionException</code> class has been removed:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> old: throws React\Socket\ConnectionException</span></span>
 <span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Server</span>(<span class="pl-smi">$loop</span>);</span>
@@ -527,8 +796,8 @@ the <code>ConnectionException</code> class has been removed:</p>
 <span class="pl-s1"><span class="pl-smi">$server</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Server</span>(<span class="pl-c1">80</span>, <span class="pl-smi">$loop</span>);</span></pre></div>
 </li>
 <li>
-<p>Feature / BC break: Rename <code>shutdown()</code> to <code>close()</code> for consistency throughout React
-(#62 by @clue)</p>
+<p>Feature / BC break: Rename <code>shutdown()</code> to <code>close()</code> for consistency throughout React<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="201220570" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/62" href="https://github.com/reactphp/socket/pull/62">#62</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> old</span></span>
 <span class="pl-s1"><span class="pl-smi">$server</span><span class="pl-k">-&gt;</span>shutdown();</span>
 <span class="pl-s1"></span>
@@ -536,8 +805,8 @@ the <code>ConnectionException</code> class has been removed:</p>
 <span class="pl-s1"><span class="pl-smi">$server</span><span class="pl-k">-&gt;</span>close();</span></pre></div>
 </li>
 <li>
-<p>Feature / BC break: Replace <code>getPort()</code> with <code>getAddress()</code>
-(#67 by @clue)</p>
+<p>Feature / BC break: Replace <code>getPort()</code> with <code>getAddress()</code><br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="205420718" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/67" href="https://github.com/reactphp/socket/pull/67">#67</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> old</span></span>
 <span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$server</span><span class="pl-k">-&gt;</span>getPort(); <span class="pl-c"><span class="pl-c">//</span> 8080</span></span>
 <span class="pl-s1"></span>
@@ -545,8 +814,8 @@ the <code>ConnectionException</code> class has been removed:</p>
 <span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$server</span><span class="pl-k">-&gt;</span>getAddress(); <span class="pl-c"><span class="pl-c">//</span> 127.0.0.1:8080</span></span></pre></div>
 </li>
 <li>
-<p>Feature / BC break: <code>getRemoteAddress()</code> returns full address instead of only IP
-(#65 by @clue)</p>
+<p>Feature / BC break: <code>getRemoteAddress()</code> returns full address instead of only IP<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="203327734" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/65" href="https://github.com/reactphp/socket/pull/65">#65</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> old</span></span>
 <span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$connection</span><span class="pl-k">-&gt;</span>getRemoteAddress(); <span class="pl-c"><span class="pl-c">//</span> 192.168.0.1</span></span>
 <span class="pl-s1"></span>
@@ -554,141 +823,385 @@ the <code>ConnectionException</code> class has been removed:</p>
 <span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$connection</span><span class="pl-k">-&gt;</span>getRemoteAddress(); <span class="pl-c"><span class="pl-c">//</span> 192.168.0.1:51743</span></span></pre></div>
 </li>
 <li>
-<p>Feature / BC break: Add <code>getLocalAddress()</code> method
-(#68 by @clue)</p>
+<p>Feature / BC break: Add <code>getLocalAddress()</code> method<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="205428178" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/68" href="https://github.com/reactphp/socket/pull/68">#68</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$connection</span><span class="pl-k">-&gt;</span>getLocalAddress(); <span class="pl-c"><span class="pl-c">//</span> 127.0.0.1:8080</span></span></pre></div>
 </li>
 <li>
-<p>BC break: The <code>Server</code> and <code>SecureServer</code> class are now marked <code>final</code>
-and you can no longer <code>extend</code> them
-(which was never documented or recommended anyway).
-Public properties and event handlers are now internal only.
-Please use composition instead of extension.
-(#71, #70 and #69 by @clue)</p>
+<p>BC break: The <code>Server</code> and <code>SecureServer</code> class are now marked <code>final</code><br>
+and you can no longer <code>extend</code> them<br>
+(which was never documented or recommended anyway).<br>
+Public properties and event handlers are now internal only.<br>
+Please use composition instead of extension.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="206188067" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/71" href="https://github.com/reactphp/socket/pull/71">#71</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="206165079" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/70" href="https://github.com/reactphp/socket/pull/70">#70</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="206140559" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/69" href="https://github.com/reactphp/socket/pull/69">#69</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
-<h2>
-<a id="046-2017-01-26" class="anchor" href="#046-2017-01-26" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.6 (2017-01-26)</h2>
-<ul>
-<li>
-<p>Feature: Support socket context options passed to <code>Server</code>
-(#64 by @clue)</p>
-</li>
-<li>
-<p>Fix: Properly return <code>null</code> for unknown addresses
-(#63 by @clue)</p>
-</li>
-<li>
-<p>Improve documentation for <code>ServerInterface</code> and lock test suite requirements
-(#60 by @clue, #57 by @shaunbramley)</p>
-</li>
+
+    <hr>
+    
+            <h3>
+        <a id="046-2017-01-26" class="anchor" href="#046-2017-01-26" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.6
+
+        <small>
+            (2017-01-26)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.4.6" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Support socket context options passed to <code>Server</code><br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="202817509" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/64" href="https://github.com/reactphp/socket/pull/64">#64</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Fix: Properly return <code>null</code> for unknown addresses<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="202649771" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/63" href="https://github.com/reactphp/socket/pull/63">#63</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Improve documentation for <code>ServerInterface</code> and lock test suite requirements<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="200869964" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/60" href="https://github.com/reactphp/socket/pull/60">#60</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="199442321" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/57" href="https://github.com/reactphp/socket/pull/57">#57</a> by <a class="user-mention" data-hovercard-user-id="7277007" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/shaunbramley">@shaunbramley</a>)</li>
 </ul>
-<h2>
-<a id="045-2017-01-08" class="anchor" href="#045-2017-01-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.5 (2017-01-08)</h2>
-<ul>
-<li>
-<p>Feature: Add <code>SecureServer</code> for secure TLS connections
-(#55 by @clue)</p>
-</li>
-<li>
-<p>Add functional integration tests
-(#54 by @clue)</p>
-</li>
+
+    <hr>
+    
+            <h3>
+        <a id="045-2017-01-08" class="anchor" href="#045-2017-01-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.5
+
+        <small>
+            (2017-01-08)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.4.5" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Add <code>SecureServer</code> for secure TLS connections<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="198240316" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/55" href="https://github.com/reactphp/socket/pull/55">#55</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Add functional integration tests<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="197990494" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/54" href="https://github.com/reactphp/socket/pull/54">#54</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
-<h2>
-<a id="044-2016-12-19" class="anchor" href="#044-2016-12-19" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.4 (2016-12-19)</h2>
-<ul>
-<li>
-<p>Feature / Fix: <code>ConnectionInterface</code> should extend <code>DuplexStreamInterface</code> + documentation
-(#50 by @clue)</p>
-</li>
-<li>
-<p>Feature / Fix: Improve test suite and switch to normal stream handler
-(#51 by @clue)</p>
-</li>
-<li>
-<p>Feature: Add examples
-(#49 by @clue)</p>
-</li>
+
+    <hr>
+        <h2>
+        <a id="2016" class="anchor" href="#2016" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2016
+    </h2>
+
+    
+            <h3>
+        <a id="044-2016-12-19" class="anchor" href="#044-2016-12-19" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.4
+
+        <small>
+            (2016-12-19)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.4.4" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature / Fix: <code>ConnectionInterface</code> should extend <code>DuplexStreamInterface</code> + documentation<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="188979236" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/50" href="https://github.com/reactphp/socket/pull/50">#50</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Feature / Fix: Improve test suite and switch to normal stream handler<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="189327106" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/51" href="https://github.com/reactphp/socket/pull/51">#51</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>Feature: Add examples<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="188333298" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/49" href="https://github.com/reactphp/socket/pull/49">#49</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
-<h2>
-<a id="043-2016-03-01" class="anchor" href="#043-2016-03-01" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.3 (2016-03-01)</h2>
-<ul>
-<li>Bug fix: Suppress errors on stream_socket_accept to prevent PHP from crashing</li>
+
+    <hr>
+    
+            <h3>
+        <a id="043-2016-03-01" class="anchor" href="#043-2016-03-01" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.3
+
+        <small>
+            (2016-03-01)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.4.3" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Suppress errors on stream_socket_accept to prevent PHP from crashing</li>
 <li>Support for PHP7 and HHVM</li>
 <li>Support PHP 5.3 again</li>
 </ul>
-<h2>
-<a id="042-2014-05-25" class="anchor" href="#042-2014-05-25" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.2 (2014-05-25)</h2>
-<ul>
-<li>Verify stream is a valid resource in Connection</li>
+
+    <hr>
+        <h2>
+        <a id="2014" class="anchor" href="#2014" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2014
+    </h2>
+
+    
+            <h3>
+        <a id="042-2014-05-25" class="anchor" href="#042-2014-05-25" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.2
+
+        <small>
+            (2014-05-25)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.4.2" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>[Connection] Verify stream is valid resource</li>
 </ul>
-<h2>
-<a id="041-2014-04-13" class="anchor" href="#041-2014-04-13" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.1 (2014-04-13)</h2>
-<ul>
-<li>Bug fix: Check read buffer for data before shutdown signal and end emit (@ArtyDev)</li>
+
+    <hr>
+    
+            <h3>
+        <a id="041-2014-04-13" class="anchor" href="#041-2014-04-13" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.1
+
+        <small>
+            (2014-04-13)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.4.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Bug fix: Check read buffer for data before shutdown signal and end emit (<a class="user-mention" data-hovercard-user-id="31207473" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/artydev">@artydev</a>)</li>
 <li>Bug fix: v0.3.4 changes merged for v0.4.1</li>
 </ul>
-<h2>
-<a id="034-2014-03-30" class="anchor" href="#034-2014-03-30" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.3.4 (2014-03-30)</h2>
-<ul>
-<li>Bug fix: Reset socket to non-blocking after shutting down (PHP bug)</li>
-</ul>
-<h2>
-<a id="040-2014-02-02" class="anchor" href="#040-2014-02-02" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.4.0 (2014-02-02)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="040-2014-02-02" class="anchor" href="#040-2014-02-02" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.4.0
+
+        <small>
+            (2014-02-02)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.4.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>BC break: Bump minimum PHP version to PHP 5.4, remove 5.3 specific hacks</li>
 <li>BC break: Update to React/Promise 2.0</li>
 <li>BC break: Update to Evenement 2.0</li>
 <li>Dependency: Autoloading and filesystem structure now PSR-4 instead of PSR-0</li>
 <li>Bump React dependencies to v0.4</li>
 </ul>
-<h2>
-<a id="033-2013-07-08" class="anchor" href="#033-2013-07-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.3.3 (2013-07-08)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="034-2014-02-17" class="anchor" href="#034-2014-02-17" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.3.4
+
+        <small>
+            (2014-02-17)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.3.4" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Bug fix: Reset socket to non-blocking after shutting down (PHP bug)</li>
+</ul>
+
+    <hr>
+        <h2>
+        <a id="2013" class="anchor" href="#2013" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2013
+    </h2>
+
+    
+            <h3>
+        <a id="033-2013-07-08" class="anchor" href="#033-2013-07-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.3.3
+
+        <small>
+            (2013-07-08)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.3.3" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>Version bump</li>
 </ul>
-<h2>
-<a id="032-2013-05-10" class="anchor" href="#032-2013-05-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.3.2 (2013-05-10)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="032-2013-04-26" class="anchor" href="#032-2013-04-26" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.3.2
+
+        <small>
+            (2013-04-26)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.3.2" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>Version bump</li>
 </ul>
-<h2>
-<a id="031-2013-04-21" class="anchor" href="#031-2013-04-21" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.3.1 (2013-04-21)</h2>
-<ul>
-<li>Feature: Support binding to IPv6 addresses (@clue)</li>
+
+    <hr>
+    
+            <h3>
+        <a id="031-2013-04-20" class="anchor" href="#031-2013-04-20" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.3.1
+
+        <small>
+            (2013-04-20)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.3.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Support binding to IPv6 addresses (<a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
-<h2>
-<a id="030-2013-04-14" class="anchor" href="#030-2013-04-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.3.0 (2013-04-14)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="030-2013-01-21" class="anchor" href="#030-2013-01-21" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.3.0
+
+        <small>
+            (2013-01-21)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.3.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>Bump React dependencies to v0.3</li>
 </ul>
-<h2>
-<a id="026-2012-12-26" class="anchor" href="#026-2012-12-26" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.2.6 (2012-12-26)</h2>
-<ul>
+
+    <hr>
+        <h2>
+        <a id="2012" class="anchor" href="#2012" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2012
+    </h2>
+
+    
+            <h3>
+        <a id="026-2012-12-14" class="anchor" href="#026-2012-12-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.2.6
+
+        <small>
+            (2012-12-14)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.2.6" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>Version bump</li>
 </ul>
-<h2>
-<a id="023-2012-11-14" class="anchor" href="#023-2012-11-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.2.3 (2012-11-14)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="023-2012-11-05" class="anchor" href="#023-2012-11-05" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.2.3
+
+        <small>
+            (2012-11-05)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.2.3" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>Version bump</li>
 </ul>
-<h2>
-<a id="020-2012-09-10" class="anchor" href="#020-2012-09-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.2.0 (2012-09-10)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="020-2012-09-10" class="anchor" href="#020-2012-09-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.2.0
+
+        <small>
+            (2012-09-10)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.2.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>Bump React dependencies to v0.2</li>
 </ul>
-<h2>
-<a id="011-2012-07-12" class="anchor" href="#011-2012-07-12" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.1.1 (2012-07-12)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="011-2012-07-12" class="anchor" href="#011-2012-07-12" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.1.1
+
+        <small>
+            (2012-07-12)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.1.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>Version bump</li>
 </ul>
-<h2>
-<a id="010-2012-07-11" class="anchor" href="#010-2012-07-11" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0.1.0 (2012-07-11)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="010-2012-07-11" class="anchor" href="#010-2012-07-11" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        0.1.0
+
+        <small>
+            (2012-07-11)
+            <a href="https://github.com/reactphp/socket/releases/tag/v0.1.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>First tagged release</li>
 </ul>
-                </main>
+
+    <hr>
+                    </main>
                 <aside class="sidebar" role="complementary">
                     <section class="component-info">
                         <h2 class="component-info__title">
@@ -1035,7 +1548,7 @@ Please use composition instead of extension.
         <mask id="reactphp-socket-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,5 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,6 54,3 60,1 66,4 72,4 78,3 84,4 90,1 96,4 102,11 108,6 114,4 120,1 126,1 132,5 138,9 144,1 150,3 156,1 162,1 168,5 174,2 180,7 186,3 192,3 198,1 204,2 210,1 216,1 222,3 228,2 234,1 240,1 246,1 252,1 258,1 264,1 270,6 276,1 282,3 288,1 294,1 300,1 306,1" 
+                points="0,5 6,1 12,1 18,1 24,1 30,1 36,1 42,1 48,6 54,3 60,1 66,4 72,4 78,3 84,4 90,1 96,4 102,13 108,4 114,4 120,1 126,1 132,5 138,9 144,1 150,3 156,1 162,1 168,5 174,4 180,5 186,4 192,2 198,1 204,2 210,1 216,1 222,4 228,1 234,1 240,1 246,1 252,1 258,1 264,2 270,5 276,1 282,3 288,1 294,1 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"

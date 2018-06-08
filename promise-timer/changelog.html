@@ -5,8 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>PromiseTimer: 
-Changelog - ReactPHP</title>
+        <title>PromiseTimer: Changelog - ReactPHP</title>
 
         <meta name="description" content="A trivial implementation of timeouts for Promises, built on top of ReactPHP.">
 
@@ -204,66 +203,179 @@ Changelog - ReactPHP</title>
             <div class="grid grid--wrap grid--gutter">
                 <main class="main">
                     <h1>
-<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Changelog</h1>
-<h2>
-<a id="130-2018-04-24" class="anchor" href="#130-2018-04-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.3.0 (2018-04-24)</h2>
-<ul>
-<li>Feature: Improve memory consumption by cleaning up unneeded references.
-(#32 by @clue)</li>
+        PromiseTimer Changelog
+    </h1>
+
+    <ul class="toc">
+            <li><a href="#2018" title="Jump to year 2018 (1 release)">2018</a></li>
+            <li><a href="#2017" title="Jump to year 2017 (2 releases)">2017</a></li>
+            <li><a href="#2016" title="Jump to year 2016 (2 releases)">2016</a></li>
+            <li><a href="#2015" title="Jump to year 2015 (1 release)">2015</a></li>
+        </ul>
+
+    <h2>
+        <a id="2018" class="anchor" href="#2018" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2018
+    </h2>
+
+    
+            <h3>
+        <a id="130-2018-04-24" class="anchor" href="#130-2018-04-24" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.3.0
+
+        <small>
+            (2018-04-24)
+            <a href="https://github.com/reactphp/promise-timer/releases/tag/v1.3.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Improve memory consumption by cleaning up unneeded references.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="316608822" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/promise-timer/issues/32" href="https://github.com/reactphp/promise-timer/pull/32">#32</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
-<h2>
-<a id="121-2017-12-22" class="anchor" href="#121-2017-12-22" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2.1 (2017-12-22)</h2>
-<ul>
+
+    <hr>
+        <h2>
+        <a id="2017" class="anchor" href="#2017" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2017
+    </h2>
+
+    
+            <h3>
+        <a id="121-2017-12-22" class="anchor" href="#121-2017-12-22" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.2.1
+
+        <small>
+            (2017-12-22)
+            <a href="https://github.com/reactphp/promise-timer/releases/tag/v1.2.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>
-<p>README improvements
-(#28 by @jsor)</p>
+<p>README improvements<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="262176643" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/promise-timer/issues/28" href="https://github.com/reactphp/promise-timer/pull/28">#28</a> by <a class="user-mention" data-hovercard-user-id="55574" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/jsor">@jsor</a>)</p>
 </li>
 <li>
-<p>Improve test suite by adding forward compatiblity with PHPUnit 6 and
-fix test suite forward compatibility with upcoming EventLoop releases
-(#30 and #31 by @clue)</p>
-</li>
-</ul>
-<h2>
-<a id="120-2017-08-08" class="anchor" href="#120-2017-08-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2.0 (2017-08-08)</h2>
-<ul>
-<li>
-<p>Feature: Only start timers if input Promise is still pending and
-return a settled output promise if the input is already settled.
-(#25 by @clue)</p>
-</li>
-<li>
-<p>Feature: Cap minimum timer interval at 1µs across all versions
-(#23 by @clue)</p>
-</li>
-<li>
-<p>Feature: Forward compatibility with EventLoop v1.0 and v0.5
-(#27 by @clue)</p>
-</li>
-<li>
-<p>Improve test suite by adding PHPUnit to require-dev and
-lock Travis distro so new defaults will not break the build
-(#24 and #26 by @clue)</p>
+<p>Improve test suite by adding forward compatiblity with PHPUnit 6 and<br>
+fix test suite forward compatibility with upcoming EventLoop releases<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="284181352" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/promise-timer/issues/30" href="https://github.com/reactphp/promise-timer/pull/30">#30</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="284181695" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/promise-timer/issues/31" href="https://github.com/reactphp/promise-timer/pull/31">#31</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>
-<h2>
-<a id="111-2016-12-27" class="anchor" href="#111-2016-12-27" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.1.1 (2016-12-27)</h2>
-<ul>
-<li>Improve test suite to use PSR-4 autoloader and proper namespaces.
-(#21 by @clue)</li>
+
+    <hr>
+    
+            <h3>
+        <a id="120-2017-08-08" class="anchor" href="#120-2017-08-08" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.2.0
+
+        <small>
+            (2017-08-08)
+            <a href="https://github.com/reactphp/promise-timer/releases/tag/v1.2.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Only start timers if input Promise is still pending and<br>
+return a settled output promise if the input is already settled.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="219890435" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/promise-timer/issues/25" href="https://github.com/reactphp/promise-timer/pull/25">#25</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Feature: Cap minimum timer interval at 1µs across all versions<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="219611060" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/promise-timer/issues/23" href="https://github.com/reactphp/promise-timer/pull/23">#23</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Feature: Forward compatibility with EventLoop v1.0 and v0.5<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="248537915" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/promise-timer/issues/27" href="https://github.com/reactphp/promise-timer/pull/27">#27</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Improve test suite by adding PHPUnit to require-dev and<br>
+lock Travis distro so new defaults will not break the build<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="219870072" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/promise-timer/issues/24" href="https://github.com/reactphp/promise-timer/pull/24">#24</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="248350427" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/promise-timer/issues/26" href="https://github.com/reactphp/promise-timer/pull/26">#26</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
 </ul>
-<h2>
-<a id="110-2016-02-29" class="anchor" href="#110-2016-02-29" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.1.0 (2016-02-29)</h2>
-<ul>
-<li>Feature: Support promise cancellation for all timer primitives
-(#18 by @clue)</li>
+
+    <hr>
+        <h2>
+        <a id="2016" class="anchor" href="#2016" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2016
+    </h2>
+
+    
+            <h3>
+        <a id="111-2016-12-27" class="anchor" href="#111-2016-12-27" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.1.1
+
+        <small>
+            (2016-12-27)
+            <a href="https://github.com/reactphp/promise-timer/releases/tag/v1.1.1" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Improve test suite to use PSR-4 autoloader and proper namespaces.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="197518148" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/promise-timer/issues/21" href="https://github.com/reactphp/promise-timer/pull/21">#21</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
 </ul>
-<h2>
-<a id="100-2015-09-29" class="anchor" href="#100-2015-09-29" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.0.0 (2015-09-29)</h2>
-<ul>
+
+    <hr>
+    
+            <h3>
+        <a id="110-2016-02-29" class="anchor" href="#110-2016-02-29" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.1.0
+
+        <small>
+            (2016-02-29)
+            <a href="https://github.com/reactphp/promise-timer/releases/tag/v1.1.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>Feature: Support promise cancellation for all timer primitives<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="134415257" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/promise-timer/issues/18" href="https://github.com/reactphp/promise-timer/pull/18">#18</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>
+
+    <hr>
+        <h2>
+        <a id="2015" class="anchor" href="#2015" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        2015
+    </h2>
+
+    
+            <h3>
+        <a id="100-2015-09-29" class="anchor" href="#100-2015-09-29" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        1.0.0
+
+        <small>
+            (2015-09-29)
+            <a href="https://github.com/reactphp/promise-timer/releases/tag/v1.0.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
 <li>First tagged release</li>
 </ul>
-                </main>
+
+    <hr>
+                    </main>
                 <aside class="sidebar" role="complementary">
                     <section class="component-info">
                         <h2 class="component-info__title">
