@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <title>Promise: 
-React/Promise - ReactPHP</title>
+Promise - ReactPHP</title>
 
         <meta name="description" content="Promises/A implementation for PHP.">
 
@@ -91,7 +91,7 @@ React/Promise - ReactPHP</title>
                         Promise
 
                         <span class="off-canvas-menu__version">
-                            v2.5.1
+                            v2.7.0
                         </span>
                     </a>
                 </li>
@@ -105,7 +105,7 @@ React/Promise - ReactPHP</title>
                         Socket
 
                         <span class="off-canvas-menu__version">
-                            v0.8.11
+                            v0.8.12
                         </span>
                     </a>
                 </li>
@@ -178,7 +178,7 @@ React/Promise - ReactPHP</title>
                         PromiseTimer
 
                         <span class="off-canvas-menu__version">
-                            v1.3.0
+                            v1.5.0
                         </span>
                     </a>
                 </li>
@@ -218,7 +218,7 @@ React/Promise - ReactPHP</title>
 <a href="#concepts">Concepts</a>
 <ul>
 <li><a href="#deferred">Deferred</a></li>
-<li><a href="#promise">Promise</a></li>
+<li><a href="#promise-1">Promise</a></li>
 </ul>
 </li>
 <li>
@@ -254,7 +254,7 @@ React/Promise - ReactPHP</title>
 <li><a href="#cancellablepromiseinterfacecancel">CancellablePromiseInterface::cancel()</a></li>
 </ul>
 </li>
-<li><a href="#promise-1">Promise</a></li>
+<li><a href="#promise-2">Promise</a></li>
 <li><a href="#fulfilledpromise">FulfilledPromise</a></li>
 <li><a href="#rejectedpromise">RejectedPromise</a></li>
 <li><a href="#lazypromise">LazyPromise</a></li>
@@ -290,12 +290,13 @@ React/Promise - ReactPHP</title>
 <li><a href="#done-vs-then">done() vs. then()</a></li>
 </ul>
 </li>
+<li><a href="#install">Install</a></li>
 <li><a href="#credits">Credits</a></li>
 <li><a href="#license">License</a></li>
 </ol>
 <h2>
 <a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h2>
-<p>React/Promise is a library implementing
+<p>Promise is a library implementing
 <a href="http://wiki.commonjs.org/wiki/Promises/A" rel="nofollow">CommonJS Promises/A</a> for PHP.</p>
 <p>It also provides several other useful promise-related concepts, such as joining
 multiple promises and mapping and reducing collections of promises.</p>
@@ -309,7 +310,7 @@ multiple promises and mapping and reducing collections of promises.</p>
 completed yet. Typically (but not always), that computation will be something
 that executes asynchronously and completes at some point in the future.</p>
 <h3>
-<a id="promise" class="anchor" href="#promise" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Promise</h3>
+<a id="promise-1" class="anchor" href="#promise-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Promise</h3>
 <p>While a deferred represents the computation itself, a <strong>Promise</strong> represents
 the result of that computation. Thus, each deferred has a promise that acts as
 a placeholder for its actual result.</p>
@@ -328,9 +329,9 @@ promise and resolver parts.</p>
 <span class="pl-s1"><span class="pl-smi">$deferred</span><span class="pl-k">-&gt;</span>notify(<span class="pl-c1">mixed</span> <span class="pl-smi">$update</span> <span class="pl-k">=</span> <span class="pl-c1">null</span>);</span></pre></div>
 <p>The <code>promise</code> method returns the promise of the deferred.</p>
 <p>The <code>resolve</code> and <code>reject</code> methods control the state of the deferred.</p>
-<p>The <code>notify</code> method is for progress notification.</p>
+<p>The deprecated <code>notify</code> method is for progress notification.</p>
 <p>The constructor of the <code>Deferred</code> accepts an optional <code>$canceller</code> argument.
-See <a href="#promise-1">Promise</a> for more information.</p>
+See <a href="#promise-2">Promise</a> for more information.</p>
 <h4>
 <a id="deferredpromise" class="anchor" href="#deferredpromise" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred::promise()</h4>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$promise</span> <span class="pl-k">=</span> <span class="pl-smi">$deferred</span><span class="pl-k">-&gt;</span>promise();</span></pre></div>
@@ -355,6 +356,9 @@ All consumers are notified by having <code>$onRejected</code> (which they regist
 of this promise regardless whether it fulfills or rejects.</p>
 <h4>
 <a id="deferrednotify" class="anchor" href="#deferrednotify" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deferred::notify()</h4>
+<blockquote>
+<p>Deprecated in v2.6.0: Progress support is deprecated and should not be used anymore.</p>
+</blockquote>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$deferred</span><span class="pl-k">-&gt;</span>notify(<span class="pl-c1">mixed</span> <span class="pl-smi">$update</span> <span class="pl-k">=</span> <span class="pl-c1">null</span>);</span></pre></div>
 <p>Triggers progress notifications, to indicate to consumers that the computation
 is making progress toward its result.</p>
@@ -371,7 +375,7 @@ Neither its state nor its result (or error) can be modified.</p>
 <h4>
 <a id="implementations" class="anchor" href="#implementations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Implementations</h4>
 <ul>
-<li><a href="#promise-1">Promise</a></li>
+<li><a href="#promise-2">Promise</a></li>
 <li><a href="#fulfilledpromise">FulfilledPromise</a></li>
 <li><a href="#rejectedpromise">RejectedPromise</a></li>
 <li><a href="#lazypromise">LazyPromise</a></li>
@@ -391,7 +395,7 @@ the result as the first argument.</li>
 <code>$onRejected</code> will be invoked once the promise is rejected and passed the
 reason as the first argument.</li>
 <li>
-<code>$onProgress</code> will be invoked whenever the producer of the promise
+<code>$onProgress</code> (deprecated) will be invoked whenever the producer of the promise
 triggers progress notifications and passed a single argument (whatever it
 wants) to indicate progress.</li>
 </ul>
@@ -407,7 +411,7 @@ never both.</li>
 <code>$onFulfilled</code> and <code>$onRejected</code> will never be called more
 than once.</li>
 <li>
-<code>$onProgress</code> may be called multiple times.</li>
+<code>$onProgress</code> (deprecated) may be called multiple times.</li>
 </ol>
 <h4>
 <a id="see-also" class="anchor" href="#see-also" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>See also</h4>
@@ -497,6 +501,9 @@ written:</p>
 <span class="pl-s1">    <span class="pl-k">-&gt;</span>always(<span class="pl-s"><span class="pl-pds">'</span>cleanup<span class="pl-pds">'</span></span>);</span></pre></div>
 <h4>
 <a id="extendedpromiseinterfaceprogress" class="anchor" href="#extendedpromiseinterfaceprogress" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ExtendedPromiseInterface::progress()</h4>
+<blockquote>
+<p>Deprecated in v2.6.0: Progress support is deprecated and should not be used anymore.</p>
+</blockquote>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$promise</span><span class="pl-k">-&gt;</span>progress(<span class="pl-c1">callable</span> <span class="pl-smi">$onProgress</span>);</span></pre></div>
 <p>Registers a handler for progress updates from promise. It is a shortcut for:</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$promise</span><span class="pl-k">-&gt;</span>then(<span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-smi">$onProgress</span>);</span></pre></div>
@@ -521,24 +528,26 @@ a promise has no effect.</p>
 <li><a href="#lazypromise">LazyPromise</a></li>
 </ul>
 <h3>
-<a id="promise-1" class="anchor" href="#promise-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Promise</h3>
+<a id="promise-2" class="anchor" href="#promise-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Promise</h3>
 <p>Creates a promise whose state is controlled by the functions passed to
 <code>$resolver</code>.</p>
 <div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$resolver</span> <span class="pl-k">=</span> <span class="pl-k">function</span> (<span class="pl-k">callable</span> <span class="pl-smi">$resolve</span>, <span class="pl-k">callable</span> <span class="pl-smi">$reject</span>, <span class="pl-k">callable</span> <span class="pl-smi">$notify</span>) {</span>
 <span class="pl-s1">    <span class="pl-c"><span class="pl-c">//</span> Do some work, possibly asynchronously, and then</span></span>
-<span class="pl-s1">    <span class="pl-c"><span class="pl-c">//</span> resolve or reject. You can notify of progress events</span></span>
+<span class="pl-s1">    <span class="pl-c"><span class="pl-c">//</span> resolve or reject. You can notify of progress events (deprecated)</span></span>
 <span class="pl-s1">    <span class="pl-c"><span class="pl-c">//</span> along the way if you want/need.</span></span>
 <span class="pl-s1"></span>
 <span class="pl-s1">    $<span class="pl-smi">resolve</span>(<span class="pl-smi">$awesomeResult</span>);</span>
+<span class="pl-s1">    <span class="pl-c"><span class="pl-c">//</span> or throw new Exception('Promise rejected');</span></span>
 <span class="pl-s1">    <span class="pl-c"><span class="pl-c">//</span> or $resolve($anotherPromise);</span></span>
 <span class="pl-s1">    <span class="pl-c"><span class="pl-c">//</span> or $reject($nastyError);</span></span>
 <span class="pl-s1">    <span class="pl-c"><span class="pl-c">//</span> or $notify($progressNotification);</span></span>
 <span class="pl-s1">};</span>
 <span class="pl-s1"></span>
-<span class="pl-s1"><span class="pl-smi">$canceller</span> <span class="pl-k">=</span> <span class="pl-k">function</span> (<span class="pl-k">callable</span> <span class="pl-smi">$resolve</span>, <span class="pl-k">callable</span> <span class="pl-smi">$reject</span>, <span class="pl-k">callable</span> <span class="pl-smi">$progress</span>) {</span>
+<span class="pl-s1"><span class="pl-smi">$canceller</span> <span class="pl-k">=</span> <span class="pl-k">function</span> () {</span>
 <span class="pl-s1">    <span class="pl-c"><span class="pl-c">//</span> Cancel/abort any running operations like network connections, streams etc.</span></span>
 <span class="pl-s1"></span>
-<span class="pl-s1">    $<span class="pl-smi">reject</span>(<span class="pl-k">new</span> <span class="pl-c1">\Exception</span>(<span class="pl-s"><span class="pl-pds">'</span>Promise cancelled<span class="pl-pds">'</span></span>));</span>
+<span class="pl-s1">    <span class="pl-c"><span class="pl-c">//</span> Reject promise by throwing an exception</span></span>
+<span class="pl-s1">    <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-c1">Exception</span>(<span class="pl-s"><span class="pl-pds">'</span>Promise cancelled<span class="pl-pds">'</span></span>);</span>
 <span class="pl-s1">};</span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-smi">$promise</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\Promise\</span><span class="pl-c1">Promise</span>(<span class="pl-smi">$resolver</span>, <span class="pl-smi">$canceller</span>);</span></pre></div>
@@ -552,9 +561,10 @@ When called with a non-promise value, fulfills promise with that value.
 When called with another promise, e.g. <code>$resolve($otherPromise)</code>, promise's
 fate will be equivalent to that of <code>$otherPromise</code>.</li>
 <li>
-<code>$reject($reason)</code> - Function that rejects the promise.</li>
+<code>$reject($reason)</code> - Function that rejects the promise. It is recommended to
+just throw an exception instead of using <code>$reject()</code>.</li>
 <li>
-<code>$notify($update)</code> - Function that issues progress events for the promise.</li>
+<code>$notify($update)</code> - Deprecated function that issues progress events for the promise.</li>
 </ul>
 <p>If the resolver or canceller throw an exception, the promise will be rejected
 with that thrown exception as the rejection reason.</p>
@@ -584,7 +594,7 @@ calls the <code>then()</code> method.</p>
 <span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$deferred</span><span class="pl-k">-&gt;</span>promise();</span>
 <span class="pl-s1">};</span>
 <span class="pl-s1"></span>
-<span class="pl-s1"><span class="pl-smi">$promise</span> <span class="pl-k">=</span> <span class="pl-c1">React\Promise\</span>LazyPromise(<span class="pl-smi">$factory</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$promise</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">React\Promise\</span><span class="pl-c1">LazyPromise</span>(<span class="pl-smi">$factory</span>);</span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> $factory will only be executed once we call then()</span></span>
 <span class="pl-s1"><span class="pl-smi">$promise</span><span class="pl-k">-&gt;</span>then(<span class="pl-k">function</span> (<span class="pl-smi">$value</span>) {</span>
@@ -802,6 +812,9 @@ rejections will still forward handler results in a predictable way.</p>
 <span class="pl-s1"><span class="pl-smi">$deferred</span><span class="pl-k">-&gt;</span>resolve(<span class="pl-c1">1</span>);  <span class="pl-c"><span class="pl-c">//</span> Prints "Mixed 4"</span></span></pre></div>
 <h4>
 <a id="progress-event-forwarding" class="anchor" href="#progress-event-forwarding" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Progress event forwarding</h4>
+<blockquote>
+<p>Deprecated in v2.6.0: Progress support is deprecated and should not be used anymore.</p>
+</blockquote>
 <p>In the same way as resolution and rejection handlers, your progress handler
 <strong>MUST</strong> return a progress event to be propagated to the next link in the chain.
 If you return nothing, <code>null</code> will be propagated.</p>
@@ -888,15 +901,27 @@ rethrown in an uncatchable way causing a fatal error.</p>
 wrapped in an exception of the type <code>React\Promise\UnhandledRejectionException</code>.</p>
 <p>You can get the original rejection reason by calling <code>$exception-&gt;getReason()</code>.</p>
 <h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+<p>The recommended way to install this library is <a href="https://getcomposer.org" rel="nofollow">through Composer</a>.
+<a href="https://getcomposer.org/doc/00-intro.md" rel="nofollow">New to Composer?</a></p>
+<p>This project follows <a href="https://semver.org/" rel="nofollow">SemVer</a>.
+This will install the latest supported version:</p>
+<div class="highlight highlight-source-shell"><pre>$ composer require react/promise:^2.7</pre></div>
+<p>See also the <a href="changelog.html">CHANGELOG</a> for details about version upgrades.</p>
+<p>This project aims to run on any platform and thus does not require any PHP
+extensions and supports running on legacy PHP 5.4 through current PHP 7+ and HHVM.
+It's <em>highly recommended to use PHP 7+</em> for this project due to its vast
+performance improvements.</p>
+<h2>
 <a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
-<p>React/Promise is a port of <a href="https://github.com/cujojs/when">when.js</a>
+<p>Promise is a port of <a href="https://github.com/cujojs/when">when.js</a>
 by <a href="https://github.com/briancavalier">Brian Cavalier</a>.</p>
 <p>Also, large parts of the documentation have been ported from the when.js
 <a href="https://github.com/cujojs/when/wiki">Wiki</a> and the
 <a href="https://github.com/cujojs/when/blob/master/docs/api.md">API docs</a>.</p>
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
-<p>React/Promise is released under the <a href="https://github.com/reactphp/promise/blob/master/LICENSE">MIT</a> license.</p>
+<p>Released under the <a href="license.html">MIT</a> license.</p>
                                 </main>
                 <aside class="sidebar" role="complementary">
                     <section class="component-info">
@@ -905,7 +930,7 @@ by <a href="https://github.com/briancavalier">Brian Cavalier</a>.</p>
 
                             <div class="version-selector">
                                 <button class="version-selector__button version-selector__button--latest" aria-expanded="false" aria-controls="component-version-selector" data-version-selector-toggle>
-                                    v2.5.1
+                                    v2.7.0
 
                                     <i class="icon-chevron-down" aria-hidden="true"></i>
                                     <i class="icon-chevron-up" aria-hidden="true"></i>
@@ -921,6 +946,16 @@ by <a href="https://github.com/briancavalier">Brian Cavalier</a>.</p>
                                             </a>
                                         </li>
                                                                                                                                                                                                                     <li>
+                                                <a href="https://github.com/reactphp/promise/tree/v2.6.0#readme" class="version-selector__version">
+                                                    v2.6.0
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/promise/tree/v2.5.1#readme" class="version-selector__version">
+                                                    v2.5.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
                                                 <a href="https://github.com/reactphp/promise/tree/v2.5.0#readme" class="version-selector__version">
                                                     v2.5.0
                                                 </a>
@@ -980,6 +1015,31 @@ by <a href="https://github.com/briancavalier">Brian Cavalier</a>.</p>
                                                     v2.0.0
                                                 </a>
                                             </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/promise/tree/v1.0.4#readme" class="version-selector__version">
+                                                    v1.0.4
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/promise/tree/v1.0.3#readme" class="version-selector__version">
+                                                    v1.0.3
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/promise/tree/v1.0.2#readme" class="version-selector__version">
+                                                    v1.0.2
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/promise/tree/v1.0.1#readme" class="version-selector__version">
+                                                    v1.0.1
+                                                </a>
+                                            </li>
+                                                                                                                                                                            <li>
+                                                <a href="https://github.com/reactphp/promise/tree/v1.0.0#readme" class="version-selector__version">
+                                                    v1.0.0
+                                                </a>
+                                            </li>
                                                                                                                         </ul>
                                 </div>
                             </div>
@@ -1005,7 +1065,7 @@ by <a href="https://github.com/briancavalier">Brian Cavalier</a>.</p>
 
                         <h3 class="component-info__subtitle">Installation</h3>
 
-                        <div class="highlight highlight-source-shell"><pre>composer require react/promise:^2.5.1</pre></div>
+                        <div class="highlight highlight-source-shell"><pre>composer require react/promise:^2.7.0</pre></div>
 
                         <h3 class="component-info__subtitle">Contributors</h3>
 
@@ -1074,7 +1134,7 @@ by <a href="https://github.com/briancavalier">Brian Cavalier</a>.</p>
         <mask id="reactphp-promise-participation-sparkline" x="0" y="0" width="320" height="40" >
             <polyline 
                 transform="translate(0, 40) scale(1,-1)"
-                points="0,1 6,2 12,1 18,1 24,1 30,1 36,1 42,3 48,2 54,1 60,4 66,3 72,1 78,1 84,2 90,1 96,1 102,1 108,1 114,1 120,1 126,1 132,2 138,3 144,2 150,2 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,1 270,3 276,1 282,1 288,1 294,1 300,1 306,1" 
+                points="0,2 6,1 12,1 18,1 24,1 30,1 36,3 42,2 48,1 54,4 60,3 66,1 72,1 78,2 84,1 90,1 96,1 102,1 108,1 114,1 120,2 126,3 132,1 138,3 144,1 150,1 156,1 162,1 168,1 174,1 180,1 186,1 192,1 198,1 204,1 210,1 216,1 222,1 228,1 234,1 240,1 246,1 252,1 258,1 264,3 270,1 276,1 282,1 288,1 294,1 300,1 306,1" 
                 fill="transparent" 
                 stroke="#40a977" 
                 stroke-width="2"
