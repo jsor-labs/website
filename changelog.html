@@ -73,7 +73,7 @@
                         EventLoop
 
                         <span class="off-canvas-menu__version">
-                            v0.5.2
+                            v0.5.3
                         </span>
                     </a>
                 </li>
@@ -146,7 +146,7 @@
                         DNS
 
                         <span class="off-canvas-menu__version">
-                            v0.4.13
+                            v0.4.15
                         </span>
                     </a>
                 </li>
@@ -160,7 +160,7 @@
                         Cache
 
                         <span class="off-canvas-menu__version">
-                            v0.4.2
+                            v0.5.0
                         </span>
                     </a>
                 </li>
@@ -208,7 +208,7 @@
 
 
             <ul class="toc">
-            <li><a href="#2018" title="Jump to year 2018 (24 releases)">2018</a></li>
+            <li><a href="#2018" title="Jump to year 2018 (28 releases)">2018</a></li>
             <li><a href="#2017" title="Jump to year 2017 (71 releases)">2017</a></li>
             <li><a href="#2016" title="Jump to year 2016 (29 releases)">2016</a></li>
             <li><a href="#2015" title="Jump to year 2015 (13 releases)">2015</a></li>
@@ -222,6 +222,142 @@
         2018
     </h2>
 
+    
+                        <h3>
+        <a id="eventloop-053-2018-07-09" class="anchor" href="#eventloop-053-2018-07-09" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        EventLoop 0.5.3
+
+        <small>
+            (2018-07-09)
+            <a href="https://github.com/reactphp/event-loop/releases/tag/v0.5.3" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Improve performance by importing global functions.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="331935499" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/event-loop/issues/167" href="https://github.com/reactphp/event-loop/pull/167">#167</a> by <a class="user-mention" data-hovercard-user-id="154256" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/Ocramius">@Ocramius</a>)</p>
+</li>
+<li>
+<p>Improve test suite by simplifying test bootstrap by using dev autoloader.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="335578689" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/event-loop/issues/169" href="https://github.com/reactphp/event-loop/pull/169">#169</a> by <a class="user-mention" data-hovercard-user-id="201963" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/lcobucci">@lcobucci</a>)</p>
+</li>
+<li>
+<p>Minor internal changes to improved backward compatibility with PHP 5.3.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="321859321" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/event-loop/issues/166" href="https://github.com/reactphp/event-loop/pull/166">#166</a> by <a class="user-mention" data-hovercard-user-id="2649302" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/Donatello-za">@Donatello-za</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+                        <h3>
+        <a id="dns-0415-2018-07-02" class="anchor" href="#dns-0415-2018-07-02" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        DNS 0.4.15
+
+        <small>
+            (2018-07-02)
+            <a href="https://github.com/reactphp/dns/releases/tag/v0.4.15" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Add <code>resolveAll()</code> method to support custom query types in <code>Resolver</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="336884718" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/110" href="https://github.com/reactphp/dns/pull/110">#110</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="user-mention" data-hovercard-user-id="147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$resolver</span><span class="pl-k">-&gt;</span>resolveAll(<span class="pl-s"><span class="pl-pds">'</span>reactphp.org<span class="pl-pds">'</span></span>, <span class="pl-c1">Message</span><span class="pl-k">::</span><span class="pl-c1">TYPE_AAAA</span>)<span class="pl-k">-&gt;</span>then(<span class="pl-k">function</span> (<span class="pl-smi">$ips</span>) {</span>
+<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>IPv6 addresses for reactphp.org <span class="pl-pds">'</span></span> <span class="pl-k">.</span> <span class="pl-c1">implode</span>(<span class="pl-s"><span class="pl-pds">'</span>, <span class="pl-pds">'</span></span>, <span class="pl-smi">$ips</span>) <span class="pl-k">.</span> <span class="pl-c1">PHP_EOL</span>;</span>
+<span class="pl-s1">});</span></pre></div>
+</li>
+<li>
+<p>Feature: Support parsing <code>NS</code>, <code>TXT</code>, <code>MX</code>, <code>SOA</code> and <code>SRV</code> records.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="335771740" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/104" href="https://github.com/reactphp/dns/pull/104">#104</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="335818701" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/105" href="https://github.com/reactphp/dns/pull/105">#105</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="336554084" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/106" href="https://github.com/reactphp/dns/pull/106">#106</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="336605164" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/107" href="https://github.com/reactphp/dns/pull/107">#107</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="336609410" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/108" href="https://github.com/reactphp/dns/pull/108">#108</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Feature: Add support for <code>Message::TYPE_ANY</code> parse unknown types as binary data.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="335771740" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/104" href="https://github.com/reactphp/dns/pull/104">#104</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Feature: Improve error messages for failed queries and improve documentation.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="336652900" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/109" href="https://github.com/reactphp/dns/pull/109">#109</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Feature: Add reverse DNS lookup example.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="336953891" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/111" href="https://github.com/reactphp/dns/pull/111">#111</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+                        <h3>
+        <a id="dns-0414-2018-06-26" class="anchor" href="#dns-0414-2018-06-26" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        DNS 0.4.14
+
+        <small>
+            (2018-06-26)
+            <a href="https://github.com/reactphp/dns/releases/tag/v0.4.14" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Feature: Add <code>UdpTransportExecutor</code>, validate incoming DNS response messages<br>
+to avoid cache poisoning attacks and deprecate legacy <code>Executor</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="334955344" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/101" href="https://github.com/reactphp/dns/pull/101">#101</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="335412702" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/103" href="https://github.com/reactphp/dns/pull/103">#103</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Feature: Forward compatibility with Cache 0.5<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="335206013" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/102" href="https://github.com/reactphp/dns/pull/102">#102</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Deprecate legacy <code>Query::$currentTime</code> and binary parser data attributes to clean up and simplify API.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="334767473" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/99" href="https://github.com/reactphp/dns/pull/99">#99</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
+    
+                        <h3>
+        <a id="cache-050-2018-06-25" class="anchor" href="#cache-050-2018-06-25" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+
+        Cache 0.5.0
+
+        <small>
+            (2018-06-25)
+            <a href="https://github.com/reactphp/cache/releases/tag/v0.5.0" title="Release on GitHub">
+                <i class="icon-github" aria-hidden="true"></i> <span class="visually-hidden">Release on GitHub</span>
+            </a>
+        </small>
+    </h3>
+
+    <ul>
+<li>
+<p>Improve documentation by describing what is expected of a class implementing <code>CacheInterface</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="294126811" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/cache/issues/21" href="https://github.com/reactphp/cache/pull/21">#21</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="294557985" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/cache/issues/22" href="https://github.com/reactphp/cache/pull/22">#22</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="298120483" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/cache/issues/23" href="https://github.com/reactphp/cache/pull/23">#23</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="310016131" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/cache/issues/27" href="https://github.com/reactphp/cache/pull/27">#27</a> by <a class="user-mention" data-hovercard-user-id="147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+<li>
+<p>Implemented (optional) Least Recently Used (LRU) cache algorithm for <code>ArrayCache</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="308650927" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/cache/issues/26" href="https://github.com/reactphp/cache/pull/26">#26</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Added support for cache expiration (TTL).<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="330626351" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/cache/issues/29" href="https://github.com/reactphp/cache/pull/29">#29</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a> and <a class="user-mention" data-hovercard-user-id="147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+<li>
+<p>Renamed <code>remove</code> to <code>delete</code> making it more in line with <code>PSR-16</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="330633468" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/cache/issues/30" href="https://github.com/reactphp/cache/pull/30">#30</a> by <a class="user-mention" data-hovercard-user-id="776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>
+
+    <hr>
     
                         <h3>
         <a id="promisetimer-150-2018-06-13" class="anchor" href="#promisetimer-150-2018-06-13" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
@@ -6114,16 +6250,7 @@ Upgrading from clue/datagram v0.5.0? Use namespace <code>React\Datagram</code> i
 </ul>
 
     <hr>
-    
-            <ul class="links">
-                <li>
-                    <a href="https://jsor-labs.github.io/website/changelog.atom">
-                        <i class="icon-feed" aria-hidden="true"></i>
-                        Subscribe to the Changelog feed
-                    </a>
-                </li>
-            </ul>
-        </div>
+            </div>
     </div>
 
 
