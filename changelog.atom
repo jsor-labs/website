@@ -1,265 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <title type="text">The combined changelog for all ReactPHP components.</title>
-  <updated>2019-02-15T13:48:32+00:00</updated>
+  <updated>2019-10-29T14:17:29+00:00</updated>
   <generator uri="http://framework.zend.com" version="2">Zend_Feed_Writer</generator>
   <link rel="alternate" type="text/html" href="https://jsor-labs.github.io/website/changelog.html"/>
   <link rel="self" type="application/atom+xml" href="https://jsor-labs.github.io/website/changelog.atom"/>
   <id>https://jsor-labs.github.io/website/changelog.html</id>
   <entry>
-    <title type="html"><![CDATA[ChildProcess 0.6.1]]></title>
+    <title type="html"><![CDATA[HTTP 0.8.5]]></title>
     <summary type="html"><![CDATA[<ul>
-<li>Feature / Fix: Improve error reporting when spawning child process fails.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="409917419" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/child-process/issues/73" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/73/hovercard" href="https://github.com/reactphp/child-process/pull/73">#73</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+<li>
+<p>Internal refactorings and optimizations to improve request parsing performance.<br>
+Benchmarks suggest number of requests/s improved by ~30% for common <code>GET</code> requests.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="456296934" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http/issues/345" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/345/hovercard" href="https://github.com/reactphp/http/pull/345">#345</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="456649853" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http/issues/346" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/346/hovercard" href="https://github.com/reactphp/http/pull/346">#346</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="498214944" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http/issues/349" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/349/hovercard" href="https://github.com/reactphp/http/pull/349">#349</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="499118258" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http/issues/350" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/350/hovercard" href="https://github.com/reactphp/http/pull/350">#350</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Add documentation and example for JSON/XML request body and<br>
+improve documentation for concurrency and streaming requests and for error handling.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="432871220" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http/issues/341" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/341/hovercard" href="https://github.com/reactphp/http/pull/341">#341</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="434218553" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http/issues/342" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/342/hovercard" href="https://github.com/reactphp/http/pull/342">#342</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
 </ul>]]></summary>
-    <updated>2019-02-15T13:48:32+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/child-process/releases/tag/v0.6.1"/>
-    <id>https://github.com/reactphp/child-process/releases/tag/v0.6.1</id>
+    <updated>2019-10-29T14:17:29+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/http/releases/tag/v0.8.5"/>
+    <id>https://github.com/reactphp/http/releases/tag/v0.8.5</id>
     <author>
       <name>clue</name>
       <uri>https://github.com/clue</uri>
     </author>
   </entry>
   <entry>
-    <title type="html"><![CDATA[EventLoop 1.1.0]]></title>
+    <title type="html"><![CDATA[DNS 1.2.0]]></title>
     <summary type="html"><![CDATA[<ul>
 <li>
-<p>New UV based event loop (ext-uv).<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="269913340" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/event-loop/issues/112" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/112/hovercard" href="https://github.com/reactphp/event-loop/pull/112">#112</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+<p>Feature: Add <code>TcpTransportExecutor</code> to send DNS queries over TCP/IP connection,<br>
+add <code>SelectiveTransportExecutor</code> to retry with TCP if UDP is truncated and<br>
+automatically select transport protocol when no explicit <code>udp://</code> or <code>tcp://</code> scheme is given in <code>Factory</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="476278188" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/145" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/145/hovercard" href="https://github.com/reactphp/dns/pull/145">#145</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="478672660" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/146" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/146/hovercard" href="https://github.com/reactphp/dns/pull/146">#146</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="479002973" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/147" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/147/hovercard" href="https://github.com/reactphp/dns/pull/147">#147</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="480052064" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/148" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/148/hovercard" href="https://github.com/reactphp/dns/pull/148">#148</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Use high resolution timer on PHP 7.3+.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="407159925" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/event-loop/issues/182" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/182/hovercard" href="https://github.com/reactphp/event-loop/pull/182">#182</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p>Improve PCNTL signals by using async signal dispatching if available.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="398847598" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/event-loop/issues/179" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/179/hovercard" href="https://github.com/reactphp/event-loop/pull/179">#179</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=4529744" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/CharlotteDunois">@CharlotteDunois</a>)</p>
-</li>
-<li>
-<p>Improve test suite and test suite set up.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="374434272" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/event-loop/issues/174" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/174/hovercard" href="https://github.com/reactphp/event-loop/pull/174">#174</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="406302085" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/event-loop/issues/181" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/181/hovercard" href="https://github.com/reactphp/event-loop/pull/181">#181</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p>Fix PCNTL signals edge case.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="407294905" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/event-loop/issues/183" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/event-loop/pull/183/hovercard" href="https://github.com/reactphp/event-loop/pull/183">#183</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>Feature: Support escaping literal dots and special characters in domain names.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="475625705" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/144" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/144/hovercard" href="https://github.com/reactphp/dns/pull/144">#144</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 </ul>]]></summary>
-    <updated>2019-02-07T16:20:18+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/event-loop/releases/tag/v1.1.0"/>
-    <id>https://github.com/reactphp/event-loop/releases/tag/v1.1.0</id>
+    <updated>2019-08-15T09:06:41+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/dns/releases/tag/v1.2.0"/>
+    <id>https://github.com/reactphp/dns/releases/tag/v1.2.0</id>
     <author>
-      <name>WyriHaximus</name>
-      <uri>https://github.com/WyriHaximus</uri>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
     </author>
   </entry>
   <entry>
-    <title type="html"><![CDATA[HTTP 0.8.4]]></title>
+    <title type="html"><![CDATA[DNS 1.1.0]]></title>
     <summary type="html"><![CDATA[<ul>
-<li>Improvement: Internal refactoring to simplify response header logic (<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="343679950" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http/issues/321" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/321/hovercard" href="https://github.com/reactphp/http/pull/321">#321</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
-<li>Improvement: Assign Content-Length response header automatically only when size is known (<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="379770949" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http/issues/329" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/329/hovercard" href="https://github.com/reactphp/http/pull/329">#329</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
-<li>Improvement: Import global functions for better performance (<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="380088071" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/http/issues/330" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/http/pull/330/hovercard" href="https://github.com/reactphp/http/pull/330">#330</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
+<li>
+<p>Feature: Support parsing <code>CAA</code> and <code>SSHFP</code> records.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="468573632" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/141" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/141/hovercard" href="https://github.com/reactphp/dns/pull/141">#141</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="468845581" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/142" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/142/hovercard" href="https://github.com/reactphp/dns/pull/142">#142</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Feature: Add <code>ResolverInterface</code> as common interface for <code>Resolver</code> class.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="468244418" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/139" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/139/hovercard" href="https://github.com/reactphp/dns/pull/139">#139</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Fix: Add missing private property definitions and<br>
+remove unneeded dependency on <code>react/stream</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="468250332" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/140" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/140/hovercard" href="https://github.com/reactphp/dns/pull/140">#140</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="469402412" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/143" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/143/hovercard" href="https://github.com/reactphp/dns/pull/143">#143</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
 </ul>]]></summary>
-    <updated>2019-01-16T07:26:54+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/http/releases/tag/v0.8.4"/>
-    <id>https://github.com/reactphp/http/releases/tag/v0.8.4</id>
+    <updated>2019-07-18T09:47:54+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/dns/releases/tag/v1.1.0"/>
+    <id>https://github.com/reactphp/dns/releases/tag/v1.1.0</id>
     <author>
-      <name>WyriHaximus</name>
-      <uri>https://github.com/WyriHaximus</uri>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
     </author>
   </entry>
   <entry>
-    <title type="html"><![CDATA[ChildProcess 0.6.0]]></title>
-    <summary type="html"><![CDATA[<p>A major feature release with some minor API improvements!<br>
-This project now has limited Windows support and supports passing custom pipes<br>
-and file descriptors to the child process.</p>
-<p>This update involves a few minor BC breaks. We've tried hard to avoid BC breaks<br>
-where possible and minimize impact otherwise. We expect that most consumers of<br>
-this package will actually not be affected by any BC breaks, see below for more<br>
-details.</p>
+    <title type="html"><![CDATA[DNS 1.0.0]]></title>
+    <summary type="html"><![CDATA[<ul>
+<li>First stable LTS release, now following <a href="https://semver.org/" rel="nofollow">SemVer</a>.<br>
+We'd like to emphasize that this component is production ready and battle-tested.<br>
+We plan to support all long-term support (LTS) releases for at least 24 months,<br>
+so you have a rock-solid foundation to build on top of.</li>
+</ul>
+<p>This update involves a number of BC breaks due to dropped support for<br>
+deprecated functionality and some internal API cleanup. We've tried hard to<br>
+avoid BC breaks where possible and minimize impact otherwise. We expect that<br>
+most consumers of this package will actually not be affected by any BC<br>
+breaks, see below for more details:</p>
 <ul>
 <li>
-<p>Feature / BC break: Support passing custom pipes and file descriptors to child process,<br>
-expose all standard I/O pipes in an array and remove unused Windows-only options.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="383999912" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/child-process/issues/62" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/62/hovercard" href="https://github.com/reactphp/child-process/pull/62">#62</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="386159810" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/child-process/issues/64" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/64/hovercard" href="https://github.com/reactphp/child-process/pull/64">#64</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="386584758" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/child-process/issues/65" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/65/hovercard" href="https://github.com/reactphp/child-process/pull/65">#65</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<blockquote>
-<p>BC note: The optional <code>$options</code> parameter in the <code>Process</code> constructor<br>
-has been removed and a new <code>$fds</code> parameter has been added instead. The<br>
-previous <code>$options</code> parameter was Windows-only, available options were not<br>
-documented or referenced anywhere else in this library, so its actual<br>
-impact is expected to be relatively small. See the documentation and the<br>
-following changelog entry if you're looking for Windows support.</p>
-</blockquote>
+<p>BC break: Delete all deprecated APIs, use <code>Query</code> objects for <code>Message</code> questions<br>
+instead of nested arrays and increase code coverage to 100%.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="465771042" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/130" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/130/hovercard" href="https://github.com/reactphp/dns/pull/130">#130</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Feature: Support spawning child process on Windows without process I/O pipes.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="397884467" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/child-process/issues/67" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/67/hovercard" href="https://github.com/reactphp/child-process/pull/67">#67</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>BC break: Move <code>$nameserver</code> from <code>ExecutorInterface</code> to <code>UdpTransportExecutor</code>,<br>
+remove advanced/internal <code>UdpTransportExecutor</code> args for <code>Parser</code>/<code>BinaryDumper</code> and<br>
+add API documentation for <code>ExecutorInterface</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="466759823" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/135" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/135/hovercard" href="https://github.com/reactphp/dns/pull/135">#135</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="466797146" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/137" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/137/hovercard" href="https://github.com/reactphp/dns/pull/137">#137</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="466886290" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/138" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/138/hovercard" href="https://github.com/reactphp/dns/pull/138">#138</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Feature / BC break: Improve sigchild compatibility and support explicit configuration.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="384374501" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/child-process/issues/63" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/63/hovercard" href="https://github.com/reactphp/child-process/pull/63">#63</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-c"><span class="pl-c">//</span> advanced: not recommended by default</span></span>
-<span class="pl-s1"><span class="pl-c1">Process</span><span class="pl-k">::</span>setSigchildEnabled(<span class="pl-c1">true</span>);</span></pre></div>
-<blockquote>
-<p>BC note: The old public sigchild methods have been removed, but its<br>
-practical impact is believed to be relatively small due to the automatic detection.</p>
-</blockquote>
+<p>BC break: Replace <code>HeaderBag</code> attributes with simple <code>Message</code> properties.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="465915799" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/132" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/132/hovercard" href="https://github.com/reactphp/dns/pull/132">#132</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Improve performance by prefixing all global functions calls with \ to skip<br>
-the look up and resolve process and go straight to the global function.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="398402393" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/child-process/issues/68" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/68/hovercard" href="https://github.com/reactphp/child-process/pull/68">#68</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+<p>BC break: Mark all <code>Record</code> attributes as required, add documentation vs <code>Query</code>.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="466784724" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/136" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/136/hovercard" href="https://github.com/reactphp/dns/pull/136">#136</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
 </li>
 <li>
-<p>Minor documentation improvements and docblock updates.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="331323060" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/child-process/issues/59" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/59/hovercard" href="https://github.com/reactphp/child-process/pull/59">#59</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=1539731" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/iamluc">@iamluc</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="398553768" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/child-process/issues/69" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/69/hovercard" href="https://github.com/reactphp/child-process/pull/69">#69</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=4529744" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/CharlotteDunois">@CharlotteDunois</a>)</p>
-</li>
-<li>
-<p>Improve test suite to test against PHP7.2 and PHP 7.3, improve HHVM compatibility,<br>
-add forward compatibility with PHPUnit 7 and run tests on Windows via Travis CI.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="397396699" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/child-process/issues/66" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/66/hovercard" href="https://github.com/reactphp/child-process/pull/66">#66</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="398659551" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/child-process/issues/71" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/child-process/pull/71/hovercard" href="https://github.com/reactphp/child-process/pull/71">#71</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+<p>BC break: Mark all classes as final to discourage inheritance<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="466693315" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/134" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/134/hovercard" href="https://github.com/reactphp/dns/pull/134">#134</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
 </li>
 </ul>]]></summary>
-    <updated>2019-01-14T15:55:02+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/child-process/releases/tag/v0.6.0"/>
-    <id>https://github.com/reactphp/child-process/releases/tag/v0.6.0</id>
+    <updated>2019-07-11T14:58:45+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/dns/releases/tag/v1.0.0"/>
+    <id>https://github.com/reactphp/dns/releases/tag/v1.0.0</id>
     <author>
       <name>clue</name>
       <uri>https://github.com/clue</uri>
     </author>
   </entry>
   <entry>
-    <title type="html"><![CDATA[Promise 2.7.1]]></title>
-    <summary type="html"><![CDATA[<ul>
-<li>Fix: file_exists warning when resolving with long strings. (<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="392998751" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/promise/issues/130" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/130/hovercard" href="https://github.com/reactphp/promise/pull/130">#130</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=151181" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/sbesselsen">@sbesselsen</a>)</li>
-<li>Improve performance by prefixing all global functions calls with \ to skip the look up and resolve process and go straight to the global function. (<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="396586706" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/promise/issues/133" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/promise/pull/133/hovercard" href="https://github.com/reactphp/promise/pull/133">#133</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
-</ul>]]></summary>
-    <updated>2019-01-07T21:26:15+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/promise/releases/tag/v2.7.1"/>
-    <id>https://github.com/reactphp/promise/releases/tag/v2.7.1</id>
-    <author>
-      <name>WyriHaximus</name>
-      <uri>https://github.com/WyriHaximus</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[Socket 1.2.0]]></title>
-    <summary type="html"><![CDATA[<ul>
-<li>
-<p>Feature / Fix: Improve TLS 1.3 support.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="395302314" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/186" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/186/hovercard" href="https://github.com/reactphp/socket/pull/186">#186</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<p>TLS 1.3 is now an official standard as of August 2018! <g-emoji class="g-emoji" alias="tada" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji><br>
-The protocol has major improvements in the areas of security, performance, and privacy.<br>
-TLS 1.3 is supported by default as of <a href="https://www.openssl.org/blog/blog/2018/09/11/release111/" rel="nofollow">OpenSSL 1.1.1</a>.<br>
-For example, this version ships with Ubuntu 18.10 (and newer) by default, meaning that recent installations support TLS 1.3 out of the box <img class="emoji" title=":shipit:" alt=":shipit:" src="https://github.githubassets.com/images/icons/emoji/shipit.png" height="20" width="20" align="absmiddle"></p>
-</li>
-<li>
-<p>Fix: Avoid possibility of missing remote address when TLS handshake fails.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="396284100" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/188" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/188/hovercard" href="https://github.com/reactphp/socket/pull/188">#188</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p>Improve performance by prefixing all global functions calls with <code>\</code> to skip the look up and resolve process and go straight to the global function.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="394901397" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/183" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/183/hovercard" href="https://github.com/reactphp/socket/pull/183">#183</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
-</li>
-<li>
-<p>Update documentation to use full class names with namespaces.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="396040268" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/187" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/187/hovercard" href="https://github.com/reactphp/socket/pull/187">#187</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p>Improve test suite to avoid some possible race conditions,<br>
-test against PHP 7.3 on Travis and<br>
-use dedicated <code>assertInstanceOf()</code> assertions.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="395084900" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/185" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/185/hovercard" href="https://github.com/reactphp/socket/pull/185">#185</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="374436516" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/178" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/178/hovercard" href="https://github.com/reactphp/socket/pull/178">#178</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="379523025" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/181" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/181/hovercard" href="https://github.com/reactphp/socket/pull/181">#181</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=16328050" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/carusogabriel">@carusogabriel</a>)</p>
-</li>
-</ul>]]></summary>
-    <updated>2019-01-07T14:34:11+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/socket/releases/tag/v1.2.0"/>
-    <id>https://github.com/reactphp/socket/releases/tag/v1.2.0</id>
-    <author>
-      <name>clue</name>
-      <uri>https://github.com/clue</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[Stream 1.1.0]]></title>
-    <summary type="html"><![CDATA[<ul>
-<li>Improvement: Increase performance by optimizing global function and constant look ups<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="371711734" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/stream/issues/137" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/137/hovercard" href="https://github.com/reactphp/stream/pull/137">#137</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
-<li>Travis: Test against PHP 7.3<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="374435409" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/stream/issues/138" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/138/hovercard" href="https://github.com/reactphp/stream/pull/138">#138</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
-<li>Fix: Ignore empty reads<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="384006525" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/stream/issues/139" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/stream/pull/139/hovercard" href="https://github.com/reactphp/stream/pull/139">#139</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</li>
-</ul>]]></summary>
-    <updated>2019-01-01T16:15:30+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/stream/releases/tag/v1.1.0"/>
-    <id>https://github.com/reactphp/stream/releases/tag/v1.1.0</id>
-    <author>
-      <name>WyriHaximus</name>
-      <uri>https://github.com/WyriHaximus</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[DNS 0.4.16]]></title>
-    <summary type="html"><![CDATA[<ul>
-<li>
-<p>Feature: Improve promise cancellation for DNS lookup retries and clean up any garbage references.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="377369343" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/118" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/118/hovercard" href="https://github.com/reactphp/dns/pull/118">#118</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p>Fix: Reject parsing malformed DNS response messages such as incomplete DNS response messages,<br>
-malformed record data or malformed compressed domain name labels.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="377073833" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/115" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/115/hovercard" href="https://github.com/reactphp/dns/pull/115">#115</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="377314964" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/117" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/117/hovercard" href="https://github.com/reactphp/dns/pull/117">#117</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p>Fix: Fix interpretation of TTL as UINT32 with most significant bit unset.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="377149683" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/116" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/116/hovercard" href="https://github.com/reactphp/dns/pull/116">#116</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-<li>
-<p>Fix: Fix caching advanced MX/SRV/TXT/SOA structures.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="343098921" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/112" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/112/hovercard" href="https://github.com/reactphp/dns/pull/112">#112</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-</li>
-</ul>]]></summary>
-    <updated>2018-11-11T11:21:20+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/dns/releases/tag/v0.4.16"/>
-    <id>https://github.com/reactphp/dns/releases/tag/v0.4.16</id>
-    <author>
-      <name>clue</name>
-      <uri>https://github.com/clue</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[Socket 1.1.0]]></title>
-    <summary type="html"><![CDATA[<ul>
-<li>
-<p>Feature: Improve error reporting for failed connection attempts and improve<br>
-cancellation forwarding during DNS lookup, TCP/IP connection or TLS handshake.<br>
-(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="342009514" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/168" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/168/hovercard" href="https://github.com/reactphp/socket/pull/168">#168</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="342683404" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/169" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/169/hovercard" href="https://github.com/reactphp/socket/pull/169">#169</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="346511755" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/170" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/170/hovercard" href="https://github.com/reactphp/socket/pull/170">#170</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="348085928" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/171" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/171/hovercard" href="https://github.com/reactphp/socket/pull/171">#171</a>, <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="362933766" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/176" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/176/hovercard" href="https://github.com/reactphp/socket/pull/176">#176</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="364365413" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/177" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/177/hovercard" href="https://github.com/reactphp/socket/pull/177">#177</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
-<p>All error messages now always contain a reference to the remote URI to give<br>
-more details which connection actually failed and the reason for this error.<br>
-Accordingly, failures during DNS lookup will now mention both the remote URI<br>
-as well as the DNS error reason. TCP/IP connection issues and errors during<br>
-a secure TLS handshake will both mention the remote URI as well as the<br>
-underlying socket error. Similarly, lost/dropped connections during a TLS<br>
-handshake will now report a lost connection instead of an empty error reason.</p>
-<p>For most common use cases this means that simply reporting the <code>Exception</code><br>
-message should give the most relevant details for any connection issues:</p>
-<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-smi">$promise</span> <span class="pl-k">=</span> <span class="pl-smi">$connector</span><span class="pl-k">-&gt;</span>connect(<span class="pl-s"><span class="pl-pds">'</span>tls://example.com:443<span class="pl-pds">'</span></span>);</span>
-<span class="pl-s1"><span class="pl-smi">$promise</span><span class="pl-k">-&gt;</span>then(<span class="pl-k">function</span> (<span class="pl-c1">ConnectionInterface</span> <span class="pl-smi">$conn</span>) <span class="pl-k">use</span> (<span class="pl-smi">$loop</span>) {</span>
-<span class="pl-s1">    <span class="pl-c"><span class="pl-c">//</span> …</span></span>
-<span class="pl-s1">}, <span class="pl-k">function</span> (<span class="pl-c1">Exception</span> <span class="pl-smi">$e</span>) {</span>
-<span class="pl-s1">    <span class="pl-c1">echo</span> <span class="pl-smi">$e</span><span class="pl-k">-&gt;</span>getMessage();</span>
-<span class="pl-s1">});</span></pre></div>
-</li>
-</ul>]]></summary>
-    <updated>2018-10-01T12:21:17+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/socket/releases/tag/v1.1.0"/>
-    <id>https://github.com/reactphp/socket/releases/tag/v1.1.0</id>
-    <author>
-      <name>clue</name>
-      <uri>https://github.com/clue</uri>
-    </author>
-  </entry>
-  <entry>
-    <title type="html"><![CDATA[Socket 1.0.0]]></title>
+    <title type="html"><![CDATA[Cache 1.0.0]]></title>
     <summary type="html"><![CDATA[<ul>
 <li>First stable LTS release, now following <a href="https://semver.org/" rel="nofollow">SemVer</a>.<br>
 We'd like to emphasize that this component is production ready and battle-tested.<br>
@@ -267,11 +130,118 @@ We plan to support all long-term support (LTS) releases for at least 24 months,<
 so you have a rock-solid foundation to build on top of.</li>
 </ul>
 <blockquote>
-<p>Contains no other changes, so it's actually fully compatible with the v0.8.12 release.</p>
+<p>Contains no other changes, so it's actually fully compatible with the v0.6.0 release.</p>
 </blockquote>]]></summary>
-    <updated>2018-07-11T14:43:56+00:00</updated>
-    <link rel="alternate" type="text/html" href="https://github.com/reactphp/socket/releases/tag/v1.0.0"/>
-    <id>https://github.com/reactphp/socket/releases/tag/v1.0.0</id>
+    <updated>2019-07-11T14:56:12+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/cache/releases/tag/v1.0.0"/>
+    <id>https://github.com/reactphp/cache/releases/tag/v1.0.0</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[DNS 0.4.19]]></title>
+    <summary type="html"><![CDATA[<ul>
+<li>Feature: Avoid garbage references when DNS resolution rejects on legacy PHP &lt;= 5.6.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="466271528" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/133" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/133/hovercard" href="https://github.com/reactphp/dns/pull/133">#133</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>]]></summary>
+    <updated>2019-07-10T21:01:17+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/dns/releases/tag/v0.4.19"/>
+    <id>https://github.com/reactphp/dns/releases/tag/v0.4.19</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[Socket 1.3.0]]></title>
+    <summary type="html"><![CDATA[<ul>
+<li>Feature: Forward compatibility with upcoming stable DNS component.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="464951885" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/socket/issues/206" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/socket/pull/206/hovercard" href="https://github.com/reactphp/socket/pull/206">#206</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</li>
+</ul>]]></summary>
+    <updated>2019-07-10T10:11:23+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/socket/releases/tag/v1.3.0"/>
+    <id>https://github.com/reactphp/socket/releases/tag/v1.3.0</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[Datagram 1.5.0]]></title>
+    <summary type="html"><![CDATA[<ul>
+<li>
+<p>Feature: Forward compatibility with upcoming stable DNS component.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="464954089" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/datagram/issues/29" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/datagram/pull/29/hovercard" href="https://github.com/reactphp/datagram/pull/29">#29</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Prefix all global functions calls with <code>\</code> to skip the look up and resolve process and go straight to the global function.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="366477132" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/datagram/issues/28" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/datagram/pull/28/hovercard" href="https://github.com/reactphp/datagram/pull/28">#28</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+<li>
+<p>Improve test suite to also test against PHP 7.1 and 7.2.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="319487815" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/datagram/issues/25" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/datagram/pull/25/hovercard" href="https://github.com/reactphp/datagram/pull/25">#25</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=2576509" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/andreybolonin">@andreybolonin</a>)</p>
+</li>
+</ul>]]></summary>
+    <updated>2019-07-10T10:04:22+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/datagram/releases/tag/v1.5.0"/>
+    <id>https://github.com/reactphp/datagram/releases/tag/v1.5.0</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[DNS 0.4.18]]></title>
+    <summary type="html"><![CDATA[<ul>
+<li>
+<p>Feature / Fix: Implement <code>CachingExecutor</code> using cache TTL, deprecate old <code>CachedExecutor</code>,<br>
+respect TTL from response records when caching and do not cache truncated responses.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="465179457" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/129" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/129/hovercard" href="https://github.com/reactphp/dns/pull/129">#129</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Feature: Limit cache size to 256 last responses by default.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="464855970" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/127" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/127/hovercard" href="https://github.com/reactphp/dns/pull/127">#127</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Feature: Cooperatively resolve hosts to avoid running same query concurrently.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="427568088" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/dns/issues/125" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/dns/pull/125/hovercard" href="https://github.com/reactphp/dns/pull/125">#125</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+</ul>]]></summary>
+    <updated>2019-07-09T10:19:35+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/dns/releases/tag/v0.4.18"/>
+    <id>https://github.com/reactphp/dns/releases/tag/v0.4.18</id>
+    <author>
+      <name>clue</name>
+      <uri>https://github.com/clue</uri>
+    </author>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[Cache 0.6.0]]></title>
+    <summary type="html"><![CDATA[<ul>
+<li>
+<p>Feature / BC break: Add support for <code>getMultiple()</code>, <code>setMultiple()</code>, <code>deleteMultiple()</code>, <code>clear()</code> and <code>has()</code><br>
+supporting multiple cache items (inspired by PSR-16).<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="374219300" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/cache/issues/32" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/cache/pull/32/hovercard" href="https://github.com/reactphp/cache/pull/32">#32</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=3404064" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/krlv">@krlv</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="463813955" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/cache/issues/37" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/cache/pull/37/hovercard" href="https://github.com/reactphp/cache/pull/37">#37</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Documentation for TTL precision with millisecond accuracy or below and<br>
+use high-resolution timer for cache TTL on PHP 7.3+.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="437931289" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/cache/issues/35" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/cache/pull/35/hovercard" href="https://github.com/reactphp/cache/pull/35">#35</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="463897470" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/cache/issues/38" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/cache/pull/38/hovercard" href="https://github.com/reactphp/cache/pull/38">#38</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Improve API documentation and allow legacy HHVM to fail in Travis CI config.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="398559997" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/cache/issues/34" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/cache/pull/34/hovercard" href="https://github.com/reactphp/cache/pull/34">#34</a> and <a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="437932059" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/cache/issues/36" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/cache/pull/36/hovercard" href="https://github.com/reactphp/cache/pull/36">#36</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=776829" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/clue">@clue</a>)</p>
+</li>
+<li>
+<p>Prefix all global functions calls with \ to skip the look up and resolve process and go straight to the global function.<br>
+(<a class="issue-link js-issue-link" data-error-text="Failed to load issue title" data-id="366461579" data-permission-text="Issue title is private" data-url="https://github.com/reactphp/cache/issues/31" data-hovercard-type="pull_request" data-hovercard-url="/reactphp/cache/pull/31/hovercard" href="https://github.com/reactphp/cache/pull/31">#31</a> by <a class="user-mention" data-hovercard-type="user" data-hovercard-url="/hovercards?user_id=147145" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/WyriHaximus">@WyriHaximus</a>)</p>
+</li>
+</ul>]]></summary>
+    <updated>2019-07-04T14:46:11+00:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/reactphp/cache/releases/tag/v0.6.0"/>
+    <id>https://github.com/reactphp/cache/releases/tag/v0.6.0</id>
     <author>
       <name>clue</name>
       <uri>https://github.com/clue</uri>
